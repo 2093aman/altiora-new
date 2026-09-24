@@ -1,0 +1,47 @@
+# ==========================================
+# Altiora Infotech Canada
+# https://altiorainfotech.ca
+# ==========================================
+
+User-agent: *
+Allow: /
+
+# Block non-public system paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/data/
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap
+Sitemap: https://altiorainfotech.ca/sitemap.xml
