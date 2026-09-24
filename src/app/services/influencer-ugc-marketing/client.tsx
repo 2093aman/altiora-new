@@ -54,16 +54,16 @@ const CreatorTierCard = ({ tier, className }: { tier: any; className?: string })
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${tier.borderColor} ${tier.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${tier.borderColor} bg-white shadow-lg backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${tier.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${tier.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: "1s" }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
 
         {/* Tier Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${tier.iconBg} mb-6 relative z-10`}
+          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${tier.iconBg} mb-6 relative z-10 shadow-md`}
         >
           <tier.icon className={`w-8 h-8 md:w-10 md:h-10 ${tier.iconColor}`} />
         </motion.div>
@@ -71,17 +71,17 @@ const CreatorTierCard = ({ tier, className }: { tier: any; className?: string })
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: tier.highlightedName }} />
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{tier.description}</p>
+          <p className="text-slate-700 text-base md:text-lg mb-4 leading-relaxed flex-1">{tier.description}</p>
 
           {/* Stats */}
           <div className="flex items-center justify-between mb-4">
             <div className="text-center">
               <div className={`text-2xl font-bold ${tier.textColor}`}>{tier.stat1}</div>
-              <div className="text-xs text-slate-500">{tier.stat1Label}</div>
+              <div className="text-xs text-slate-600">{tier.stat1Label}</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${tier.textColor}`}>{tier.stat2}</div>
-              <div className="text-xs text-slate-500">{tier.stat2Label}</div>
+              <div className="text-xs text-slate-600">{tier.stat2Label}</div>
             </div>
           </div>
 
@@ -89,8 +89,8 @@ const CreatorTierCard = ({ tier, className }: { tier: any; className?: string })
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {tier.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-gray-600" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-sm text-slate-700">{feature}</span>
               </div>
             ))}
           </div>
@@ -98,7 +98,7 @@ const CreatorTierCard = ({ tier, className }: { tier: any; className?: string })
 
         {/* Hover Effect */}
         <motion.div
-          className={`absolute inset-0 ${tier.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`}
+          className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
         />
       </div>
     </motion.div>
@@ -124,14 +124,14 @@ const InfluencerDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-[#F3F6FC] to-[#EAF0FB] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-          <BarChart3 className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center shadow-md">
+          <BarChart3 className="w-6 h-6 text-[#010c22]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Campaign Performance</h3>
-          <p className="text-slate-500 text-sm">Average results across managed campaigns</p>
+          <p className="text-slate-600 text-sm">Average results across managed campaigns</p>
         </div>
       </div>
 
@@ -142,15 +142,15 @@ const InfluencerDashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? "border-[#f4cc6f] bg-[#f4cc6f]/10"
-                : "border-black/10 bg-black/5"
+                ? "border-[#1945a6] bg-[#1945a6]/10 shadow-md"
+                : "border-black/10 bg-white"
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-slate-600 mb-2" />
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
-              <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-semibold text-slate-600">{metric.change}</div>
+              <div className="text-xs text-slate-600 mb-1">{metric.label}</div>
+              <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -185,136 +185,136 @@ export default function InfluencerUGCClient() {
 
   const creatorTiers = [
     {
-      highlightedName: "Nano & Micro <span class='text-[#f4cc6f]'>Influencers</span>",
+      highlightedName: "Nano & Micro <span class='text-[#1945a6]'>Influencers</span>",
       icon: Users,
       description: "Highly engaged niche audiences with authentic trust. Micro-influencers (1K-100K followers) deliver the highest engagement rates and the lowest cost-per-conversion ideal for targeted, results-driven campaigns.",
       stat1: "3-8%",
       stat1Label: "Avg Engagement",
       stat2: "5-20×",
       stat2Label: "Avg ROAS",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Niche Audience Fit", "Authentic Trust", "Cost-Effective", "High Engagement", "Product Reviews", "Community Access"],
     },
     {
-      highlightedName: "Macro <span class='text-[#f4cc6f]'>Influencers</span>",
+      highlightedName: "Macro <span class='text-[#1945a6]'>Influencers</span>",
       icon: Star,
       description: "Established creators with 100K-1M followers who bring broad reach combined with strong audience loyalty. Ideal for brand awareness campaigns, product launches, and scaling your message to larger markets.",
       stat1: "1.5-3%",
       stat1Label: "Avg Engagement",
       stat2: "100K-1M",
       stat2Label: "Audience Size",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Broad Brand Reach", "Established Authority", "Category Leadership", "Multi-Format Content", "Brand Partnerships", "Media Coverage"],
     },
     {
-      highlightedName: "UGC <span class='text-[#f4cc6f]'>Creators</span>",
+      highlightedName: "UGC <span class='text-[#1945a6]'>Creators</span>",
       icon: Camera,
       description: "User-generated content specialists who create authentic, ad-ready product content without posting to their own audience. UGC outperforms brand-produced creative in paid ads by 4× on average.",
       stat1: "4×",
       stat1Label: "vs Brand Creative",
       stat2: "48-72hrs",
       stat2Label: "Delivery Time",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Ad-Ready Content", "Full Usage Rights", "Product Reviews", "Unboxing Videos", "Testimonials", "Lifestyle Shoots"],
     },
     {
-      highlightedName: "TikTok & Reels <span class='text-[#f4cc6f]'>Creators</span>",
+      highlightedName: "TikTok & Reels <span class='text-[#1945a6]'>Creators</span>",
       icon: FaTiktok,
       description: "Short-form video specialists optimized for the TikTok and Instagram Reels algorithms. These creators understand trend cycles, audio selection, and the creative hooks that drive organic discovery and viral reach.",
       stat1: "5.96%",
       stat1Label: "Avg Engagement",
       stat2: "1B+",
       stat2Label: "Monthly Users",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Viral Hook Expertise", "Trend Riding", "Sound Strategy", "FYP Optimization", "Duet & Stitch", "Gen Z Targeting"],
     },
     {
-      highlightedName: "Instagram <span class='text-[#f4cc6f]'>Creators</span>",
+      highlightedName: "Instagram <span class='text-[#1945a6]'>Creators</span>",
       icon: FaInstagram,
       description: "Visual storytellers specializing in feed posts, Stories, and Reels on Instagram. They build aspirational brand narratives that drive product discovery, engagement, and purchase intent among highly visual audiences.",
       stat1: "4.7%",
       stat1Label: "Avg Engagement",
       stat2: "2B+",
       stat2Label: "Monthly Users",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Feed Aesthetics", "Story Sequences", "Reels Strategy", "Product Tags", "Swipe-Up Links", "Brand Collabs"],
     },
     {
-      highlightedName: "YouTube & Podcast <span class='text-[#f4cc6f]'>Creators</span>",
+      highlightedName: "YouTube & Podcast <span class='text-[#1945a6]'>Creators</span>",
       icon: FaYoutube,
       description: "Long-form content creators who build deep audience trust through in-depth reviews, tutorials, and dedicated brand segments. YouTube and podcast integrations drive some of the highest conversion rates in influencer marketing.",
       stat1: "8min+",
       stat1Label: "Avg Watch Time",
       stat2: "2.7B+",
       stat2Label: "Monthly Users",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Dedicated Reviews", "Tutorial Integrations", "Brand Segments", "SEO-Rich Content", "Loyal Subscribers", "High Intent Audiences"],
     },
   ];
 
   const services = [
     {
-      title: <>Influencer Strategy & <span className="text-[#f4cc6f]">Discovery</span></>,
+      title: <>Influencer Strategy & <span className="text-[#1945a6]">Discovery</span></>,
       description: "Data-driven creator identification using audience quality scores, engagement authenticity analysis, and brand-fit alignment across all platforms and niches.",
       icon: <Search className="w-8 h-8 text-slate-900" />,
       link: "/contact",
     },
     {
-      title: <>Campaign Management & <span className="text-[#f4cc6f]">Outreach</span></>,
+      title: <>Campaign Management & <span className="text-[#1945a6]">Outreach</span></>,
       description: "End-to-end campaign coordination from creator outreach and negotiation to contract management, briefing, and timeline execution.",
       icon: <Target className="w-8 h-8 text-slate-900" />,
       link: "/contact",
     },
     {
-      title: <>UGC Content Creation & <span className="text-[#f4cc6f]">Licensing</span></>,
+      title: <>UGC Content Creation & <span className="text-[#1945a6]">Licensing</span></>,
       description: "Brief, source, and manage UGC creators to produce ad-ready content with full commercial usage rights for paid ads and organic distribution.",
       icon: <Camera className="w-8 h-8 text-slate-900" />,
       link: "/contact",
     },
     {
-      title: <>Performance Tracking & <span className="text-[#f4cc6f]">Analytics</span></>,
+      title: <>Performance Tracking & <span className="text-[#1945a6]">Analytics</span></>,
       description: "Comprehensive reporting on reach, engagement, traffic, conversions, and ROI with clear attribution from creator content to business outcomes.",
       icon: <BarChart3 className="w-8 h-8 text-slate-900" />,
       link: "/contact",
     },
     {
-      title: <>Brand Safety & <span className="text-[#f4cc6f]">Compliance</span></>,
+      title: <>Brand Safety & <span className="text-[#1945a6]">Compliance</span></>,
       description: "Thorough creator vetting, audience authenticity verification, FTC disclosure compliance, and contract protection across every partnership.",
       icon: <Shield className="w-8 h-8 text-slate-900" />,
       link: "/contact",
     },
     {
-      title: <>Content Amplification & <span className="text-[#f4cc6f]">Distribution</span></>,
+      title: <>Content Amplification & <span className="text-[#1945a6]">Distribution</span></>,
       description: "Repurpose and amplify creator content across paid ads, email, organic social, and your website to maximize the value of every content asset.",
       icon: <Zap className="w-8 h-8 text-slate-900" />,
       link: "/contact",
@@ -416,9 +416,9 @@ export default function InfluencerUGCClient() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#1945a6]/50 to-transparent" />
               <span className={styles.overviewTitle}>Overview</span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#1945a6]/50 to-transparent" />
             </div>
 
             <div className="flex flex-col items-center">
@@ -426,17 +426,17 @@ export default function InfluencerUGCClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F8FAFC] backdrop-blur-xl shadow-md relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Consumers trust creators more than brands. <Link href="/" className="text-[#f4cc6f] hover:underline">Influencer and UGC marketing</Link> tap into that trust placing your product in the hands of real people who speak authentically to the audiences you need to reach. At Altiora Infotech, we build end-to-end creator programs that go beyond follower counts. We identify the right creators, brief them for maximum brand alignment, and measure every campaign against real business outcomes. Whether you need nano-influencer product seeding, large-scale macro campaigns, or a library of high-converting UGC for your paid ads, we build and manage creator programs that generate measurable growth for Canadian businesses.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-800`}>
+                  Consumers trust creators more than brands. <Link href="/" className="text-[#1945a6] font-semibold hover:underline">Influencer and UGC marketing</Link> tap into that trust placing your product in the hands of real people who speak authentically to the audiences you need to reach. At Altiora Infotech, we build end-to-end creator programs that go beyond follower counts. We identify the right creators, brief them for maximum brand alignment, and measure every campaign against real business outcomes. Whether you need nano-influencer product seeding, large-scale macro campaigns, or a library of high-converting UGC for your paid ads, we build and manage creator programs that generate measurable growth for Canadian businesses.
                 </p>
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#1945a6]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Creator Tiers Showcase */}
@@ -444,9 +444,9 @@ export default function InfluencerUGCClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#f4cc6f]">Creator Tiers</span> We Work With
+              <span className="text-[#1945a6]">Creator Tiers</span> We Work With
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               From highly targeted micro-influencers to viral short-form creators we match your brand with the right voices across every tier and platform.
             </p>
           </div>
@@ -460,14 +460,14 @@ export default function InfluencerUGCClient() {
       </section>
 
       {/* Campaign Performance Dashboard */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Real Results From Real Creators
+                Real Results From <span className="text-[#1945a6]">Real Creators</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
                 Every campaign we run is measured against real business metrics not vanity numbers. Our managed influencer programs consistently deliver returns that outperform traditional digital advertising channels.
               </p>
               <div className="space-y-4">
@@ -479,7 +479,7 @@ export default function InfluencerUGCClient() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-800">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -492,13 +492,13 @@ export default function InfluencerUGCClient() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Influencer & UGC Services
+              Our Influencer & <span className="text-[#1945a6]">UGC Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               A complete creator marketing infrastructure designed to connect your brand with the right audiences and convert attention into revenue.
             </p>
           </div>
@@ -514,7 +514,6 @@ export default function InfluencerUGCClient() {
                   icon={service.icon}
                   link={service.link}
                   hideServiceTag={true}
-                  iconVariant="gray"
                 />
               ))}
             </div>
@@ -531,7 +530,6 @@ export default function InfluencerUGCClient() {
                   icon={service.icon}
                   link={service.link}
                   hideServiceTag={true}
-                  iconVariant="gray"
                 />
               ))}
             </div>
@@ -540,13 +538,13 @@ export default function InfluencerUGCClient() {
       </section>
 
       {/* Why Choose Our Influencer Marketing */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Influencer & UGC Marketing?
+              Why Choose Our <span className="text-[#1945a6]">Influencer & UGC Marketing?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We combine creator expertise with performance discipline to deliver campaigns that build genuine brand trust and measurable business growth.
             </p>
           </div>
@@ -563,17 +561,17 @@ export default function InfluencerUGCClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                      <Icon className="w-7 h-7 text-[#010c22]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-1">
+                    <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 flex-1">
                       {point.description}
                     </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -587,13 +585,13 @@ export default function InfluencerUGCClient() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                        <Icon className="w-7 h-7 text-[#010c22]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <p className="text-base text-slate-700 leading-relaxed flex-1">{point.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -603,7 +601,7 @@ export default function InfluencerUGCClient() {
               {whyChoosePoints.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-black/30"}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#1945a6]" : "w-2 bg-black/30"}`}
                 />
               ))}
             </div>
@@ -666,9 +664,9 @@ export default function InfluencerUGCClient() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora Infotech?
+              Why Work With Altiora <span className="text-[#1945a6]">Infotech?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Partner with a creator marketing team that treats every campaign as a performance investment not just a brand exercise.
             </p>
           </div>
@@ -687,7 +685,7 @@ export default function InfluencerUGCClient() {
               const subtitles = ["Creator Roster", "Management", "Selection", "Storytelling", "Licensing", "ROI Reporting"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="relative rounded-2xl border border-black/10 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-[#1945a6]/30 hover:shadow-xl hover:-translate-y-2">
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -695,11 +693,11 @@ export default function InfluencerUGCClient() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-600">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -720,7 +718,7 @@ export default function InfluencerUGCClient() {
               <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Influencer & UGC Marketing" fill className="object-cover rounded-3xl" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Star className="w-10 h-10 text-[#f4cc6f]" />

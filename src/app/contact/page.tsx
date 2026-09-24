@@ -586,11 +586,11 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#000929]/70 via-[#0a133b]/70 to-[#050510]/80" />
         <div className="relative z-10 h-full w-full flex items-center justify-center text-center px-6">
           <div className="max-w-4xl">
-            <p className="uppercase tracking-[0.22em] text-xs sm:text-[13px] text-white/80">
+            <p className="uppercase tracking-[0.22em] text-xs sm:text-[13px] text-[#f4cc6f] font-semibold">
               Contact
             </p>
             <h1 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight drop-shadow text-white">
-              Get in Touch
+              Get in <span className="text-[#f4cc6f]">Touch</span>
             </h1>
             <p className="mt-4 text-white/85 text-base sm:text-lg leading-relaxed">
               Have a question or want to discuss your project? We&apos;d love to hear from you.
@@ -605,7 +605,7 @@ export default function ContactPage() {
           {/* Form Introduction */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Start Your Project Journey
+              Start Your <span className="text-[#1945a6]">Project Journey</span>
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Tell us about your vision and we'll help bring it to life. Our team of experts is ready to transform your ideas into reality.
@@ -615,10 +615,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form Section */}
             <div className="lg:col-span-3 w-full">
-              <div className="bg-gradient-to-br from-[#F3F6FC] to-[#EAF0FB] backdrop-blur-sm border border-black/10 rounded-2xl p-8 sm:p-10 shadow-2xl">
+              <div className="bg-[#F8FAFC] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-lg">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Form Header */}
-                  <div className="text-center pb-6 border-b border-black/10">
+                  <div className="text-center pb-6 border-b border-slate-200">
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Enquiry Form</h3>
                     <p className="text-slate-500">Fill out the details below and we'll get back to you within 24 hours</p>
                   </div>
@@ -626,7 +626,7 @@ export default function ContactPage() {
                   {/* Personal Information Section */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">1</div>
+                      <div className="w-8 h-8 bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] rounded-full flex items-center justify-center text-[#010c22] font-bold text-sm shadow-sm">1</div>
                       <h4 className="text-lg font-semibold text-slate-900">Personal Information</h4>
                     </div>
 
@@ -642,7 +642,7 @@ export default function ContactPage() {
                             id="firstName"
                             name="firstName"
                             required
-                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
                             placeholder="John"
                           />
                         </div>
@@ -656,7 +656,7 @@ export default function ContactPage() {
                             type="text"
                             id="lastName"
                             name="lastName"
-                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
                             placeholder="Doe"
                           />
                         </div>
@@ -675,7 +675,7 @@ export default function ContactPage() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                        className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
                         placeholder="john@company.com"
                       />
                     </div>
@@ -691,7 +691,7 @@ export default function ContactPage() {
                           <button
                             type="button"
                             onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                            className="flex items-center gap-2 bg-white border border-slate-300 rounded-lg px-3 py-3 text-slate-900 hover:border-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 min-w-[100px]"
+                            className="flex items-center gap-2 bg-white border border-slate-300 rounded-lg px-3 py-3 text-slate-900 hover:border-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200 min-w-[100px]"
                           >
                             {selectedCountry ? (
                               <>
@@ -714,7 +714,7 @@ export default function ContactPage() {
                                   type="text"
                                   value={countrySearch}
                                   onChange={(e) => setCountrySearch(e.target.value)}
-                                  className="w-full bg-slate-50 border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400"
+                                  className="w-full bg-slate-50 border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6]"
                                   placeholder="Search countries..."
                                 />
                               </div>
@@ -759,7 +759,7 @@ export default function ContactPage() {
                                 setPhoneNumber(value);
                               }
                             }}
-                            className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
                             placeholder="1234567890"
                             required
                           />
@@ -790,7 +790,7 @@ export default function ContactPage() {
                           type="text"
                           id="company"
                           name="company"
-                          className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                          className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
                           placeholder="Your Company Name"
                         />
                       </div>
@@ -800,7 +800,7 @@ export default function ContactPage() {
                   {/* Message Section */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">2</div>
+                      <div className="w-8 h-8 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm">2</div>
                       <h4 className="text-lg font-semibold text-slate-900">Tell Us About Your Project</h4>
                     </div>
 
@@ -814,7 +814,7 @@ export default function ContactPage() {
                           id="message"
                           name="message"
                           rows={6}
-                          className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 pb-8 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 resize-none"
+                          className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 pb-8 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200 resize-none"
                           placeholder="Describe your project goals, requirements, challenges, and any specific features you need. The more details you provide, the better we can help you."
                           onChange={(e) => setMessageLength(e.target.value.length)}
                           maxLength={2000}
@@ -860,19 +860,19 @@ export default function ContactPage() {
                   )}
 
                   {/* Consent and Submit Section */}
-                  <div className="space-y-6 pt-6 border-t border-black/10">
+                  <div className="space-y-6 pt-6 border-t border-slate-200">
 
                     {/* Consent Checkbox */}
-                    <div className="bg-black/[0.03] rounded-lg p-4 border border-black/10">
+                    <div className="bg-[#F8FAFC] rounded-lg p-4 border border-slate-200">
                       <label className="flex items-start gap-3 cursor-pointer">
                         <input
                           type="checkbox"
                           checked={humanVerified}
                           onChange={(e) => setHumanVerified(e.target.checked)}
-                          className="w-5 h-5 mt-0.5 rounded border-2 border-slate-500 bg-transparent text-blue-500 focus:ring-blue-500 focus:ring-2"
+                          className="w-5 h-5 mt-0.5 rounded border-2 border-slate-400 bg-white text-[#1945a6] focus:ring-[#1945a6] focus:ring-2"
                         />
                         <div className="text-sm text-slate-600 leading-relaxed">
-                          <span className="font-medium">Privacy Consent:</span> I consent to Altiora Infotech storing and processing my contact details to respond to this enquiry. Your information will be kept secure and used solely for communication purposes.
+                          <span className="font-semibold text-slate-900">Privacy Consent:</span> I consent to Altiora Infotech storing and processing my contact details to respond to this enquiry. Your information will be kept secure and used solely for communication purposes.
                         </div>
                       </label>
                     </div>
@@ -881,11 +881,11 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading" || !humanVerified || !email.trim()}
-                      className="w-full rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 px-8 py-4 font-bold text-white text-lg hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-2xl hover:shadow-blue-500/25 transform hover:scale-[1.02] active:scale-[0.98] disabled:transform-none"
+                      className="w-full rounded-xl bg-gradient-to-r from-[#f4cc6f] via-[#e6b85c] to-[#f4cc6f] px-8 py-4 font-bold text-[#010c22] text-lg hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-4 focus:ring-[#f4cc6f]/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md transform hover:scale-[1.01] active:scale-[0.99] disabled:transform-none"
                     >
                       {status === "loading" ? (
                         <span className="flex items-center justify-center gap-3">
-                          <svg className="animate-spin w-6 h-6" fill="none" viewBox="0 0 24 24">
+                          <svg className="animate-spin w-6 h-6 text-[#010c22]" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
@@ -893,7 +893,7 @@ export default function ContactPage() {
                         </span>
                       ) : !humanVerified ? (
                         <span className="flex items-center justify-center gap-3">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-6 h-6 text-[#010c22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
                           Please Accept Privacy Terms
@@ -912,7 +912,7 @@ export default function ContactPage() {
 
             {/* Contact Information Sidebar */}
             <div className="lg:col-span-2 w-full">
-              <div className="bg-gradient-to-br from-[#F3F6FC] to-[#EAF0FB] backdrop-blur-sm border border-black/10 rounded-2xl p-8 shadow-2xl h-fit sticky top-8">
+              <div className="bg-[#F8FAFC] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 shadow-lg h-fit sticky top-8">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">Get In Touch</h3>
                   <p className="text-slate-500">Ready to start your project? We're here to help.</p>
@@ -921,9 +921,9 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   {/* Email Contact */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 rounded-xl p-6 hover:border-blue-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#1945a6]/40 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center shadow-sm">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
@@ -935,7 +935,7 @@ export default function ContactPage() {
                       </div>
                       <Link
                         href="mailto:info@altiorainfotech.ca"
-                        className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 break-all"
+                        className="text-[#1945a6] hover:text-[#12327a] font-semibold transition-colors duration-200 break-all"
                       >
                         info@altiorainfotech.ca
                       </Link>
@@ -945,10 +945,10 @@ export default function ContactPage() {
 
                   {/* Address */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-xl p-6 hover:border-purple-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#f4cc6f]/60 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] rounded-full flex items-center justify-center shadow-sm">
+                          <svg className="w-6 h-6 text-[#010c22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
@@ -964,9 +964,9 @@ export default function ContactPage() {
 
                   {/* Why Choose Us */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 border border-green-400/20 rounded-xl p-6 hover:border-green-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#1945a6]/40 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center shadow-sm">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -977,26 +977,20 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <ul className="space-y-2 text-sm text-slate-600">
-                        {/* <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                          Expert team with 5+ years experience
-                        </li> */}
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           24/7 support and communication
                         </li>
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           Agile development methodology
                         </li>
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           Competitive pricing & quality

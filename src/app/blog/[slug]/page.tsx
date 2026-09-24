@@ -90,9 +90,7 @@ export default async function BlogPostPage({
   const toc = extractH2TOC(html);
 
   return (
-    <div className="min-h-screen text-slate-900 font-sans" style={{
-      background: 'radial-gradient(1400px 800px at 70% -10%, color-mix(in oklch, #2c56dd 20%, transparent), transparent), linear-gradient(180deg, #ffffff 0%, #F5F8FF 65%)'
-    }}>
+    <div className="min-h-screen text-slate-900 font-sans bg-gradient-to-b from-white via-[#F8FAFC] to-[#F1F5F9]">
       <Header />
 
       <main className="relative">
@@ -100,7 +98,7 @@ export default async function BlogPostPage({
         <article className="max-w-4xl mx-auto px-6 py-12">
           {/* Title */}
           <header className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900">
               {post.title}
             </h1>
           </header>
@@ -108,7 +106,7 @@ export default async function BlogPostPage({
           {/* Featured Image */}
           {post.image && (
             <div className="mb-8">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-sm">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -122,8 +120,8 @@ export default async function BlogPostPage({
           )}
 
           {/* Metadata */}
-          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-gray-600">
-            <span className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-slate-600">
+            <span className="flex items-center gap-2 font-medium">
               By {post.author || 'Altiora Team'}
             </span>
             <span>•</span>
@@ -135,19 +133,19 @@ export default async function BlogPostPage({
               })}
             </span>
             <span>•</span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-600 text-white">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#f4cc6f]/20 text-[#b48312] border border-[#f4cc6f]/40">
               {post.category}
             </span>
             <span>•</span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-600 text-white">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
               Published
             </span>
           </div>
 
           {/* Excerpt */}
           {post.excerpt && (
-            <div className="mb-8">
-              <p className="text-lg md:text-xl text-gray-600 italic leading-relaxed">
+            <div className="mb-8 p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/80">
+              <p className="text-lg md:text-xl text-slate-700 italic leading-relaxed">
                 {post.excerpt}
               </p>
             </div>
@@ -164,11 +162,10 @@ export default async function BlogPostPage({
           {/* Additional Images Gallery */}
           {post.images && post.images.length > 0 && (
             <section className="mb-12">
-              
               <div className="grid grid-cols-1 gap-8">
                 {post.images.map((image) => (
                   <div key={image.id} className="space-y-4">
-                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl shadow-sm">
                       <Image 
                         src={image.url} 
                         alt={image.alt}
@@ -178,7 +175,7 @@ export default async function BlogPostPage({
                       />
                     </div>
                     {image.caption && (
-                      <p className="text-sm text-gray-600 italic text-center">{image.caption}</p>
+                      <p className="text-sm text-slate-500 italic text-center">{image.caption}</p>
                     )}
                   </div>
                 ))}
@@ -191,7 +188,7 @@ export default async function BlogPostPage({
             <section className="mb-12">
               <div className="space-y-8">
                 {post.contentSections.map((section) => (
-                  <div key={section.id} className="border-l-4 border-blue-500 pl-6">
+                  <div key={section.id} className="border-l-4 border-[#1945a6] pl-6">
                     {section.type === 'title' ? (
                       <h2
                         className="text-2xl font-bold mb-4"
@@ -225,14 +222,14 @@ export default async function BlogPostPage({
           {/* Table of Contents - Mobile/Tablet */}
           {toc.length >= 2 && (
             <section className="mb-12 lg:hidden">
-              <div className="bg-[#F3F6FC] rounded-xl p-6 border border-black/10">
-                <h3 className="text-lg font-semibold mb-4">Table of Contents</h3>
+              <div className="bg-[#F8FAFC] rounded-xl p-6 border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold mb-4 text-slate-900">Table of Contents</h3>
                 <ul className="space-y-2">
                   {toc.map((t) => (
                     <li key={t.id}>
                       <a
                         href={`#${t.id}`}
-                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                        className="text-[#1945a6] hover:text-[#12327a] font-medium transition-colors"
                       >
                         {t.text}
                       </a>
@@ -244,10 +241,10 @@ export default async function BlogPostPage({
           )}
 
           {/* Navigation */}
-          <nav className="pt-8 border-t border-black/10">
+          <nav className="pt-8 border-t border-slate-200">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-2 text-[#1945a6] hover:text-[#12327a] font-semibold transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -260,8 +257,8 @@ export default async function BlogPostPage({
         {/* Table of Contents - Desktop Sidebar */}
         {toc.length >= 2 && (
           <aside className="hidden lg:block fixed top-1/2 right-8 transform -translate-y-1/2 w-64">
-            <div className="bg-[#F3F6FC] rounded-xl p-6 border border-black/10 backdrop-blur-sm">
-              <h3 className="text-sm font-semibold mb-4 text-gray-600 uppercase tracking-wider">
+            <div className="bg-[#F8FAFC] rounded-xl p-6 border border-slate-200 backdrop-blur-sm shadow-sm">
+              <h3 className="text-xs font-bold mb-4 text-slate-500 uppercase tracking-wider">
                 On this page
               </h3>
               <ul className="space-y-2 text-sm">
@@ -269,7 +266,7 @@ export default async function BlogPostPage({
                   <li key={t.id}>
                     <a
                       href={`#${t.id}`}
-                      className="block py-1 text-gray-600 hover:text-blue-400 transition-colors border-l-2 border-transparent hover:border-blue-400 pl-3"
+                      className="block py-1 text-slate-600 hover:text-[#1945a6] font-medium transition-colors border-l-2 border-transparent hover:border-[#1945a6] pl-3"
                     >
                       {t.text}
                     </a>

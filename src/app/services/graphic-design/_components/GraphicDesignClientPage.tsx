@@ -46,37 +46,37 @@ const DesignCategoryCard = ({ item, className }: { item: any; className?: string
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${item.borderColor} ${item.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${item.borderColor} bg-white shadow-lg backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
         <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${item.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${item.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: "1s" }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${item.iconBg} mb-6 relative z-10`}>
+        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${item.iconBg} mb-6 relative z-10 shadow-md`}>
           <item.icon className={`w-8 h-8 md:w-10 md:h-10 ${item.iconColor}`} />
         </motion.div>
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: item.highlightedName }} />
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{item.description}</p>
+          <p className="text-slate-700 text-base md:text-lg mb-4 leading-relaxed flex-1">{item.description}</p>
           <div className="flex items-center justify-between mb-4">
             <div className="text-center">
               <div className={`text-2xl font-bold ${item.textColor}`}>{item.stat1}</div>
-              <div className="text-xs text-slate-500">{item.stat1Label}</div>
+              <div className="text-xs text-slate-600">{item.stat1Label}</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${item.textColor}`}>{item.stat2}</div>
-              <div className="text-xs text-slate-500">{item.stat2Label}</div>
+              <div className="text-xs text-slate-600">{item.stat2Label}</div>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {item.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-gray-600" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-sm text-slate-700">{feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <motion.div className={`absolute inset-0 ${item.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`} />
+        <motion.div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
       </div>
     </motion.div>
   );
@@ -97,14 +97,14 @@ const DesignMetricsWidget = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="bg-gradient-to-br from-[#F3F6FC] to-[#EAF0FB] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-          <Palette className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center shadow-md">
+          <Palette className="w-6 h-6 text-[#010c22]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Design Standards</h3>
-          <p className="text-slate-500 text-sm">What every project delivers</p>
+          <p className="text-slate-600 text-sm">What every project delivers</p>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -113,13 +113,13 @@ const DesignMetricsWidget = () => {
           return (
             <motion.div
               key={index}
-              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#f4cc6f] bg-[#f4cc6f]/10" : "border-black/10 bg-black/5"}`}
+              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#1945a6] bg-[#1945a6]/10 shadow-md" : "border-black/10 bg-white"}`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-slate-600 mb-2" />
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
-              <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-semibold text-slate-600">{metric.change}</div>
+              <div className="text-xs text-slate-600 mb-1">{metric.label}</div>
+              <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -151,136 +151,136 @@ export default function GraphicDesignClientPage() {
 
   const designCategories = [
     {
-      highlightedName: "Logo & Brand <span class='text-[#f4cc6f]'>Identity</span>",
+      highlightedName: "Logo & Brand <span class='text-[#1945a6]'>Identity</span>",
       icon: Award,
       description: "Distinctive logos and complete brand identity systems that make your business instantly recognizable and unforgettable.",
       stat1: "500+",
       stat1Label: "Logos Designed",
       stat2: "98%",
       stat2Label: "Client Approval",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Logo Design", "Color Palette", "Typography System", "Brand Guidelines", "Icon Design", "Watermark"],
     },
     {
-      highlightedName: "Social Media <span class='text-[#f4cc6f]'>Graphics</span>",
+      highlightedName: "Social Media <span class='text-[#1945a6]'>Graphics</span>",
       icon: Monitor,
       description: "Platform-optimized visuals for Instagram, Facebook, LinkedIn, and TikTok that drive engagement and reinforce brand identity.",
       stat1: "10K+",
       stat1Label: "Graphics Created",
       stat2: "3x",
       stat2Label: "Engagement Boost",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Post Templates", "Story Graphics", "Carousel Designs", "Cover Photos", "Ad Creatives", "Highlight Icons"],
     },
     {
-      highlightedName: "Marketing <span class='text-[#f4cc6f]'>Collateral</span>",
+      highlightedName: "Marketing <span class='text-[#1945a6]'>Collateral</span>",
       icon: Layers,
       description: "Professional sales tools and marketing materials that elevate your brand perception and support every stage of your sales process.",
       stat1: "Print",
       stat1Label: "Ready Quality",
       stat2: "Multi",
       stat2Label: "Format Delivery",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Brochures", "Flyers", "Presentations", "Business Cards", "Banners", "Infographics"],
     },
     {
-      highlightedName: "UI/UX <span class='text-[#f4cc6f]'>Design</span>",
+      highlightedName: "UI/UX <span class='text-[#1945a6]'>Design</span>",
       icon: PenTool,
       description: "User-centered interface designs for websites and apps that balance visual appeal with seamless, intuitive user experiences.",
       stat1: "UX",
       stat1Label: "Research-Led",
       stat2: "CRO",
       stat2Label: "Optimized",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Wireframes", "Prototypes", "Design Systems", "User Flows", "Mobile Design", "Accessibility"],
     },
     {
-      highlightedName: "Print <span class='text-[#f4cc6f]'>Design</span>",
+      highlightedName: "Print <span class='text-[#1945a6]'>Design</span>",
       icon: Printer,
       description: "High-resolution print-ready designs crafted for professional offset and digital printing with precise color management.",
       stat1: "300+",
       stat1Label: "DPI Resolution",
       stat2: "CMYK",
       stat2Label: "Color Mode",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Posters", "Catalogues", "Letterheads", "Envelopes", "Stickers", "Event Materials"],
     },
     {
-      highlightedName: "Packaging <span class='text-[#f4cc6f]'>Design</span>",
+      highlightedName: "Packaging <span class='text-[#1945a6]'>Design</span>",
       icon: Package,
       description: "Shelf-stopping packaging design that communicates product value, builds brand trust, and drives purchase decisions at the point of sale.",
       stat1: "Retail",
       stat1Label: "Ready Design",
       stat2: "3D",
       stat2Label: "Mockup Included",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Box Design", "Label Design", "Bag Design", "Tag Design", "3D Mockups", "Die-Cut Files"],
     },
   ];
 
   const services = [
     {
-      title: <>Logo & Brand <span className="text-[#f4cc6f]">Identity</span></>,
+      title: <>Logo & Brand <span className="text-[#1945a6]">Identity</span></>,
       description: "Distinctive logos and complete brand identity systems designed to make your business instantly recognizable and memorable.",
       icon: <Award className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Social Media <span className="text-[#f4cc6f]">Graphics</span></>,
+      title: <>Social Media <span className="text-[#1945a6]">Graphics</span></>,
       description: "Platform-optimized visuals that drive engagement, reinforce brand identity, and stop the scroll on every social network.",
       icon: <Monitor className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Marketing <span className="text-[#f4cc6f]">Collateral</span></>,
+      title: <>Marketing <span className="text-[#1945a6]">Collateral</span></>,
       description: "Professional brochures, presentations, flyers, and sales tools that elevate your brand and support your entire sales process.",
       icon: <Layers className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>UI/UX <span className="text-[#f4cc6f]">Design</span></>,
+      title: <>UI/UX <span className="text-[#1945a6]">Design</span></>,
       description: "User-centered website and app interfaces that balance stunning aesthetics with intuitive usability and conversion optimization.",
       icon: <PenTool className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Print <span className="text-[#f4cc6f]">Design</span></>,
+      title: <>Print <span className="text-[#1945a6]">Design</span></>,
       description: "High-resolution print-ready artwork for posters, catalogs, signage, and all promotional printed materials your business needs.",
       icon: <Printer className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Packaging <span className="text-[#f4cc6f]">Design</span></>,
+      title: <>Packaging <span className="text-[#1945a6]">Design</span></>,
       description: "Shelf-impact packaging that communicates product value, builds brand trust, and drives purchase decisions at the point of sale.",
       icon: <Package className="w-12 h-12" />,
       link: "/contact",
@@ -367,26 +367,26 @@ export default function GraphicDesignClientPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={overviewInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center">
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#1945a6]/50 to-transparent" />
               <span className={styles.overviewTitle}>Overview</span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#1945a6]/50 to-transparent" />
             </div>
             <div className="flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F8FAFC] backdrop-blur-xl shadow-md relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Great design is more than aesthetics it's communication. At Altiora Infotech, our <Link href="/" className="text-[#f4cc6f] hover:underline">Graphic Design Services</Link> transform your brand's visual identity into a powerful business asset that attracts attention, builds trust, and drives conversions. From logos and brand identity to social media graphics, marketing collateral, and packaging design, every visual we create is crafted with strategic intent. We design for impact ensuring your brand looks premium, consistent, and unmistakably yours across every touchpoint.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-800`}>
+                  Great design is more than aesthetics it's communication. At Altiora Infotech, our <Link href="/" className="text-[#1945a6] font-semibold hover:underline">Graphic Design Services</Link> transform your brand's visual identity into a powerful business asset that attracts attention, builds trust, and drives conversions. From logos and brand identity to social media graphics, marketing collateral, and packaging design, every visual we create is crafted with strategic intent. We design for impact ensuring your brand looks premium, consistent, and unmistakably yours across every touchpoint.
                 </p>
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#1945a6]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Design Categories */}
@@ -394,9 +394,9 @@ export default function GraphicDesignClientPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Design <span className="text-[#f4cc6f]">Specialties</span> We Master
+              Design <span className="text-[#1945a6]">Specialties</span> We Master
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               From brand identity to packaging, we cover every visual touchpoint your business needs to look premium and professional.
             </p>
           </div>
@@ -409,14 +409,14 @@ export default function GraphicDesignClientPage() {
       </section>
 
       {/* Quality Standards Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Design That Delivers Results
+                Design That Delivers <span className="text-[#1945a6]">Results</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
                 Every design we create is built to perform not just look good. We combine creative excellence with strategic thinking to produce visuals that attract attention, communicate your message clearly, and drive the action you need.
               </p>
               <div className="space-y-4">
@@ -428,7 +428,7 @@ export default function GraphicDesignClientPage() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-800">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -441,37 +441,37 @@ export default function GraphicDesignClientPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Graphic Design Services
+              Our Graphic Design <span className="text-[#1945a6]">Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Complete visual design solutions that build brand recognition and drive business growth across all channels.
             </p>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
             ))}
           </div>
           <div className="block md:hidden grid grid-cols-1 gap-4">
             {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Graphic Design?
+              Why Choose Our <span className="text-[#1945a6]">Graphic Design?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We combine creative vision with strategic thinking to deliver designs that make your brand unforgettable.
             </p>
           </div>
@@ -480,13 +480,13 @@ export default function GraphicDesignClientPage() {
               const Icon = point.icon;
               return (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="group relative">
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                      <Icon className="w-7 h-7 text-[#010c22]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">{point.title}</h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-1">{point.description}</p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">{point.title}</h3>
+                    <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 flex-1">{point.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -498,13 +498,13 @@ export default function GraphicDesignClientPage() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                        <Icon className="w-7 h-7 text-[#010c22]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <p className="text-base text-slate-700 leading-relaxed flex-1">{point.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -512,7 +512,7 @@ export default function GraphicDesignClientPage() {
             </div>
             <div className="flex justify-center gap-2 mt-4">
               {whyChoosePoints.map((_, index) => (
-                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-black/30"}`} />
+                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#1945a6]" : "w-2 bg-black/30"}`} />
               ))}
             </div>
           </div>
@@ -538,9 +538,9 @@ export default function GraphicDesignClientPage() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora <span className="text-[#f4cc6f]">Infotech?</span>
+              Why Work With Altiora <span className="text-[#1945a6]">Infotech?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Partner with design experts who understand that great visuals drive real business results.
             </p>
           </div>
@@ -559,7 +559,7 @@ export default function GraphicDesignClientPage() {
               const subtitles = ["Design", "Expertise", "Consistency", "Assurance", "Delivery", "Ownership"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="relative rounded-2xl border border-black/10 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-[#1945a6]/30 hover:shadow-xl hover:-translate-y-2">
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -567,11 +567,11 @@ export default function GraphicDesignClientPage() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-600">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -592,7 +592,7 @@ export default function GraphicDesignClientPage() {
               <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Graphic Design Services" fill className="object-cover rounded-3xl" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Palette className="w-10 h-10 text-[#f4cc6f]" />
@@ -604,14 +604,14 @@ export default function GraphicDesignClientPage() {
                 Transform how the world sees your business with premium graphic design that communicates your value instantly. At Altiora Infotech, we create designs that make your brand look as good as it performs.
               </p>
               <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-8">
-                Share your design requirements and brand details, and we'll deliver a comprehensive creative proposal with concepts, timeline, and investment details.
+                Share your design requirements and brand details, and we&apos;ll deliver a comprehensive creative proposal with concepts, timeline, and investment details.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                <Link href="https://calendly.com/altiorainfotech/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 transition-all duration-300 transform hover:scale-105">
+                <Link href="https://calendly.com/altiorainfotech/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105">
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book Design Consultation
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] transition-all duration-300">
+                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] focus:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300">
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Custom Quote
                 </Link>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -50,12 +50,12 @@ const PlatformCard = ({ platform, className }: { platform: any; className?: stri
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${platform.borderColor} ${platform.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${platform.borderColor} bg-white shadow-lg backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
         <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${platform.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${platform.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: "1s" }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${platform.iconBg} mb-6 relative z-10`}>
+        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${platform.iconBg} mb-6 relative z-10 shadow-md`}>
           <platform.icon className={`w-8 h-8 md:w-10 md:h-10 ${platform.iconColor}`} />
         </motion.div>
         <div className="relative z-10 flex-1 flex flex-col">
@@ -74,13 +74,13 @@ const PlatformCard = ({ platform, className }: { platform: any; className?: stri
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {platform.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className={`w-4 h-4 ${platform.iconColor}`} />
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
                 <span className="text-sm text-slate-700">{feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <motion.div className={`absolute inset-0 ${platform.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`} />
+        <motion.div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
       </div>
     </motion.div>
   );
@@ -101,10 +101,10 @@ const PerformanceWidget = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-          <BarChart3 className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center shadow-md">
+          <BarChart3 className="w-6 h-6 text-[#010c22]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Social Performance</h3>
@@ -117,13 +117,13 @@ const PerformanceWidget = () => {
           return (
             <motion.div
               key={index}
-              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#f4cc6f] bg-[#f4cc6f]/10" : "border-black/10 bg-black/5"}`}
+              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#1945a6] bg-[#1945a6]/10 shadow-md" : "border-black/10 bg-white"}`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-slate-700 mb-2" />
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-600 mb-1">{metric.label}</div>
-              <div className="text-xs font-semibold text-slate-700">{metric.change}</div>
+              <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -155,136 +155,136 @@ export default function SocialMediaManagementClient() {
 
   const platforms = [
     {
-      highlightedName: "Instagram <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "Instagram <span class='text-[#1945a6]'>Management</span>",
       icon: FaInstagram,
       description: "Grow a loyal audience with visually stunning Reels, Stories, and feed posts optimized for discovery and engagement.",
       stat1: "2B+",
       stat1Label: "Monthly Users",
       stat2: "4.7%",
       stat2Label: "Avg Engagement",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Reels Strategy", "Story Content", "Hashtag Research", "Feed Aesthetics", "Bio Optimization", "Highlight Covers"],
     },
     {
-      highlightedName: "Facebook <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "Facebook <span class='text-[#1945a6]'>Management</span>",
       icon: FaFacebookF,
       description: "Build community, drive traffic, and generate leads through strategic page management and targeted content publishing.",
       stat1: "3.8B+",
       stat1Label: "Monthly Users",
       stat2: "1.93%",
       stat2Label: "Avg Engagement",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Page Management", "Group Moderation", "Event Promotion", "Video Content", "Lead Generation", "Community Building"],
     },
     {
-      highlightedName: "LinkedIn <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "LinkedIn <span class='text-[#1945a6]'>Management</span>",
       icon: FaLinkedinIn,
       description: "Position your brand as an industry authority with thought leadership content that attracts high-value B2B prospects.",
       stat1: "900M+",
       stat1Label: "Professionals",
       stat2: "2.74%",
       stat2Label: "Avg Engagement",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Thought Leadership", "Company Page", "Employee Advocacy", "Lead Nurturing", "Content Articles", "B2B Targeting"],
     },
     {
-      highlightedName: "TikTok <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "TikTok <span class='text-[#1945a6]'>Management</span>",
       icon: FaTiktok,
       description: "Capture Gen Z and millennial audiences with trend-driven short-form video content that drives organic viral reach.",
       stat1: "1B+",
       stat1Label: "Monthly Users",
       stat2: "5.96%",
       stat2Label: "Avg Engagement",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Viral Video Strategy", "Trend Utilization", "Sound Selection", "Duet & Stitch", "Hashtag Challenges", "FYP Optimization"],
     },
     {
-      highlightedName: "Twitter/X <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "Twitter/X <span class='text-[#1945a6]'>Management</span>",
       icon: FaTwitter,
       description: "Stay part of real-time conversations and build brand awareness through strategic Twitter presence and engagement.",
       stat1: "450M+",
       stat1Label: "Monthly Users",
       stat2: "Daily",
       stat2Label: "Engagement",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Brand Voice", "Trend Monitoring", "Reply Management", "Thread Strategy", "Polls & Engagement", "News Commentary"],
     },
     {
-      highlightedName: "YouTube <span class='text-[#f4cc6f]'>Management</span>",
+      highlightedName: "YouTube <span class='text-[#1945a6]'>Management</span>",
       icon: FaYoutube,
       description: "Build a long-form content library that drives search traffic, authority, and subscriber growth for your brand.",
       stat1: "2.7B+",
       stat1Label: "Monthly Users",
       stat2: "8min",
       stat2Label: "Avg Watch Time",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Channel Optimization", "SEO Titles & Tags", "Thumbnail Design", "End Screens & Cards", "Playlist Strategy", "Analytics Review"],
     },
   ];
 
   const services = [
     {
-      title: <>Content <span className="text-[#f4cc6f]">Strategy</span></>,
+      title: <>Content <span className="text-[#1945a6]">Strategy</span></>,
       description: "Data-driven content strategies that define your brand voice, content pillars, and platform-specific direction for measurable growth.",
       icon: <Target className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Social Media <span className="text-[#f4cc6f]">Content Creation</span></>,
+      title: <>Social Media <span className="text-[#1945a6]">Content Creation</span></>,
       description: "Scroll-stopping visuals, captions, and short-form videos crafted to capture attention and spark action across every platform.",
       icon: <Share2 className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Community <span className="text-[#f4cc6f]">Management</span></>,
+      title: <>Community <span className="text-[#1945a6]">Management</span></>,
       description: "Active comment moderation, DM responses, and community engagement that builds loyalty and converts followers into customers.",
       icon: <MessageCircle className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Audience <span className="text-[#f4cc6f]">Growth</span></>,
+      title: <>Audience <span className="text-[#1945a6]">Growth</span></>,
       description: "Organic growth tactics including hashtag strategy, collaboration outreach, and platform algorithm optimization for sustained follower growth.",
       icon: <Users className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Analytics & <span className="text-[#f4cc6f]">Reporting</span></>,
+      title: <>Analytics & <span className="text-[#1945a6]">Reporting</span></>,
       description: "Comprehensive monthly performance reports with actionable insights, trend analysis, and strategic recommendations for continuous improvement.",
       icon: <BarChart3 className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Influencer <span className="text-[#f4cc6f]">Partnerships</span></>,
+      title: <>Influencer <span className="text-[#1945a6]">Partnerships</span></>,
       description: "Identify, outreach, and manage relevant influencer collaborations that amplify your brand message to highly targeted audiences.",
       icon: <Zap className="w-12 h-12" />,
       link: "/contact",
@@ -374,11 +374,12 @@ export default function SocialMediaManagementClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="rounded-3xl border border-[#f4cc6f]/20 bg-black/[0.03] backdrop-blur-sm p-6 sm:p-8 md:p-10"
+            className="rounded-3xl border border-[#f4cc6f]/30 bg-[#F8FAFC] backdrop-blur-sm p-6 sm:p-8 md:p-10 shadow-sm"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex h-2 w-2 rounded-full bg-[#f4cc6f] shadow-[0_0_12px_#f4cc6f]" />
-              <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#f4cc6f]/90 font-semibold">Quick Answer</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 text-[#b48312] uppercase tracking-wider">
+                Quick Answer
+              </span>
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
               What does a social media management service actually include?
@@ -413,26 +414,26 @@ export default function SocialMediaManagementClient() {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={overviewInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center">
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#1945a6]/50 to-transparent" />
               <span className={styles.overviewTitle}>Overview</span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#1945a6]/50 to-transparent" />
             </div>
             <div className="flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F8FAFC] backdrop-blur-xl shadow-md relative overflow-hidden"
               >
                 <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-800`}>
-                  Social media shouldn't feel like a second job. Most businesses post consistently yet still don't grow. Because growth doesn't come from activity it comes from strategy, positioning, and execution that compounds over time. At Altiora Infotech, we design a complete <Link href="/" className="text-[#f4cc6f] hover:underline">social media management</Link> system that makes your brand recognizable, trusted, and chosen across every platform your audience lives on.
+                  Social media shouldn't feel like a second job. Most businesses post consistently yet still don't grow. Because growth doesn't come from activity it comes from strategy, positioning, and execution that compounds over time. At Altiora Infotech, we design a complete <Link href="/" className="text-[#1945a6] font-semibold hover:underline">social media management</Link> system that makes your brand recognizable, trusted, and chosen across every platform your audience lives on.
                 </p>
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#1945a6]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Platforms Section */}
@@ -440,7 +441,7 @@ export default function SocialMediaManagementClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#f4cc6f]">Platforms</span> We Manage
+              <span className="text-[#1945a6]">Platforms</span> We Manage
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Reach your audience where they spend their time with platform-specific strategies and creative excellence.
@@ -455,12 +456,12 @@ export default function SocialMediaManagementClient() {
       </section>
 
       {/* Performance Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Results That Speak for Themselves
+                Results That Speak for <span className="text-[#1945a6]">Themselves</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
                 Our managed social media accounts consistently outperform industry benchmarks. We track what matters engagement quality, follower intent, and lead signals then optimize every week.
@@ -487,11 +488,11 @@ export default function SocialMediaManagementClient() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Social Media Management Services
+              Our Social Media <span className="text-[#1945a6]">Management Services</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Comprehensive social media solutions designed to build your brand, grow your audience, and drive real business results.
@@ -499,13 +500,13 @@ export default function SocialMediaManagementClient() {
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
             ))}
           </div>
           <div className="block md:hidden">
             <div className="grid grid-cols-1 gap-4">
               {services.map((service, index) => (
-                <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+                <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
               ))}
             </div>
           </div>
@@ -513,11 +514,11 @@ export default function SocialMediaManagementClient() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Social Media Management?
+              Why Choose Our <span className="text-[#1945a6]">Social Media Management?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We combine platform expertise with creative excellence to deliver social media management that drives real business results.
@@ -528,13 +529,13 @@ export default function SocialMediaManagementClient() {
               const Icon = point.icon;
               return (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="group relative">
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                      <Icon className="w-7 h-7 text-[#010c22]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">{point.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">{point.title}</h3>
                     <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 flex-1">{point.description}</p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -546,13 +547,13 @@ export default function SocialMediaManagementClient() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                        <Icon className="w-7 h-7 text-[#010c22]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
                       <p className="text-base text-slate-700 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -560,7 +561,7 @@ export default function SocialMediaManagementClient() {
             </div>
             <div className="flex justify-center gap-2 mt-4">
               {whyChoosePoints.map((_, index) => (
-                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-black/30"}`} />
+                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#1945a6]" : "w-2 bg-black/30"}`} />
               ))}
             </div>
           </div>
@@ -586,7 +587,7 @@ export default function SocialMediaManagementClient() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora <span className="text-[#f4cc6f]">Infotech?</span>
+              Why Work With Altiora <span className="text-[#1945a6]">Infotech?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Partner with social media experts who treat your brand like their own.
@@ -607,7 +608,7 @@ export default function SocialMediaManagementClient() {
               const subtitles = ["Mastery", "Excellence", "Approach", "Focused", "Delivery", "Partnership"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="relative rounded-2xl border border-black/10 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-[#1945a6]/30 hover:shadow-xl hover:-translate-y-2">
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -615,7 +616,7 @@ export default function SocialMediaManagementClient() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
                           <span className="text-sm text-slate-600">{subtitles[index]}</span>
                         </div>
                       </div>
@@ -635,31 +636,31 @@ export default function SocialMediaManagementClient() {
       {/* CTA Section */}
       <section className="px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-black/20 backdrop-blur-sm overflow-hidden">
+          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden">
             <div className="absolute inset-0">
               <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Social Media Management" fill className="object-cover rounded-3xl" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#F5F8FF]/85 to-white/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Share2 className="w-10 h-10 text-[#f4cc6f]" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                 Ready to Build Your Social Media Presence?
               </h3>
-              <p className="text-slate-800 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
                 Transform your social channels into a consistent lead generation and brand authority engine. At Altiora Infotech, we handle everything strategy, content, publishing, and growth so you can focus on running your business.
               </p>
-              <p className="text-slate-800 max-w-3xl mx-auto text-base sm:text-lg mb-8">
-                Ready to start growing? Share your business goals and target audience, and we'll create a comprehensive social media strategy tailored to your brand.
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-8">
+                Ready to start growing? Share your business goals and target audience, and we&apos;ll create a comprehensive social media strategy tailored to your brand.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                 <Link href="https://calendly.com/altiorainfotech/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105">
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book Strategy Call
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-black/30 bg-black/[0.08] backdrop-blur-sm text-slate-900 hover:bg-black/[0.12] focus:bg-black/[0.12] focus:outline-none focus:ring-2 focus:ring-black/50 transition-all duration-300">
+                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] focus:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300">
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Custom Quote
                 </Link>

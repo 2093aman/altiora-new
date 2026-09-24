@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -76,18 +76,18 @@ const SocialPlatformCard = ({ platform, className }: { platform: any; className?
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${platform.borderColor} ${platform.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${platform.borderColor} ${platform.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col shadow-sm hover:shadow-md`}>
         {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${platform.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${platform.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Platform Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${platform.iconBg} mb-6 relative z-10`}
+          className={`flex items-center justify-center w-16 h-16 flex-shrink-0 rounded-2xl ${platform.iconBg} mb-6 relative z-10 shadow-sm`}
         >
-          <platform.icon className={`w-8 h-8 md:w-10 md:h-10 ${platform.iconColor}`} />
+          <platform.icon className={`w-8 h-8 flex-shrink-0 ${platform.iconColor}`} />
         </motion.div>
 
         {/* Content */}
@@ -96,14 +96,14 @@ const SocialPlatformCard = ({ platform, className }: { platform: any; className?
           <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{platform.description}</p>
 
           {/* Stats */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-4 p-3 rounded-xl bg-white border border-slate-200/60">
             <div className="text-center">
               <div className={`text-2xl font-bold ${platform.textColor}`}>{platform.reach}</div>
-              <div className="text-xs text-slate-500">Monthly Reach</div>
+              <div className="text-xs text-slate-500 font-medium">Monthly Reach</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${platform.textColor}`}>{platform.engagement}</div>
-              <div className="text-xs text-slate-500">Avg Engagement</div>
+              <div className="text-xs text-slate-500 font-medium">Avg Engagement</div>
             </div>
           </div>
 
@@ -111,8 +111,8 @@ const SocialPlatformCard = ({ platform, className }: { platform: any; className?
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {platform.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-gray-500" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-xs sm:text-sm text-slate-600">{feature}</span>
               </div>
             ))}
           </div>
@@ -120,7 +120,7 @@ const SocialPlatformCard = ({ platform, className }: { platform: any; className?
 
         {/* Hover Effect */}
         <motion.div
-          className={`absolute inset-0 ${platform.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`}
+          className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
         />
       </div>
     </motion.div>
@@ -134,7 +134,7 @@ const SocialPostMockup = ({ post, delay = 0 }: { post: any; delay?: number }) =>
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
-      className="bg-[#F3F6FC] backdrop-blur-sm rounded-2xl p-4 border border-black/10 hover:border-black/20 transition-all duration-300"
+      className="bg-[#F8FAFC] backdrop-blur-sm rounded-2xl p-4 border border-slate-200/80 hover:border-[#f4cc6f]/40 transition-all duration-300"
     >
       {/* Post Header */}
       <div className="flex items-center gap-3 mb-4">
@@ -152,27 +152,27 @@ const SocialPostMockup = ({ post, delay = 0 }: { post: any; delay?: number }) =>
       <div className="mb-4">
         <p className="text-slate-700 text-sm leading-relaxed mb-3">{post.content}</p>
         {post.image && (
-          <div className="relative h-32 rounded-xl overflow-hidden bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+          <div className="relative h-32 rounded-xl overflow-hidden bg-gradient-to-br from-[#1945a6]/20 to-[#f4cc6f]/20">
             <div className="absolute inset-0 flex items-center justify-center">
-              <Camera className="w-8 h-8 text-slate-400" />
+              <Camera className="w-8 h-8 text-[#1945a6]" />
             </div>
           </div>
         )}
       </div>
 
       {/* Post Engagement */}
-      <div className="flex items-center justify-between pt-3 border-t border-black/10">
+      <div className="flex items-center justify-between pt-3 border-t border-slate-200/80">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1">
-            <Heart className="w-4 h-4 text-red-400" />
+            <Heart className="w-4 h-4 text-red-500" />
             <span className="text-xs text-slate-500">{post.likes}</span>
           </div>
           <div className="flex items-center gap-1">
-            <MessageCircle className="w-4 h-4 text-blue-400" />
+            <MessageCircle className="w-4 h-4 text-[#1945a6]" />
             <span className="text-xs text-slate-500">{post.comments}</span>
           </div>
           <div className="flex items-center gap-1">
-            <Share className="w-4 h-4 text-green-400" />
+            <Share className="w-4 h-4 text-[#b48312]" />
             <span className="text-xs text-slate-500">{post.shares}</span>
           </div>
         </div>
@@ -187,10 +187,10 @@ const CampaignDashboard = () => {
   const [activeMetric, setActiveMetric] = useState(0);
 
   const metrics = [
-    { label: "Impressions", value: "2.4M", change: "+23%", color: "text-blue-400", icon: Eye },
-    { label: "Engagement", value: "156K", change: "+45%", color: "text-green-400", icon: Heart },
-    { label: "Clicks", value: "89K", change: "+67%", color: "text-purple-400", icon: Target },
-    { label: "Conversions", value: "12.3K", change: "+89%", color: "text-yellow-400", icon: TrendingUp }
+    { label: "Impressions", value: "2.4M", change: "+23%", color: "text-[#1945a6]", icon: Eye },
+    { label: "Engagement", value: "156K", change: "+45%", color: "text-[#b48312]", icon: Heart },
+    { label: "Clicks", value: "89K", change: "+67%", color: "text-[#1945a6]", icon: Target },
+    { label: "Conversions", value: "12.3K", change: "+89%", color: "text-[#b48312]", icon: TrendingUp }
   ];
 
   useEffect(() => {
@@ -201,14 +201,14 @@ const CampaignDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-xl bg-[#1945a6] flex items-center justify-center">
           <BarChart3 className="w-6 h-6 text-white" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Campaign Performance</h3>
-          <p className="text-slate-500 text-sm">Real-time analytics dashboard</p>
+          <p className="text-slate-500 text-sm font-medium">Real-time analytics dashboard</p>
         </div>
       </div>
 
@@ -219,15 +219,15 @@ const CampaignDashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? 'border-[#f4cc6f] bg-[#f4cc6f]/10'
-                : 'border-black/10 bg-black/5'
+                ? 'border-[#f4cc6f] bg-[#f4cc6f]/15 shadow-sm'
+                : 'border-slate-200/80 bg-white'
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className={`w-5 h-5 text-slate-500 mb-2`} />
-              <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
+              <Icon className={`w-5 h-5 ${metric.color} mb-2`} />
+              <div className="text-2xl font-extrabold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className={`text-xs font-semibold text-slate-700`}>{metric.change}</div>
+              <div className={`text-xs font-bold ${metric.color}`}>{metric.change}</div>
             </motion.div>
           );
         })}
@@ -335,12 +335,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Reach 3.8B+ users with advanced targeting and creative formats across Meta's ecosystem.",
       reach: "3.8B+",
       engagement: "1.93%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Advanced Audience Targeting", "Stories & Reels Ads", "Shopping Integration", "Lookalike Audiences", "Dynamic Product Ads", "Messenger Campaigns"]
     },
     {
@@ -350,12 +350,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Target 900M+ professionals with B2B-focused campaigns and thought leadership content.",
       reach: "900M+",
       engagement: "2.74%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["B2B Lead Generation", "Sponsored Content", "InMail Campaigns", "Company Page Promotion", "Event Promotion", "Talent Solutions"]
     },
     {
@@ -365,12 +365,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Engage 1B+ users with viral & Trends short-form video content and trending challenges.",
       reach: "1B+",
       engagement: "5.96%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Viral Video Content", "Hashtag Challenges", "Influencer Partnerships", "Gen Z Targeting", "Brand Takeovers", "Spark Ads"]
     },
     {
@@ -380,12 +380,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Reach billions of users across Google Search, YouTube, Gmail, and the Google Display Network.",
       reach: "4B+",
       engagement: "2.1%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Search Ads", "YouTube Ads", "Display Network", "Shopping Campaigns", "Gmail Promotions", "Discovery Ads"]
     },
     {
@@ -395,12 +395,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Connect with 450M+ users through real-time conversations and trending / viral topics.",
       reach: "450M+",
       engagement: "0.045%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Promoted Tweets", "Trend Takeovers", "Real-time Engagement", "News & Updates", "Twitter Spaces", "Follower Campaigns"]
     },
     {
@@ -410,12 +410,12 @@ export default function SocialMediaAdvertisingClient() {
       description: "Engage 750M+ daily active users with AR experiences and vertical video advertising.",
       reach: "750M+",
       engagement: "3.2%",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["AR Lens Ads", "Snap Ads", "Story Ads", "Collection Ads", "Dynamic Ads", "Spotlight Ads"]
     }
   ];
@@ -426,7 +426,7 @@ export default function SocialMediaAdvertisingClient() {
       brand: "TechStartup Co.",
       platform: "Instagram",
       platformIcon: FaInstagram,
-      platformColor: "bg-gradient-to-br from-purple-500 to-pink-500",
+      platformColor: "bg-[#1945a6]",
       content: "🚀 Launching our new AI-powered analytics dashboard! Get insights that drive real business growth. #TechInnovation #Analytics",
       time: "2h ago",
       likes: "1.2K",
@@ -439,7 +439,7 @@ export default function SocialMediaAdvertisingClient() {
       brand: "Fashion Brand",
       platform: "TikTok",
       platformIcon: FaTiktok,
-      platformColor: "bg-gradient-to-br from-pink-500 to-red-500",
+      platformColor: "bg-[#1945a6]",
       content: "✨ Summer collection drop! Swipe to see our sustainable fashion line that's taking over social media 🌱 #SustainableFashion",
       time: "4h ago",
       likes: "3.4K",
@@ -452,7 +452,7 @@ export default function SocialMediaAdvertisingClient() {
       brand: "B2B Solutions",
       platform: "LinkedIn",
       platformIcon: FaLinkedin,
-      platformColor: "bg-gradient-to-br from-blue-600 to-cyan-500",
+      platformColor: "bg-[#1945a6]",
       content: "📊 How we helped a Fortune 500 company increase their operational efficiency by 40% using our automation platform. Read the full case study.",
       time: "1d ago",
       likes: "892",
@@ -465,39 +465,39 @@ export default function SocialMediaAdvertisingClient() {
 
   const services = [
     {
-      title: <>Facebook & Instagram <span className="text-[#f4cc6f]">Advertising</span></>,
+      title: <>Facebook & Instagram <span className="text-[#1945a6]">Advertising</span></>,
       description: "Targeted campaigns across Meta's platforms with advanced audience segmentation and creative optimization.",
-      icon: <FaFacebookF className="w-8 h-8 text-white" />,
+      icon: <FaFacebookF className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
     {
-      title: <>LinkedIn <span className="text-[#f4cc6f]">Advertising</span></>,
+      title: <>LinkedIn <span className="text-[#1945a6]">Advertising</span></>,
       description: "Professional B2B campaigns targeting decision-makers with sponsored content and InMail campaigns.",
-      icon: <FaLinkedinIn className="w-8 h-8 text-white" />,
+      icon: <FaLinkedinIn className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
     {
-      title: <>Twitter/X <span className="text-[#f4cc6f]">Advertising</span></>,
+      title: <>Twitter/X <span className="text-[#1945a6]">Advertising</span></>,
       description: "Real-time engagement campaigns with promoted tweets, trends, and targeted follower acquisition.",
-      icon: <FaTwitter className="w-8 h-8 text-white" />,
+      icon: <FaTwitter className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
     {
-      title: <>Google <span className="text-[#f4cc6f]">Advertising</span></>,
+      title: <>Google <span className="text-[#1945a6]">Advertising</span></>,
       description: "Comprehensive Google Ads campaigns across Search, Display, YouTube, and Shopping networks.",
-      icon: <FaGoogle className="w-8 h-8 text-white" />,
+      icon: <FaGoogle className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
     {
-      title: <>TikTok <span className="text-[#f4cc6f]">Advertising</span></>,
+      title: <>TikTok <span className="text-[#1945a6]">Advertising</span></>,
       description: "Creative short-form video campaigns targeting Gen Z and millennial audiences with viral potential.",
-      icon: <FaTiktok className="w-8 h-8 text-white" />,
+      icon: <FaTiktok className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
     {
       title: "Campaign Analytics & Optimization",
       description: "Real-time performance tracking, A/B testing, and continuous optimization for maximum ROI.",
-      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      icon: <BarChart3 className="w-7 h-7 text-[#010c22]" />,
       link: "/contact"
     },
   ];
@@ -608,19 +608,21 @@ export default function SocialMediaAdvertisingClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="rounded-3xl border border-[#f4cc6f]/20 bg-[#F3F6FC] backdrop-blur-sm p-6 sm:p-8 md:p-10"
+            className="rounded-3xl border border-[#f4cc6f]/30 bg-[#F8FAFC] p-6 sm:p-8 md:p-10 shadow-sm"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex h-2 w-2 rounded-full bg-[#f4cc6f] shadow-[0_0_12px_#f4cc6f]" />
-              <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#f4cc6f]/90 font-semibold">Quick Answer</span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 text-[#b48312] font-extrabold text-xs uppercase tracking-[0.2em]">
+                <span className="h-2 w-2 rounded-full bg-[#f4cc6f] animate-pulse" />
+                Quick Answer
+              </span>
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
               What are paid advertising services and what do they deliver?
             </h2>
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
-              Paid advertising services are the strategy, creative, media buying and optimization work needed to run profitable campaigns on Google Ads, Meta, LinkedIn, Microsoft and TikTok. Altiora Infotech delivers all platforms under one in-house team, from keyword research and landing pages to creative production and weekly ROAS reporting, so growth is measurable, not guesswork.
+              Paid advertising services are the strategy, creative, media buying and optimization work needed to run profitable campaigns on <span className="text-[#1945a6] font-semibold">Google Ads</span>, <span className="text-[#1945a6] font-semibold">Meta</span>, <span className="text-[#1945a6] font-semibold">LinkedIn</span>, Microsoft and TikTok. Altiora Infotech delivers all platforms under one in-house team, from keyword research and landing pages to creative production and weekly ROAS reporting, so growth is measurable, not guesswork.
             </p>
-            <p className="text-slate-600 text-sm sm:text-base font-semibold mb-3">Platforms and capabilities we cover:</p>
+            <p className="text-slate-900 text-sm sm:text-base font-bold mb-3">Platforms and capabilities we cover:</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 "Google Ads Search and Performance Max",
@@ -632,7 +634,7 @@ export default function SocialMediaAdvertisingClient() {
                 "Landing pages and conversion-rate optimization",
                 "Weekly ROAS, CPL and pipeline reporting",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm sm:text-base">
+                <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base">
                   <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
                   <span>{item}</span>
                 </li>
@@ -656,11 +658,11 @@ export default function SocialMediaAdvertisingClient() {
           >
             {/* Top - Label with centered lines */}
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
-              <span className={styles.overviewTitle}>
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/60 to-transparent" />
+              <span className="text-[#b48312] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#f4cc6f]/15 px-4 py-1.5 rounded-full border border-[#f4cc6f]/40">
                 Overview
               </span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/60 to-transparent" />
             </div>
 
             {/* Main Content Centered */}
@@ -669,11 +671,10 @@ export default function SocialMediaAdvertisingClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Connect with the right audience where they’re already active and turn clicks into real business growth. Our (PPC) <Link href="/" className="text-[#f4cc6f] hover:underline">Paid Advertising Services</Link> are designed to help you reach highly targeted customers through powerful social media campaigns that boost visibility, engagement, and conversions. At Altiora Infotech, we build performance-focused strategies using smart targeting, scroll-stopping creatives, and ongoing optimization to maximize results. Whether your goal is lead generation, increased sales, or stronger brand awareness, we create scalable social ad campaigns built to deliver consistent ROI.
-
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-slate-700 font-medium`}>
+                  Connect with the right audience where they’re already active and turn clicks into real business growth. Our (PPC) <Link href="/" className="text-[#1945a6] font-bold hover:underline">Paid Advertising Services</Link> are designed to help you reach highly targeted customers through powerful social media campaigns that boost visibility, engagement, and conversions. At Altiora Infotech, we build performance-focused strategies using smart targeting, scroll-stopping creatives, and ongoing optimization to maximize results. Whether your goal is lead generation, increased sales, or stronger brand awareness, we create scalable social ad campaigns built to deliver consistent ROI.
                 </p>
 
                 {/* Subtle inner light effect */}
@@ -682,17 +683,14 @@ export default function SocialMediaAdvertisingClient() {
             </div>
           </motion.div>
         </div>
-
-        {/* Background Accent Centered */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Social Media Platforms Showcase */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#f4cc6f]">Advertisement</span> Platforms We Master
+              <span className="text-[#1945a6]">Advertisement</span> Platforms We Master
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Reach your audience where they spend their time with platform-specific strategies and creative excellence.
@@ -708,7 +706,7 @@ export default function SocialMediaAdvertisingClient() {
       </section>
 
       {/* Campaign Performance Dashboard */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -727,7 +725,7 @@ export default function SocialMediaAdvertisingClient() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-700 font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -739,13 +737,12 @@ export default function SocialMediaAdvertisingClient() {
         </div>
       </section>
 
-
-      {/* Services Section - Redesigned for Social Media */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      {/* Services Section */}
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Paid Media Advertisement Services
+              Our Paid Media Advertisement <span className="text-[#1945a6]">Services</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive Paid media Advertisement solutions designed to maximize engagement and drive conversions.
@@ -788,15 +785,15 @@ export default function SocialMediaAdvertisingClient() {
         </div>
       </section>
 
-      {/* Why Choose Our Social Media Advertising - Redesigned */}
-      <section className="py-20 px-6">
+      {/* Why Choose Our Social Media Advertising */}
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Social Media Advertising?
+              Why Choose Our <span className="text-[#1945a6]">Paid Advertising</span>?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              We combine platform expertise with creative excellence to deliver social media campaigns that drive real business results.
+              We combine platform expertise with creative excellence to deliver ad campaigns that drive real business results.
             </p>
           </div>
 
@@ -812,14 +809,14 @@ export default function SocialMediaAdvertisingClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#f4cc6f]/60 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
+                      <Icon className="w-7 h-7 text-[#b48312]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors duration-300 flex-1">
+                    <p className="text-base text-slate-600 leading-relaxed flex-1">
                       {point.description}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
@@ -839,9 +836,9 @@ export default function SocialMediaAdvertisingClient() {
                     key={index}
                     className="group relative flex-shrink-0 w-[82vw] snap-start"
                   >
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#f4cc6f]/50 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
+                        <Icon className="w-7 h-7 text-[#b48312]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">
                         {point.title}
@@ -862,7 +859,7 @@ export default function SocialMediaAdvertisingClient() {
                   key={index}
                   className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index
                       ? "w-6 bg-[#f4cc6f]"
-                      : "w-2 bg-white/30"
+                      : "w-2 bg-slate-300"
                     }`}
                 />
               ))}
@@ -871,9 +868,9 @@ export default function SocialMediaAdvertisingClient() {
         </div>
       </section>
 
-      {/* Social Media Process - New Timeline Design */}
+      {/* Social Media Process - Timeline */}
       <ProcessTimeline
-        title="Our Paid Media Advertising Process"
+        title="Our Paid Media Advertising <span className='text-[#1945a6]'>Process</span>"
         subtitle="A strategic approach that transforms your Paid media presence into a powerful conversion engine."
         steps={[
           {
@@ -922,20 +919,20 @@ export default function SocialMediaAdvertisingClient() {
       />
 
       {/* Why Work With Altiora */}
-      <section className="px-4 md:px-6 py-24 md:py-20">
+      <section className="px-4 md:px-6 py-24 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-8">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora Infotech?
+              Why Work With <span className="text-[#1945a6]">Altiora Infotech</span>?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Partner with social media advertising experts who deliver measurable results.
+              Partner with paid advertising experts who deliver measurable results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               { text: "Platform Expertise Deep knowledge of all major social media advertising platforms and their unique features.", icon: FaNetworkWired },
-              { text: "Creative Excellence Award-winning creative team that produces high-converting ad content.", icon: FaTools },
+              { text: "Creative Excellence Creative team that produces high-converting ad content.", icon: FaTools },
               { text: "Data-Driven Approach Advanced analytics and optimization strategies for maximum ROI.", icon: FaCode },
               { text: "Audience Mastery Sophisticated targeting and segmentation for precise audience reach.", icon: FaShieldAlt },
               { text: "Scalable Campaigns Proven strategies for scaling successful campaigns across multiple platforms.", icon: FaRocket },
@@ -947,20 +944,19 @@ export default function SocialMediaAdvertisingClient() {
               const subtitles = ['Expertise', 'Excellence', 'Approach', 'Mastery', 'Campaigns', 'Reporting'];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#1945a6]/40 hover:shadow-md hover:-translate-y-1">
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
-                        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center`}>
+                        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center shadow-md`}>
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-500 font-medium">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
-                      <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
+                      <p className="text-base sm:text-lg text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <div className="mt-3 md:mt-4 h-1 w-full bg-slate-200/80 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
                     </div>
@@ -973,40 +969,35 @@ export default function SocialMediaAdvertisingClient() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 md:px-6 py-8 md:py-12">
+      <section className="px-4 md:px-6 py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-black/10 backdrop-blur-sm overflow-hidden">
-            <div className="absolute inset-0">
-              <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Social Media Advertising" fill className="object-cover rounded-3xl" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#F5F8FF]/90 to-white/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10" />
+          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#f4cc6f]/30 bg-gradient-to-br from-[#010c22] via-[#1945a6] to-[#010c22] text-white shadow-xl overflow-hidden">
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f4cc6f]/20 border border-[#f4cc6f]/40 mb-8 mx-auto shadow-md">
                 <Megaphone className="w-10 h-10 text-[#f4cc6f]" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6">
-                Ready to Amplify Your Social Media Presence?
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+                Ready to Amplify Your Paid Advertising Performance?
               </h3>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
-                Transform your social media channels into powerful conversion engines. At Altiora Infotech, we combine creative excellence with data-driven strategies to deliver social media advertising campaigns that drive real business results.
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-6 leading-relaxed">
+                Transform your advertising channels into powerful conversion engines. At Altiora Infotech, we combine creative excellence with data-driven strategies to deliver paid advertising campaigns that drive real business results.
               </p>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-8">
-                Ready to turn social engagement into revenue? Share your goals and target audience, and we&apos;ll create a comprehensive social media advertising strategy: platform recommendations, creative concepts, targeting strategies, and budget allocation that maximizes your ROI.
+              <p className="text-white/80 max-w-3xl mx-auto text-sm sm:text-base mb-8 leading-relaxed">
+                Ready to turn ad spend into revenue? Share your goals and target audience, and we&apos;ll create a comprehensive advertising strategy: platform recommendations, creative concepts, targeting strategies, and budget allocation that maximizes your ROI.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="https://calendly.com/altiorainfotech/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book Strategy Call
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-black/20 bg-black/[0.05] backdrop-blur-sm text-slate-900 hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none focus:ring-2 focus:ring-black/20 transition-all duration-300"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
                 >
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Custom Quote

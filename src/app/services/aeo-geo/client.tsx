@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -52,34 +52,34 @@ const AEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${pillar.borderColor} ${pillar.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${pillar.borderColor} ${pillar.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col shadow-sm hover:shadow-md`}>
         {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${pillar.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${pillar.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: "1s" }} />
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
 
         {/* Pillar Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${pillar.iconBg} mb-6 relative z-10`}
+          className={`flex items-center justify-center w-16 h-16 flex-shrink-0 rounded-2xl ${pillar.iconBg} mb-6 relative z-10 shadow-sm`}
         >
-          <pillar.icon className={`w-8 h-8 md:w-10 md:h-10 ${pillar.iconColor}`} />
+          <pillar.icon className={`w-8 h-8 flex-shrink-0 ${pillar.iconColor}`} />
         </motion.div>
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: pillar.highlightedName }} />
-          <p className="text-slate-700 text-base md:text-lg mb-4 leading-relaxed flex-1">{pillar.description}</p>
+          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{pillar.description}</p>
 
           {/* Stats */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-4 p-3 rounded-xl bg-white border border-slate-200/60">
             <div className="text-center">
               <div className={`text-2xl font-bold ${pillar.textColor}`}>{pillar.stat1}</div>
-              <div className="text-xs text-slate-500">{pillar.stat1Label}</div>
+              <div className="text-xs text-slate-500 font-medium">{pillar.stat1Label}</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${pillar.textColor}`}>{pillar.stat2}</div>
-              <div className="text-xs text-slate-500">{pillar.stat2Label}</div>
+              <div className="text-xs text-slate-500 font-medium">{pillar.stat2Label}</div>
             </div>
           </div>
 
@@ -87,8 +87,8 @@ const AEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {pillar.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className={`w-4 h-4 ${pillar.iconColor}`} />
-                <span className="text-sm text-slate-700">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-xs sm:text-sm text-slate-600">{feature}</span>
               </div>
             ))}
           </div>
@@ -96,7 +96,7 @@ const AEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
 
         {/* Hover Effect */}
         <motion.div
-          className={`absolute inset-0 ${pillar.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`}
+          className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
         />
       </div>
     </motion.div>
@@ -122,14 +122,14 @@ const AIVisibilityDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-[#F3F6FC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-xl bg-[#1945a6] flex items-center justify-center">
           <BarChart3 className="w-6 h-6 text-white" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">AI Visibility Performance</h3>
-          <p className="text-slate-500 text-sm">Average results across managed AEO & GEO programs</p>
+          <p className="text-slate-500 text-sm font-medium">Average results across managed AEO & GEO programs</p>
         </div>
       </div>
 
@@ -140,15 +140,15 @@ const AIVisibilityDashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? "border-[#f4cc6f] bg-[#f4cc6f]/10"
-                : "border-black/10 bg-black/5"
+                ? "border-[#f4cc6f] bg-[#f4cc6f]/15 shadow-sm"
+                : "border-slate-200/80 bg-white"
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-slate-500 mb-2" />
-              <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
+              <div className="text-2xl font-extrabold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-semibold text-slate-700">{metric.change}</div>
+              <div className="text-xs font-bold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -183,138 +183,138 @@ export default function AEOGEOClient() {
 
   const aeoPillars = [
     {
-      highlightedName: "Answer Engine <span class='text-[#f4cc6f]'>Optimization (AEO)</span>",
+      highlightedName: "Answer Engine <span class='text-[#1945a6]'>Optimization (AEO)</span>",
       icon: MessageSquare,
       description: "Structure your content to directly answer the questions your audience is asking making your brand the preferred source for AI-powered answer engines, featured snippets, and knowledge panels across all search platforms.",
       stat1: "Position 0",
       stat1Label: "Target Ranking",
       stat2: "8.6×",
       stat2Label: "CTR vs Organic",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Featured Snippets", "People Also Ask", "Knowledge Panels", "AI Answer Boxes", "Direct Answers", "Conversational Queries"],
     },
     {
-      highlightedName: "Generative Engine <span class='text-[#f4cc6f]'>Optimization (GEO)</span>",
+      highlightedName: "Generative Engine <span class='text-[#1945a6]'>Optimization (GEO)</span>",
       icon: Brain,
       description: "Optimize your brand to be cited, referenced, and recommended by ChatGPT, Google AI Overviews, Perplexity, Bing Copilot, and other large language models when users ask questions relevant to your business.",
       stat1: "5+ LLMs",
       stat1Label: "Target Engines",
       stat2: "+215%",
       stat2Label: "AI Brand Mentions",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["ChatGPT Visibility", "Google AI Overviews", "Perplexity Citations", "Bing Copilot", "Claude References", "AI Citation Strategy"],
     },
     {
-      highlightedName: "Voice Search <span class='text-[#f4cc6f]'>Optimization</span>",
+      highlightedName: "Voice Search <span class='text-[#1945a6]'>Optimization</span>",
       icon: Mic,
       description: "Capture the growing volume of voice queries from Google Assistant, Siri, Alexa, and Cortana by optimizing your content for natural, conversational search patterns and local voice intent signals.",
       stat1: "50%+",
       stat1Label: "Searches Are Voice",
       stat2: "+67%",
       stat2Label: "Voice Traffic Gain",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Conversational Queries", "Local Voice Intent", "FAQ Optimization", "Long-Tail Keywords", "Google Assistant", "Natural Language"],
     },
     {
-      highlightedName: "Featured Snippet <span class='text-[#f4cc6f]'>Capture</span>",
+      highlightedName: "Featured Snippet <span class='text-[#1945a6]'>Capture</span>",
       icon: Star,
       description: "Systematically claim Position Zero for your most valuable search terms through precise content structure, formatting, and query-intent alignment placing your brand above traditional organic results where AI pulls its answers.",
       stat1: "#0",
       stat1Label: "Position Target",
       stat2: "89+",
       stat2Label: "Snippets Captured",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Paragraph Snippets", "List Snippets", "Table Snippets", "Video Snippets", "Query Intent Mapping", "Content Formatting"],
     },
     {
-      highlightedName: "Schema & <span class='text-[#f4cc6f]'>Structured Data</span>",
+      highlightedName: "Schema & <span class='text-[#1945a6]'>Structured Data</span>",
       icon: Cpu,
       description: "Implement advanced schema markup that enables AI systems to correctly understand, categorize, and cite your content building the machine-readable authority signals that large language models prioritize when generating answers.",
       stat1: "40%+",
       stat1Label: "Rich Result Increase",
       stat2: "JSON-LD",
       stat2Label: "Implementation",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["FAQ Schema", "HowTo Schema", "Organization Markup", "Product Schema", "Article Schema", "Speakable Markup"],
     },
     {
-      highlightedName: "Entity & Knowledge <span class='text-[#f4cc6f]'>Graph Building</span>",
+      highlightedName: "Entity & Knowledge <span class='text-[#1945a6]'>Graph Building</span>",
       icon: Globe,
       description: "Establish your brand as a recognized entity in Google's Knowledge Graph and AI training datasets by building consistent entity signals, authoritative citations, and structured brand presence across the web.",
       stat1: "E-E-A-T",
       stat1Label: "Signal Building",
       stat2: "+340%",
       stat2Label: "AI Visibility Gain",
-      borderColor: "border-gray-300",
-      bgGradient: "bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC]",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
+      bgGradient: "bg-[#F8FAFC]",
+      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
+      iconColor: "text-[#b48312]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
       features: ["Knowledge Panel", "Brand Entity Signals", "Citation Building", "Wikipedia Presence", "Wikidata Optimization", "E-E-A-T Authority"],
     },
   ];
 
   const services = [
     {
-      title: <>AEO Audit & <span className="text-[#f4cc6f]">Strategy</span></>,
+      title: <>AEO Audit & <span className="text-[#1945a6]">Strategy</span></>,
       description: "Comprehensive analysis of your current AI search visibility, featured snippet opportunities, and generative engine presence with a prioritized roadmap for capturing AI-generated answer placements.",
-      icon: <Search className="w-8 h-8 text-white" />,
+      icon: <Search className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
     {
-      title: <>GEO Content <span className="text-[#f4cc6f]">Architecture</span></>,
+      title: <>GEO Content <span className="text-[#1945a6]">Architecture</span></>,
       description: "Design and implement content structures that AI engines understand, trust, and cite including topic clusters, authoritative Q&A content, and direct-answer page formats optimized for LLM consumption.",
-      icon: <Brain className="w-8 h-8 text-white" />,
+      icon: <Brain className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
     {
-      title: <>Schema Markup & <span className="text-[#f4cc6f]">Structured Data</span></>,
+      title: <>Schema Markup & <span className="text-[#1945a6]">Structured Data</span></>,
       description: "Advanced schema implementation across FAQ, HowTo, Organization, Article, and Speakable markup types that signal relevance and authority to AI-powered search and answer systems.",
-      icon: <Cpu className="w-8 h-8 text-white" />,
+      icon: <Cpu className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
     {
-      title: <>Voice Search <span className="text-[#f4cc6f]">Optimization</span></>,
+      title: <>Voice Search <span className="text-[#1945a6]">Optimization</span></>,
       description: "Optimize your content for conversational, long-tail, and question-based queries that power Google Assistant, Siri, Alexa, and the growing volume of voice-first search interactions.",
-      icon: <Mic className="w-8 h-8 text-white" />,
+      icon: <Mic className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
     {
-      title: <>AI Content <span className="text-[#f4cc6f]">Optimization</span></>,
+      title: <>AI Content <span className="text-[#1945a6]">Optimization</span></>,
       description: "Restructure and enhance existing content to meet the formatting, depth, and authority standards that large language models use to select and cite sources in generated answers.",
-      icon: <FileText className="w-8 h-8 text-white" />,
+      icon: <FileText className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
     {
-      title: <>AI Visibility <span className="text-[#f4cc6f]">Monitoring</span></>,
+      title: <>AI Visibility <span className="text-[#1945a6]">Monitoring</span></>,
       description: "Ongoing tracking of your brand's presence in AI-generated answers across ChatGPT, Perplexity, Google AI Overviews, and featured snippets with monthly reports and optimization recommendations.",
-      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      icon: <BarChart3 className="w-7 h-7 text-[#010c22]" />,
       link: "/contact",
     },
   ];
@@ -374,8 +374,8 @@ export default function AEOGEOClient() {
           <div className="w-full max-w-full">
             <div className="grid lg:grid-cols-12 gap-12 items-center w-full max-w-full">
               <div className="lg:col-span-12 space-y-6 w-full max-w-full">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.08] px-4 py-2 text-xs tracking-wider text-white/90 backdrop-blur-sm">
-                  <Brain className="w-4 h-4" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-slate-700 shadow-sm backdrop-blur-sm">
+                  <Brain className="w-4 h-4 text-[#1945a6]" />
                   ALTIORA INFOTECH
                 </span>
                 <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
@@ -414,9 +414,11 @@ export default function AEOGEOClient() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
-              <span className={styles.overviewTitle}>Overview</span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/60 to-transparent" />
+              <span className="text-[#b48312] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#f4cc6f]/15 px-4 py-1.5 rounded-full border border-[#f4cc6f]/40">
+                Overview
+              </span>
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/60 to-transparent" />
             </div>
 
             <div className="flex flex-col items-center">
@@ -424,27 +426,26 @@ export default function AEOGEOClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F3F6FC] shadow-sm relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Search has fundamentally changed. When someone asks ChatGPT, Google AI Overviews, Perplexity, or a voice assistant a question they get an answer, not a list of links. The brand that provides that answer wins the customer. <Link href="/" className="text-[#f4cc6f] hover:underline">Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)</Link> are the disciplines that make your business the trusted source AI engines turn to. At Altiora Infotech, we build the content architecture, structured data, entity authority, and E-E-A-T signals that position your brand as the definitive answer in your industry across traditional search, AI-generated responses, and voice queries future-proofing your visibility in an AI-first search landscape.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-slate-700 font-medium`}>
+                  Search has fundamentally changed. When someone asks ChatGPT, Google AI Overviews, Perplexity, or a voice assistant a question they get an answer, not a list of links. The brand that provides that answer wins the customer. <Link href="/" className="text-[#1945a6] font-bold hover:underline">Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)</Link> are the disciplines that make your business the trusted source AI engines turn to. At Altiora Infotech, we build the content architecture, structured data, entity authority, and E-E-A-T signals that position your brand as the definitive answer in your industry across traditional search, AI-generated responses, and voice queries future-proofing your visibility in an AI-first search landscape.
                 </p>
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* AEO/GEO Pillars Showcase */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#f4cc6f]">AEO & GEO</span> Optimization Pillars
+              <span className="text-[#1945a6]">AEO & GEO</span> Optimization Pillars
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               A complete AI search optimization framework built to make your brand the trusted answer source across every intelligent search engine and AI platform.
             </p>
           </div>
@@ -458,15 +459,15 @@ export default function AEOGEOClient() {
       </section>
 
       {/* AI Visibility Dashboard */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
                 Measurable AI Search Visibility
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
-                AI search optimization is no longer optional it's where your next customers are finding answers. Our AEO and GEO programs deliver measurable improvements in AI visibility, featured snippet capture, and generative engine brand presence.
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+                AI search optimization is no longer optional it&apos;s where your next customers are finding answers. Our AEO and GEO programs deliver measurable improvements in AI visibility, featured snippet capture, and generative engine brand presence.
               </p>
               <div className="space-y-4">
                 {[
@@ -477,7 +478,7 @@ export default function AEOGEOClient() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-700 font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -490,13 +491,13 @@ export default function AEOGEOClient() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our AEO & GEO Services
+              Our AEO & GEO <span className="text-[#1945a6]">Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               A full-stack AI search optimization service designed to make your brand visible, citable, and trusted across every AI-powered search and answer platform.
             </p>
           </div>
@@ -538,13 +539,13 @@ export default function AEOGEOClient() {
       </section>
 
       {/* Why Choose Our AEO & GEO */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our AEO & GEO Services?
+              Why Choose Our <span className="text-[#1945a6]">AEO & GEO Services</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               We combine deep AI search expertise with proven content strategy to build your brand&apos;s authority across every generative and answer engine that matters.
             </p>
           </div>
@@ -561,14 +562,14 @@ export default function AEOGEOClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#f4cc6f]/60 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
+                      <Icon className="w-7 h-7 text-[#b48312]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors duration-300 flex-1">
+                    <p className="text-base text-slate-600 leading-relaxed flex-1">
                       {point.description}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
@@ -585,9 +586,9 @@ export default function AEOGEOClient() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#f4cc6f]/50 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
+                        <Icon className="w-7 h-7 text-[#b48312]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
                       <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
@@ -601,7 +602,7 @@ export default function AEOGEOClient() {
               {whyChoosePoints.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-black/20"}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-slate-300"}`}
                 />
               ))}
             </div>
@@ -611,7 +612,7 @@ export default function AEOGEOClient() {
 
       {/* AEO & GEO Process Timeline */}
       <ProcessTimeline
-        title="Our AEO & GEO Optimization Process"
+        title="Our AEO & GEO Optimization <span className='text-[#1945a6]'>Process</span>"
         subtitle="A systematic approach to building your brand's AI search authority from audit to ongoing visibility monitoring across every generative engine."
         steps={[
           {
@@ -660,13 +661,13 @@ export default function AEOGEOClient() {
       />
 
       {/* Why Work With Altiora */}
-      <section className="px-4 md:px-6 py-24 md:py-20">
+      <section className="px-4 md:px-6 py-24 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-8">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora Infotech?
+              Why Work With <span className="text-[#1945a6]">Altiora Infotech</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Partner with AI search optimization specialists who are already building the strategies that will define visibility in the next era of search.
             </p>
           </div>
@@ -685,20 +686,19 @@ export default function AEOGEOClient() {
               const subtitles = ["Expertise", "Mastery", "Strategy", "Optimization", "Approach", "AI Visibility"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.06] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#1945a6]/40 hover:shadow-md hover:-translate-y-1">
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
-                        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center`}>
+                        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center shadow-md`}>
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-500 font-medium">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
-                      <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
+                      <p className="text-base sm:text-lg text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <div className="mt-3 md:mt-4 h-1 w-full bg-slate-200/80 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
                     </div>
@@ -711,40 +711,35 @@ export default function AEOGEOClient() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 md:px-6 py-8 md:py-12">
+      <section className="px-4 md:px-6 py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-black/10 backdrop-blur-sm overflow-hidden">
-            <div className="absolute inset-0">
-              <Image src="/images/agentic-ai/cta/Predictive-cta.png" alt="AEO & GEO Services" fill className="object-cover rounded-3xl" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-[#F5F8FF]/85 to-white/90" />
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
+          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#f4cc6f]/30 bg-gradient-to-br from-[#010c22] via-[#1945a6] to-[#010c22] text-white shadow-xl overflow-hidden">
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f4cc6f]/20 border border-[#f4cc6f]/40 mb-8 mx-auto shadow-md">
                 <Brain className="w-10 h-10 text-[#f4cc6f]" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                 Ready to Be the Answer AI Engines Recommend?
               </h3>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-6 leading-relaxed">
                 The businesses that appear in AI-generated answers today will own their markets tomorrow. At Altiora Infotech, we build the content authority, structured data, and entity signals that make your brand the trusted source across ChatGPT, Google AI Overviews, Perplexity, voice search, and every AI-powered platform your customers use.
               </p>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-8">
+              <p className="text-white/80 max-w-3xl mx-auto text-sm sm:text-base mb-8 leading-relaxed">
                 Share your business goals and current search presence, and we&apos;ll deliver a comprehensive AI visibility audit with featured snippet opportunities, GEO content recommendations, and a prioritized roadmap to AI search dominance.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="https://calendly.com/altiorainfotech/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book AI Visibility Audit
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-black/20 bg-black/[0.04] text-slate-900 hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none focus:ring-2 focus:ring-black/20 transition-all duration-300"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
                 >
                   <FaEye className="mr-2 w-5 h-5" />
                   Get AEO & GEO Quote

@@ -51,13 +51,13 @@ export default function BlogClient({ posts, error, onRetry }: BlogClientProps) {
                 placeholder="Search articles, topics..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full rounded-xl border border-black/10 bg-[#F3F6FC] pl-12 pr-4 py-4 text-slate-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                className="w-full rounded-xl border border-slate-200 bg-[#F8FAFC] pl-12 pr-4 py-4 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-[#1945a6] focus:border-[#1945a6] transition-all"
               />
             </label>
           </div>
 
           {/* Results count */}
-          <div className="text-gray-600 whitespace-nowrap">
+          <div className="text-slate-600 font-medium whitespace-nowrap">
             {filtered.length} {filtered.length === 1 ? 'article' : 'articles'}
           </div>
         </div>
@@ -72,10 +72,10 @@ export default function BlogClient({ posts, error, onRetry }: BlogClientProps) {
                   key={c}
                   onClick={() => setCategory(c)}
                   className={
-                    "whitespace-nowrap rounded-xl px-4 py-2 text-sm font-medium transition-all " +
+                    "whitespace-nowrap rounded-xl px-4 py-2 text-sm font-semibold transition-all " +
                     (isActive
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "bg-[#F3F6FC] border border-black/10 text-gray-700 hover:bg-black/5 hover:border-black/20")
+                      ? "bg-[#1945a6] text-white shadow-md"
+                      : "bg-[#F8FAFC] border border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300")
                   }
                   aria-pressed={isActive}
                 >
@@ -93,7 +93,7 @@ export default function BlogClient({ posts, error, onRetry }: BlogClientProps) {
           <Link
             key={post.id}
             href={post.href}
-            className="group block bg-[#F3F6FC] rounded-2xl overflow-hidden border border-black/10 hover:border-black/20 transition-all duration-300 hover:transform hover:scale-[1.02]"
+            className="group block bg-[#F8FAFC] rounded-2xl overflow-hidden border border-slate-200/80 hover:border-[#1945a6]/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
           >
             {/* Image */}
             <div className="relative aspect-[16/9] overflow-hidden">
@@ -110,8 +110,8 @@ export default function BlogClient({ posts, error, onRetry }: BlogClientProps) {
             {/* Content */}
             <div className="p-6">
               {/* Metadata */}
-              <div className="flex items-center gap-3 text-sm text-gray-600 mb-3">
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-600/20 text-blue-400 border border-blue-600/30">
+              <div className="flex items-center gap-3 text-sm text-slate-500 mb-3">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#f4cc6f]/20 text-[#b48312] border border-[#f4cc6f]/40">
                   {post.category}
                 </span>
                 <span>
@@ -124,12 +124,12 @@ export default function BlogClient({ posts, error, onRetry }: BlogClientProps) {
               </div>
 
               {/* Title */}
-              <h3 className="font-bold text-xl leading-tight text-slate-900 group-hover:text-blue-400 transition-colors mb-3 line-clamp-2">
+              <h3 className="font-bold text-xl leading-tight text-slate-900 group-hover:text-[#1945a6] transition-colors mb-3 line-clamp-2">
                 {post.title}
               </h3>
 
               {/* Read more indicator */}
-              <div className="flex items-center text-blue-400 text-sm font-medium group-hover:text-blue-300 transition-colors">
+              <div className="flex items-center text-[#1945a6] text-sm font-semibold group-hover:text-[#12327a] transition-colors">
                 Read article
                 <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

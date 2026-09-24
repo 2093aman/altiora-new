@@ -46,37 +46,37 @@ const VideoTypeCard = ({ item, className }: { item: any; className?: string }) =
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${item.borderColor} ${item.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${item.borderColor} bg-white shadow-lg backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
         <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${item.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${item.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: "1s" }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${item.iconBg} mb-6 relative z-10`}>
+        <motion.div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${item.iconBg} mb-6 relative z-10 shadow-md`}>
           <item.icon className={`w-8 h-8 md:w-10 md:h-10 ${item.iconColor}`} />
         </motion.div>
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: item.highlightedName }} />
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{item.description}</p>
+          <p className="text-slate-700 text-base md:text-lg mb-4 leading-relaxed flex-1">{item.description}</p>
           <div className="flex items-center justify-between mb-4">
             <div className="text-center">
               <div className={`text-2xl font-bold ${item.textColor}`}>{item.stat1}</div>
-              <div className="text-xs text-slate-500">{item.stat1Label}</div>
+              <div className="text-xs text-slate-600">{item.stat1Label}</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${item.textColor}`}>{item.stat2}</div>
-              <div className="text-xs text-slate-500">{item.stat2Label}</div>
+              <div className="text-xs text-slate-600">{item.stat2Label}</div>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {item.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-gray-600" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-sm text-slate-700">{feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <motion.div className={`absolute inset-0 ${item.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`} />
+        <motion.div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
       </div>
     </motion.div>
   );
@@ -97,14 +97,14 @@ const VideoPerformanceWidget = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="bg-gradient-to-br from-[#F3F6FC] to-[#EAF0FB] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-          <Film className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center shadow-md">
+          <Film className="w-6 h-6 text-[#010c22]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Video Performance</h3>
-          <p className="text-slate-500 text-sm">Industry-proven results</p>
+          <p className="text-slate-600 text-sm">Industry-proven results</p>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -113,13 +113,13 @@ const VideoPerformanceWidget = () => {
           return (
             <motion.div
               key={index}
-              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#f4cc6f] bg-[#f4cc6f]/10" : "border-black/10 bg-black/5"}`}
+              className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#1945a6] bg-[#1945a6]/10 shadow-md" : "border-black/10 bg-white"}`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-slate-600 mb-2" />
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
-              <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-semibold text-slate-600">{metric.change}</div>
+              <div className="text-xs text-slate-600 mb-1">{metric.label}</div>
+              <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -151,136 +151,136 @@ export default function VideoProductionClientPage() {
 
   const videoTypes = [
     {
-      highlightedName: "Brand <span class='text-[#f4cc6f]'>Films</span>",
+      highlightedName: "Brand <span class='text-[#1945a6]'>Films</span>",
       icon: Film,
       description: "Cinematic brand stories that capture your company's essence, values, and vision creating deep emotional connections with your audience.",
       stat1: "Cinematic",
       stat1Label: "4K Quality",
       stat2: "2-5 min",
       stat2Label: "Ideal Length",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Story Development", "Professional Crew", "4K Filming", "Color Grading", "Music Licensing", "Multi-Format Export"],
     },
     {
-      highlightedName: "Social Media <span class='text-[#f4cc6f]'>Reels</span>",
+      highlightedName: "Social Media <span class='text-[#1945a6]'>Reels</span>",
       icon: Video,
       description: "Platform-optimized short-form video content for Instagram, TikTok, and YouTube Shorts designed to maximize reach and drive engagement.",
       stat1: "+312%",
       stat1Label: "Engagement Boost",
       stat2: "< 60s",
       stat2Label: "Optimized Length",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Vertical Format", "Trending Audio", "Captions & Text", "Hook Optimization", "CTA Integration", "Platform Sizing"],
     },
     {
-      highlightedName: "Explainer <span class='text-[#f4cc6f]'>Animation</span>",
+      highlightedName: "Explainer <span class='text-[#1945a6]'>Animation</span>",
       icon: Monitor,
       description: "Animated explainer videos that simplify complex ideas, showcase products, and communicate your value proposition with visual clarity.",
       stat1: "2D/3D",
       stat1Label: "Animation",
       stat2: "87%",
       stat2Label: "Watch Rate",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Script Writing", "Storyboard", "2D Animation", "Motion Graphics", "Voice Over", "Sound Design"],
     },
     {
-      highlightedName: "Testimonial <span class='text-[#f4cc6f]'>Videos</span>",
+      highlightedName: "Testimonial <span class='text-[#1945a6]'>Videos</span>",
       icon: Mic,
       description: "Authentic customer success stories that build social proof, reduce purchase hesitation, and accelerate conversions at every stage of the funnel.",
       stat1: "+67%",
       stat1Label: "Conversion Lift",
       stat2: "Trust",
       stat2Label: "Builder",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Interview Setup", "Question Scripting", "Professional Lighting", "Multi-Angle Filming", "B-Roll Content", "Subtitles"],
     },
     {
-      highlightedName: "Product <span class='text-[#f4cc6f]'>Demo</span>",
+      highlightedName: "Product <span class='text-[#1945a6]'>Demo</span>",
       icon: Camera,
       description: "Compelling product demonstration videos that showcase features, benefits, and use cases to convert interested prospects into confident buyers.",
       stat1: "3x",
       stat1Label: "More Sales",
       stat2: "Feature",
       stat2Label: "Focused",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Product Showcase", "Feature Walkthrough", "Use Case Scenarios", "Comparison Shots", "Detail Close-Ups", "Unboxing Content"],
     },
     {
-      highlightedName: "Corporate <span class='text-[#f4cc6f]'>Films</span>",
+      highlightedName: "Corporate <span class='text-[#1945a6]'>Films</span>",
       icon: Star,
       description: "Professional corporate communications internal training, investor presentations, recruitment videos, and company culture showcases.",
       stat1: "Pro",
       stat1Label: "Grade Quality",
       stat2: "Any",
       stat2Label: "Length & Format",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-800/20 to-gray-700/20",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-600",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Training Videos", "Recruitment Films", "Investor Decks", "Culture Videos", "Event Coverage", "Annual Reports"],
     },
   ];
 
   const services = [
     {
-      title: <>Brand <span className="text-[#f4cc6f]">Film</span></>,
+      title: <>Brand <span className="text-[#1945a6]">Film</span></>,
       description: "Cinematic brand stories that capture your company's essence and create deep emotional connections with your audience and customers.",
       icon: <Film className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Social Media <span className="text-[#f4cc6f]">Reels</span></>,
+      title: <>Social Media <span className="text-[#1945a6]">Reels</span></>,
       description: "Platform-optimized short-form video content for Instagram, TikTok, and YouTube Shorts that drives reach and engagement.",
       icon: <Video className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Explainer <span className="text-[#f4cc6f]">Animation</span></>,
+      title: <>Explainer <span className="text-[#1945a6]">Animation</span></>,
       description: "Animated videos that simplify complex concepts, showcase products, and communicate your value with visual storytelling.",
       icon: <Monitor className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Testimonial <span className="text-[#f4cc6f]">Videos</span></>,
+      title: <>Testimonial <span className="text-[#1945a6]">Videos</span></>,
       description: "Authentic customer success stories that build social proof, reduce hesitation, and convert prospects into confident buyers.",
       icon: <Mic className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Product <span className="text-[#f4cc6f]">Demo</span></>,
+      title: <>Product <span className="text-[#1945a6]">Demo</span></>,
       description: "Compelling product demonstration videos that showcase features and benefits to convert interested prospects into paying customers.",
       icon: <Camera className="w-12 h-12" />,
       link: "/contact",
     },
     {
-      title: <>Corporate <span className="text-[#f4cc6f]">Films</span></>,
+      title: <>Corporate <span className="text-[#1945a6]">Films</span></>,
       description: "Professional corporate communications training videos, investor presentations, recruitment films, and company culture showcases.",
       icon: <Star className="w-12 h-12" />,
       link: "/contact",
@@ -367,26 +367,26 @@ export default function VideoProductionClientPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={overviewInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center">
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#1945a6]/50 to-transparent" />
               <span className={styles.overviewTitle}>Overview</span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#1945a6]/50 to-transparent" />
             </div>
             <div className="flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F8FAFC] backdrop-blur-xl shadow-md relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Video is the most powerful content format in the world and the businesses that use it strategically are winning. At Altiora Infotech, our <Link href="/" className="text-[#f4cc6f] hover:underline">Video Production Services</Link> combine cinematic storytelling with strategic marketing to create videos that captivate your audience, build brand authority, and drive real conversions. From brand films and social media reels to animated explainers and testimonial videos, we handle every aspect of production so you get premium video content that delivers measurable business results.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-800`}>
+                  Video is the most powerful content format in the world and the businesses that use it strategically are winning. At Altiora Infotech, our <Link href="/" className="text-[#1945a6] font-semibold hover:underline">Video Production Services</Link> combine cinematic storytelling with strategic marketing to create videos that captivate your audience, build brand authority, and drive real conversions. From brand films and social media reels to animated explainers and testimonial videos, we handle every aspect of production so you get premium video content that delivers measurable business results.
                 </p>
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#1945a6]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Video Types */}
@@ -394,9 +394,9 @@ export default function VideoProductionClientPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Video <span className="text-[#f4cc6f]">Formats</span> We Produce
+              Video <span className="text-[#1945a6]">Formats</span> We Produce
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               From cinematic brand films to viral social reels, we produce every video format your business needs to grow and convert.
             </p>
           </div>
@@ -409,14 +409,14 @@ export default function VideoProductionClientPage() {
       </section>
 
       {/* Performance Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Video Content That Drives Results
+                Video Content That Delivers <span className="text-[#1945a6]">Results</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
                 Video isn't just content it's the most powerful conversion tool available to any business. We produce videos that people actually watch, share, and act on turning viewers into leads and leads into loyal customers.
               </p>
               <div className="space-y-4">
@@ -428,7 +428,7 @@ export default function VideoProductionClientPage() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-800">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -441,37 +441,37 @@ export default function VideoProductionClientPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Video Production Services
+              Our Video Production <span className="text-[#1945a6]">Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               End-to-end video production that takes your content from concept to delivery with cinematic quality and strategic impact.
             </p>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
             ))}
           </div>
           <div className="block md:hidden grid grid-cols-1 gap-4">
             {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} iconVariant="gray" />
+              <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} link={service.link} hideServiceTag={true} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Video Production?
+              Why Choose Our <span className="text-[#1945a6]">Video Production?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We combine cinematic craft with strategic marketing thinking to produce videos that don't just look great they drive results.
             </p>
           </div>
@@ -480,13 +480,13 @@ export default function VideoProductionClientPage() {
               const Icon = point.icon;
               return (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="group relative">
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                      <Icon className="w-7 h-7 text-[#010c22]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">{point.title}</h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-1">{point.description}</p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">{point.title}</h3>
+                    <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 flex-1">{point.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -498,13 +498,13 @@ export default function VideoProductionClientPage() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-gradient-to-br from-[#F3F6FC] to-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                        <Icon className="w-7 h-7 text-[#010c22]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <p className="text-base text-slate-700 leading-relaxed flex-1">{point.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -512,7 +512,7 @@ export default function VideoProductionClientPage() {
             </div>
             <div className="flex justify-center gap-2 mt-4">
               {whyChoosePoints.map((_, index) => (
-                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-black/30"}`} />
+                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#1945a6]" : "w-2 bg-black/30"}`} />
               ))}
             </div>
           </div>
@@ -538,9 +538,9 @@ export default function VideoProductionClientPage() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora <span className="text-[#f4cc6f]">Infotech?</span>
+              Why Work With Altiora <span className="text-[#1945a6]">Infotech?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Partner with video production experts who understand both storytelling and business strategy.
             </p>
           </div>
@@ -559,7 +559,7 @@ export default function VideoProductionClientPage() {
               const subtitles = ["Storytelling", "Excellence", "Thinking", "Expertise", "Turnaround", "Team"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="relative rounded-2xl border border-black/10 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-[#1945a6]/30 hover:shadow-xl hover:-translate-y-2">
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -567,11 +567,11 @@ export default function VideoProductionClientPage() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-600">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -592,7 +592,7 @@ export default function VideoProductionClientPage() {
               <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Video Production Services" fill className="object-cover rounded-3xl" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Film className="w-10 h-10 text-[#f4cc6f]" />
@@ -604,14 +604,14 @@ export default function VideoProductionClientPage() {
                 Video is the most powerful tool in your marketing arsenal. At Altiora Infotech, we combine cinematic production quality with strategic marketing expertise to create videos that captivate your audience and drive real business results.
               </p>
               <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-8">
-                Share your vision and we'll develop a comprehensive video production proposal including creative concept, production timeline, and investment details.
+                Share your vision and we&apos;ll develop a comprehensive video production proposal including creative concept, production timeline, and investment details.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                <Link href="https://calendly.com/altiorainfotech/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 transition-all duration-300 transform hover:scale-105">
+                <Link href="https://calendly.com/altiorainfotech/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105">
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book Video Consultation
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] transition-all duration-300">
+                <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] focus:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300">
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Custom Quote
                 </Link>

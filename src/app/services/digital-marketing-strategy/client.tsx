@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -697,23 +697,23 @@ export default function DigitalMarketingStrategyClient() {
       {/* CTA Section */}
       <section className="px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-black/10 backdrop-blur-sm overflow-hidden">
+          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden">
             <div className="absolute inset-0">
               <Image src="https://pub-00cafda969bc42d5aac5365b6609f526.r2.dev/Web3_Marketing_Services-2_y7arms.png" alt="Digital Marketing Strategy" fill className="object-cover rounded-3xl" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#F5F8FF]/90 to-white/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Lightbulb className="w-10 h-10 text-[#f4cc6f]" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                 Start Building a Smarter Digital Marketing Strategy
               </h3>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
                 If your digital efforts feel scattered or underperforming, it’s time for a structured approach. Altiora Infotech helps businesses turn digital complexity into a clear, focused growth roadmap.
               </p>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-8">
                 📩 Get in touch today to build a digital marketing strategy that delivers clarity, control, and consistent results.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
@@ -728,7 +728,7 @@ export default function DigitalMarketingStrategyClient() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-black/20 bg-black/[0.05] backdrop-blur-sm text-slate-900 hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none focus:ring-2 focus:ring-black/20 transition-all duration-300"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] focus:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                 >
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Strategy Quote

@@ -1,4 +1,4 @@
-﻿// src/app/blog/page.tsx
+// src/app/blog/page.tsx
 import type { Metadata } from "next";
 import { convertToLegacyFormat, type LegacyBlogPost } from "@/lib/api";
 import { fetchBlogPostsFromDB } from "@/lib/api-server";
@@ -55,12 +55,12 @@ export default async function BlogIndex() {
 
         <div className="relative z-10 h-full w-full flex items-center justify-center text-center px-6">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-black/10 px-4 py-2 text-sm text-slate-700 mb-4">
-              <span className="h-2 w-2 rounded-full bg-blue-500" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-slate-200 px-4 py-2 text-sm text-[#b48312] font-semibold mb-4 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-[#1945a6]" />
               Latest Insights
             </div>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-3 drop-shadow">
-              <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              <span className="text-[#1945a6]">
                 Ideas shaping the future
               </span>
             </h1>
@@ -70,7 +70,7 @@ export default async function BlogIndex() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
       </section>
 
       <main className="relative px-6 pb-24 pt-16">
@@ -93,20 +93,20 @@ export default async function BlogIndex() {
           {/* Featured Post */}
           {featuredPost && (
             <div className="mb-16">
-              <div className="bg-[#F3F6FC] rounded-2xl overflow-hidden border border-black/10 hover:border-black/20 transition-colors">
+              <div className="bg-[#F8FAFC] rounded-2xl overflow-hidden border border-slate-200/80 hover:border-[#1945a6]/30 transition-colors shadow-sm">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Featured content */}
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-600/20 text-blue-400 border border-blue-600/30">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#f4cc6f]/20 text-[#b48312] border border-[#f4cc6f]/40">
                         Featured
                       </span>
-                      <span className="text-gray-600 text-sm">Latest post</span>
+                      <span className="text-slate-500 text-sm font-medium">Latest post</span>
                     </div>
-                    <h2 className="text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-4">
+                    <h2 className="text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-4 hover:text-[#1945a6] transition-colors">
                       {featuredPost.title}
                     </h2>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-slate-600 mb-6">
                       {featuredPost.category} • {new Date(featuredPost.date).toLocaleDateString("en-GB", {
                         day: "2-digit",
                         month: "short",
@@ -116,7 +116,7 @@ export default async function BlogIndex() {
                     <div>
                       <a 
                         href={featuredPost.href} 
-                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-white font-medium transition-colors"
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
                       >
                         Read article
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

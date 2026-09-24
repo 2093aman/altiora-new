@@ -116,7 +116,7 @@ export default function Header() {
               >
                 About Us
                 {isActive("/about") && (
-                  <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#2c56dd,#7aa2ff,#2c56dd)]" />
+                  <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
                 )}
               </Link>
 
@@ -146,7 +146,7 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isServicesActive && (
-                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#2c56dd,#7aa2ff,#2c56dd)]" />
+                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
                   )}
                 </button>
 
@@ -188,7 +188,7 @@ export default function Header() {
                 >
                   {item.label}
                   {isActive(item.href) && (
-                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#2c56dd,#7aa2ff,#2c56dd)]" />
+                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
                   )}
                 </Link>
               ))}

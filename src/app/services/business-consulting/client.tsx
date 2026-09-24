@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -68,16 +68,16 @@ const ConsultingAreaCard = ({ area, className }: { area: any; className?: string
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className={`relative rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${area.borderColor} ${area.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
+      <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${area.borderColor} bg-white shadow-lg backdrop-blur-sm overflow-hidden h-[480px] flex flex-col`}>
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className={`absolute top-0 right-0 w-32 h-32 ${area.iconBg} rounded-full blur-3xl animate-pulse`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 ${area.iconBg} rounded-full blur-2xl animate-pulse`} style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Area Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${area.iconBg} mb-6 relative z-10`}
+          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${area.iconBg} mb-6 relative z-10 shadow-md`}
         >
           <area.icon className={`w-8 h-8 md:w-10 md:h-10 ${area.iconColor}`} />
         </motion.div>
@@ -85,17 +85,17 @@ const ConsultingAreaCard = ({ area, className }: { area: any; className?: string
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">{area.name}</h3>
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{area.description}</p>
+          <p className="text-slate-700 text-base md:text-lg mb-4 leading-relaxed flex-1">{area.description}</p>
 
           {/* Stats */}
           <div className="flex items-center justify-between mb-4">
             <div className="text-center">
               <div className={`text-2xl font-bold ${area.textColor}`}>{area.impact}</div>
-              <div className="text-xs text-slate-500">Avg. Impact</div>
+              <div className="text-xs text-slate-600">Avg. Impact</div>
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold ${area.textColor}`}>{area.satisfaction}</div>
-              <div className="text-xs text-slate-500">Client Rating</div>
+              <div className="text-xs text-slate-600">Client Rating</div>
             </div>
           </div>
 
@@ -103,8 +103,8 @@ const ConsultingAreaCard = ({ area, className }: { area: any; className?: string
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {area.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-gray-500" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                <span className="text-sm text-slate-700">{feature}</span>
               </div>
             ))}
           </div>
@@ -112,7 +112,7 @@ const ConsultingAreaCard = ({ area, className }: { area: any; className?: string
 
         {/* Hover Effect */}
         <motion.div
-          className={`absolute inset-0 ${area.hoverGradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`}
+          className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
         />
       </div>
     </motion.div>
@@ -124,10 +124,10 @@ const ConsultingDashboard = () => {
   const [activeMetric, setActiveMetric] = useState(0);
 
   const metrics = [
-    { label: "Revenue Growth", value: "47%", change: "+23% YoY", color: "text-blue-400", icon: TrendingUp },
-    { label: "Cost Savings", value: "$2.1M", change: "+35% Avg", color: "text-green-400", icon: DollarSign },
-    { label: "Efficiency Gains", value: "62%", change: "+18% Ops", color: "text-purple-400", icon: Settings },
-    { label: "Client ROI", value: "4.8x", change: "+89% Avg", color: "text-yellow-400", icon: ChartNoAxesCombined }
+    { label: "Revenue Growth", value: "47%", change: "+23% YoY", icon: TrendingUp },
+    { label: "Cost Savings", value: "$2.1M", change: "+35% Avg", icon: DollarSign },
+    { label: "Efficiency Gains", value: "62%", change: "+18% Ops", icon: Settings },
+    { label: "Client ROI", value: "4.8x", change: "+89% Avg", icon: ChartNoAxesCombined }
   ];
 
   useEffect(() => {
@@ -138,14 +138,14 @@ const ConsultingDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10">
+    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-          <BarChart3 className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center shadow-md">
+          <BarChart3 className="w-6 h-6 text-[#010c22]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-900">Consulting Impact</h3>
-          <p className="text-slate-500 text-sm">Average client results dashboard</p>
+          <p className="text-slate-600 text-sm">Average client results dashboard</p>
         </div>
       </div>
 
@@ -156,15 +156,15 @@ const ConsultingDashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? 'border-[#f4cc6f] bg-[#f4cc6f]/10'
-                : 'border-black/10 bg-black/5'
+                ? 'border-[#1945a6] bg-[#1945a6]/10 shadow-md'
+                : 'border-black/10 bg-white'
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className={`w-5 h-5 text-slate-500 mb-2`} />
+              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
-              <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className={`text-xs font-semibold text-slate-700`}>{metric.change}</div>
+              <div className="text-xs text-slate-600 mb-1">{metric.label}</div>
+              <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -184,7 +184,7 @@ export default function BusinessConsultingClient() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const total = 6; // whyChoosePoints.length
+    const total = 6;
     const interval = setInterval(() => {
       setActiveSlide((prev) => {
         const next = (prev + 1) % total;
@@ -206,12 +206,12 @@ export default function BusinessConsultingClient() {
       description: "Define clear strategic direction, competitive positioning, and long-term growth plans tailored to your market.",
       impact: "40%+",
       satisfaction: "4.9/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Market Analysis", "Competitive Intelligence", "Vision & Mission Alignment", "Strategic Roadmapping", "Goal Setting Frameworks", "Risk Assessment"]
     },
     {
@@ -220,12 +220,12 @@ export default function BusinessConsultingClient() {
       description: "Streamline workflows, eliminate bottlenecks, and build scalable systems that drive peak performance.",
       impact: "35%+",
       satisfaction: "4.8/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Process Optimization", "Workflow Automation", "Supply Chain Strategy", "Quality Management", "Resource Allocation", "KPI Dashboards"]
     },
     {
@@ -234,12 +234,12 @@ export default function BusinessConsultingClient() {
       description: "Optimize revenue models, manage costs strategically, and build financial resilience for sustainable growth.",
       impact: "$2M+",
       satisfaction: "4.9/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Revenue Optimization", "Cost Reduction Plans", "Financial Modeling", "Budget Planning", "Cash Flow Management", "Investment Strategy"]
     },
     {
@@ -248,12 +248,12 @@ export default function BusinessConsultingClient() {
       description: "Build data-driven marketing strategies that attract, convert, and retain high-value customers at scale.",
       impact: "3x ROI",
       satisfaction: "4.8/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Go-to-Market Strategy", "Brand Positioning", "Customer Acquisition", "Retention Strategy", "Funnel Optimization", "Market Expansion"]
     },
     {
@@ -262,12 +262,12 @@ export default function BusinessConsultingClient() {
       description: "Modernize your tech stack, integrate AI-powered tools, and future-proof your business with digital-first strategies.",
       impact: "55%+",
       satisfaction: "4.7/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Technology Roadmap", "AI & Automation", "Cloud Migration", "Data Analytics Setup", "CRM Implementation", "Digital Workflows"]
     },
     {
@@ -276,49 +276,49 @@ export default function BusinessConsultingClient() {
       description: "Develop high-performing teams, strengthen leadership capacity, and build organizational culture that drives results.",
       impact: "60%+",
       satisfaction: "4.9/5",
-      borderColor: "border-gray-500/30",
-      bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
-      iconColor: "text-white",
-      textColor: "text-gray-700",
-      hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
+      borderColor: "border-[#1945a6]/20",
+      bgGradient: "bg-white",
+      iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
+      iconColor: "text-[#010c22]",
+      textColor: "text-[#1945a6]",
+      hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
       features: ["Leadership Coaching", "Team Alignment", "Talent Strategy", "Culture Building", "Change Management", "Performance Systems"]
     }
   ];
 
   const services = [
     {
-      title: <>Strategic <span className="text-[#f4cc6f]">Planning</span></>,
+      title: <>Strategic <span className="text-[#1945a6]">Planning</span></>,
       description: "Comprehensive business strategy development with actionable roadmaps, milestone tracking, and measurable outcomes.",
       icon: <Target className="w-8 h-8 text-white" />,
       link: "/contact"
     },
     {
-      title: <>Operational <span className="text-[#f4cc6f]">Improvement</span></>,
+      title: <>Operational <span className="text-[#1945a6]">Improvement</span></>,
       description: "End-to-end process optimization, workflow automation, and systems design for maximum efficiency and scalability.",
       icon: <Settings className="w-8 h-8 text-white" />,
       link: "/contact"
     },
     {
-      title: <>Financial <span className="text-[#f4cc6f]">Consulting</span></>,
+      title: <>Financial <span className="text-[#1945a6]">Consulting</span></>,
       description: "Revenue model optimization, cost management strategies, and financial forecasting for sustainable profitability.",
       icon: <DollarSign className="w-8 h-8 text-white" />,
       link: "/contact"
     },
     {
-      title: <>Growth <span className="text-[#f4cc6f]">Strategy</span></>,
+      title: <>Growth <span className="text-[#1945a6]">Strategy</span></>,
       description: "Data-driven go-to-market plans, customer acquisition frameworks, and scalable growth engines built for your market.",
       icon: <TrendingUp className="w-8 h-8 text-white" />,
       link: "/contact"
     },
     {
-      title: <>Digital <span className="text-[#f4cc6f]">Transformation</span></>,
+      title: <>Digital <span className="text-[#1945a6]">Transformation</span></>,
       description: "Technology adoption roadmaps, AI integration, cloud strategies, and digital workflow modernization for future readiness.",
       icon: <Globe className="w-8 h-8 text-white" />,
       link: "/contact"
     },
     {
-      title: <>Performance Analytics & <span className="text-[#f4cc6f]">Reporting</span></>,
+      title: <>Performance Analytics & <span className="text-[#1945a6]">Reporting</span></>,
       description: "Custom KPI dashboards, performance tracking systems, and real-time insights for data-driven decision making.",
       icon: <BarChart3 className="w-8 h-8 text-white" />,
       link: "/contact"
@@ -372,7 +372,7 @@ export default function BusinessConsultingClient() {
           <div className="w-full max-w-full">
             <div className="grid lg:grid-cols-12 gap-12 items-center w-full max-w-full">
               <div className="lg:col-span-12 space-y-6 w-full max-w-full">
-                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-slate-700 shadow-sm backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.08] px-4 py-2 text-xs tracking-wider text-white/90 backdrop-blur-sm">
                   <Briefcase className="w-4 h-4" />
                   ALTIORA INFOTECH
                 </span>
@@ -410,11 +410,11 @@ export default function BusinessConsultingClient() {
           >
             {/* Top - Label with centered lines */}
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#1945a6]/50 to-transparent" />
               <span className={styles.overviewTitle}>
                 Overview
               </span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#1945a6]/50 to-transparent" />
             </div>
 
             {/* Main Content Centered */}
@@ -423,10 +423,10 @@ export default function BusinessConsultingClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-black/10 bg-[#F8FAFC] backdrop-blur-xl shadow-md relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                  Growing a business today demands more than ambition it takes clarity, strategy, and the ability to execute under pressure. At Altiora Infotech, our <Link href="/" className="text-[#f4cc6f] hover:underline">Business Consulting Services</Link> provide the strategic partnership you need to navigate market shifts, optimize operations, and unlock sustainable growth. We work alongside founders, leadership teams, and growing organizations to diagnose challenges, identify high-impact opportunities, and build actionable roadmaps that deliver measurable outcomes. Whether you&apos;re refining your go-to-market strategy, improving operational efficiency, or planning your next growth phase, our consultants bring deep industry expertise, proven frameworks, and hands-on execution support to help you move from uncertainty to confident action.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-800`}>
+                  Growing a business today demands more than ambition it takes clarity, strategy, and the ability to execute under pressure. At Altiora Infotech, our <Link href="/" className="text-[#1945a6] font-semibold hover:underline">Business Consulting Services</Link> provide the strategic partnership you need to navigate market shifts, optimize operations, and unlock sustainable growth. We work alongside founders, leadership teams, and growing organizations to diagnose challenges, identify high-impact opportunities, and build actionable roadmaps that deliver measurable outcomes. Whether you&apos;re refining your go-to-market strategy, improving operational efficiency, or planning your next growth phase, our consultants bring deep industry expertise, proven frameworks, and hands-on execution support to help you move from uncertainty to confident action.
                 </p>
 
                 {/* Subtle inner light effect */}
@@ -437,7 +437,7 @@ export default function BusinessConsultingClient() {
         </div>
 
         {/* Background Accent Centered */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#1945a6]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* Consulting Areas Showcase */}
@@ -445,9 +445,9 @@ export default function BusinessConsultingClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#f4cc6f]">Consulting</span> Areas We Excel In
+              <span className="text-[#1945a6]">Consulting</span> Areas We Excel In
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Comprehensive consulting expertise across every critical dimension of your business from strategy and operations to finance and digital transformation.
             </p>
           </div>
@@ -461,14 +461,14 @@ export default function BusinessConsultingClient() {
       </section>
 
       {/* Consulting Impact Dashboard */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Measurable Business Impact
+                Measurable Business <span className="text-[#1945a6]">Impact</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
                 Our consulting engagements are built around measurable outcomes. Track the real impact of strategic decisions with clear KPIs, performance dashboards, and transparent progress reporting.
               </p>
               <div className="space-y-4">
@@ -480,7 +480,7 @@ export default function BusinessConsultingClient() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-800">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -493,13 +493,13 @@ export default function BusinessConsultingClient() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#F3F6FC]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Business Consulting Services
+              Our Business Consulting <span className="text-[#1945a6]">Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               End-to-end consulting solutions designed to solve your most pressing business challenges and drive sustained, scalable growth.
             </p>
           </div>
@@ -515,7 +515,6 @@ export default function BusinessConsultingClient() {
                   icon={service.icon}
                   link={service.link}
                   hideServiceTag={true}
-                  iconVariant="gray"
                 />
               ))}
             </div>
@@ -532,7 +531,6 @@ export default function BusinessConsultingClient() {
                   icon={service.icon}
                   link={service.link}
                   hideServiceTag={true}
-                  iconVariant="gray"
                 />
               ))}
             </div>
@@ -541,13 +539,13 @@ export default function BusinessConsultingClient() {
       </section>
 
       {/* Why Choose Our Consulting */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our Business Consulting?
+              Why Choose Our <span className="text-[#1945a6]">Business Consulting?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We combine deep industry expertise with hands-on execution to deliver consulting that creates lasting, measurable business impact.
             </p>
           </div>
@@ -564,17 +562,17 @@ export default function BusinessConsultingClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-[#F3F6FC] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                      <Icon className="w-7 h-7 text-[#010c22]" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#f4cc6f] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors duration-300 flex-1">
+                    <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 flex-1">
                       {point.description}
                     </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -591,17 +589,17 @@ export default function BusinessConsultingClient() {
                     key={index}
                     className="group relative flex-shrink-0 w-[82vw] snap-start"
                   >
-                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-[#F3F6FC] shadow-xl hover:border-[#F4CC6F]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-5 flex-shrink-0 shadow-lg">
-                        <Icon className="w-7 h-7 text-white" />
+                    <div className="relative h-full p-6 rounded-2xl border border-black/10 bg-white shadow-md hover:border-[#1945a6]/40 flex flex-col overflow-hidden">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-md">
+                        <Icon className="w-7 h-7 text-[#010c22]" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">
                         {point.title}
                       </h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">
+                      <p className="text-base text-slate-700 leading-relaxed flex-1">
                         {point.description}
                       </p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#1945a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -613,8 +611,8 @@ export default function BusinessConsultingClient() {
                 <div
                   key={index}
                   className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index
-                      ? "w-6 bg-[#f4cc6f]"
-                      : "w-2 bg-white/30"
+                      ? "w-6 bg-[#1945a6]"
+                      : "w-2 bg-black/30"
                     }`}
                 />
               ))}
@@ -678,9 +676,9 @@ export default function BusinessConsultingClient() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora Infotech?
+              Why Work With Altiora <span className="text-[#1945a6]">Infotech?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Partner with business consulting experts who deliver strategic clarity and measurable outcomes.
             </p>
           </div>
@@ -699,7 +697,7 @@ export default function BusinessConsultingClient() {
               const subtitles = ['Vision', 'Results', 'Expertise', 'Execution', 'Frameworks', 'Partnership'];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-black/[0.08] hover:border-black/20 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="relative rounded-2xl border border-black/10 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-[#1945a6]/30 hover:shadow-xl hover:-translate-y-2">
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -707,11 +705,11 @@ export default function BusinessConsultingClient() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
-                          <span className="text-sm text-slate-500">{subtitles[index]}</span>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <span className="text-sm text-slate-600">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -727,23 +725,23 @@ export default function BusinessConsultingClient() {
       {/* CTA Section */}
       <section className="px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-black/10 backdrop-blur-sm overflow-hidden">
+          <div className="relative p-6 sm:p-8 md:p-12 text-center rounded-2xl md:rounded-3xl border border-white/20 backdrop-blur-sm overflow-hidden">
             <div className="absolute inset-0">
               <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Business Consulting" fill className="object-cover rounded-3xl" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#F5F8FF]/90 to-white/95" />
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-blue-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
                 <Briefcase className="w-10 h-10 text-[#f4cc6f]" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                 Ready to Transform Your Business Strategy?
               </h3>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-6 md:mb-8">
                 Stop navigating uncertainty alone. At Altiora Infotech, we partner with ambitious businesses to build clear, actionable strategies that drive real, measurable growth from vision to execution.
               </p>
-              <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-lg mb-8">
+              <p className="text-white/90 max-w-3xl mx-auto text-base sm:text-lg mb-8">
                 Ready to unlock your business&apos;s full potential? Share your goals and challenges, and we&apos;ll create a comprehensive consulting roadmap: strategic priorities, operational improvements, growth opportunities, and a clear path to results.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
@@ -758,7 +756,7 @@ export default function BusinessConsultingClient() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-black/20 bg-black/[0.05] backdrop-blur-sm text-slate-900 hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none focus:ring-2 focus:ring-black/20 transition-all duration-300"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold border border-white/30 bg-white/[0.08] backdrop-blur-sm text-white hover:bg-white/[0.12] focus:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                 >
                   <FaEye className="mr-2 w-5 h-5" />
                   Get Custom Quote
