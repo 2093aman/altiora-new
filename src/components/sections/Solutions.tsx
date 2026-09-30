@@ -59,7 +59,7 @@ export default function Solutions() {
         {/* Header */}
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-semibold">Success Stories</h2>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Success Stories</h2>
             <p className="mt-2 text-slate-600">
               Idea to impact these briefs shed light on the path taken and outcomes achieved:
               the problem, process, and business results that matter.

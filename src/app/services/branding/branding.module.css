@@ -33,7 +33,7 @@
 }
 
 .overviewTitle {
-  color: #f4cc6f;
+  color: #C9A227;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.4em;
@@ -43,7 +43,7 @@
 
 /* Gradient Text */
 .gradientText {
-  background: linear-gradient(135deg, #f4cc6f, #e6b85c, #f4cc6f);
+  background: linear-gradient(135deg, #C9A227, #B18B1E, #C9A227);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -63,7 +63,7 @@
 /* Service Cards */
 .serviceCardEnhanced {
   background: linear-gradient(145deg, rgba(243, 246, 252, 0.95), rgba(234, 240, 251, 0.95));
-  border: 1px solid rgba(244, 204, 111, 0.2);
+  border: 1px solid rgba(201, 162, 39, 0.2);
   border-radius: 24px;
   padding: 2rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,7 +78,7 @@
   inset: 0;
   border-radius: 24px;
   padding: 2px;
-  background: linear-gradient(135deg, transparent, rgba(244, 204, 111, 0.4), transparent);
+  background: linear-gradient(135deg, transparent, rgba(201, 162, 39, 0.4), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -88,11 +88,11 @@
 
 .serviceCardEnhanced:hover {
   transform: translateY(-15px) scale(1.02);
-  border-color: rgba(244, 204, 111, 0.6);
+  border-color: rgba(201, 162, 39, 0.6);
   box-shadow:
-    0 20px 60px rgba(244, 204, 111, 0.15),
-    0 0 80px rgba(244, 204, 111, 0.08),
-    inset 0 0 60px rgba(244, 204, 111, 0.05);
+    0 20px 60px rgba(201, 162, 39, 0.15),
+    0 0 80px rgba(201, 162, 39, 0.08),
+    inset 0 0 60px rgba(201, 162, 39, 0.05);
   background: linear-gradient(145deg, rgba(243, 246, 252, 1), rgba(234, 240, 251, 1));
 }
 

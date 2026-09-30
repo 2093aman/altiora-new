@@ -586,11 +586,11 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#000929]/70 via-[#0a133b]/70 to-[#050510]/80" />
         <div className="relative z-10 h-full w-full flex items-center justify-center text-center px-6">
           <div className="max-w-4xl">
-            <p className="uppercase tracking-[0.22em] text-xs sm:text-[13px] text-[#f4cc6f] font-semibold">
+            <p className="uppercase tracking-[0.22em] text-xs sm:text-[13px] text-[#C9A227] font-semibold">
               Contact
             </p>
-            <h1 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight drop-shadow text-white">
-              Get in <span className="text-[#f4cc6f]">Touch</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mt-3 tracking-tight drop-shadow text-white">
+              Get in <span className="text-[#C9A227]">Touch</span>
             </h1>
             <p className="mt-4 text-white/85 text-base sm:text-lg leading-relaxed">
               Have a question or want to discuss your project? We&apos;d love to hear from you.
@@ -604,10 +604,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           {/* Form Introduction */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Start Your <span className="text-[#1945a6]">Project Journey</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
+              Start Your <span className="text-[#C9A227]">Project Journey</span>
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[#3B4456] max-w-2xl mx-auto">
               Tell us about your vision and we'll help bring it to life. Our team of experts is ready to transform your ideas into reality.
             </p>
           </div>
@@ -615,7 +615,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form Section */}
             <div className="lg:col-span-3 w-full">
-              <div className="bg-[#F8FAFC] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-lg">
+              <div className="bg-[#F7F8FA] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-lg">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Form Header */}
                   <div className="text-center pb-6 border-b border-slate-200">
@@ -626,14 +626,14 @@ export default function ContactPage() {
                   {/* Personal Information Section */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] rounded-full flex items-center justify-center text-[#010c22] font-bold text-sm shadow-sm">1</div>
-                      <h4 className="text-lg font-semibold text-slate-900">Personal Information</h4>
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm">1</div>
+                      <h4 className="text-lg font-bold text-slate-900">Personal Information</h4>
                     </div>
 
                     {/* Name Fields */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label htmlFor="firstName" className="block text-sm font-medium text-slate-600">
+                        <label htmlFor="firstName" className="block text-sm font-medium text-[#3B4456]">
                           First Name<span className="text-red-400 ml-1">*</span>
                         </label>
                         <div className="relative">
@@ -642,13 +642,13 @@ export default function ContactPage() {
                             id="firstName"
                             name="firstName"
                             required
-                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200"
                             placeholder="John"
                           />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="lastName" className="block text-sm font-medium text-slate-600">
+                        <label htmlFor="lastName" className="block text-sm font-medium text-[#3B4456]">
                           Last Name
                         </label>
                         <div className="relative">
@@ -656,7 +656,7 @@ export default function ContactPage() {
                             type="text"
                             id="lastName"
                             name="lastName"
-                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200"
                             placeholder="Doe"
                           />
                         </div>
@@ -665,7 +665,7 @@ export default function ContactPage() {
 
                     {/* Email Field */}
                     <div className="space-y-2">
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-600">
+                      <label htmlFor="email" className="block text-sm font-medium text-[#3B4456]">
                         Email<span className="text-red-400 ml-1">*</span>
                       </label>
                       <input
@@ -675,14 +675,14 @@ export default function ContactPage() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
+                        className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200"
                         placeholder="john@company.com"
                       />
                     </div>
 
                     {/* Phone Field */}
                     <div className="space-y-2">
-                      <label htmlFor="phoneNumber" className="block text-sm font-medium text-slate-600">
+                      <label htmlFor="phoneNumber" className="block text-sm font-medium text-[#3B4456]">
                         Phone Number <span className="text-red-400">*</span>
                       </label>
                       <div className="flex gap-3">
@@ -691,7 +691,7 @@ export default function ContactPage() {
                           <button
                             type="button"
                             onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                            className="flex items-center gap-2 bg-white border border-slate-300 rounded-lg px-3 py-3 text-slate-900 hover:border-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200 min-w-[100px]"
+                            className="flex items-center gap-2 bg-white border border-slate-300 rounded-lg px-3 py-3 text-slate-900 hover:border-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200 min-w-[100px]"
                           >
                             {selectedCountry ? (
                               <>
@@ -714,7 +714,7 @@ export default function ContactPage() {
                                   type="text"
                                   value={countrySearch}
                                   onChange={(e) => setCountrySearch(e.target.value)}
-                                  className="w-full bg-slate-50 border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6]"
+                                  className="w-full bg-slate-50 border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387]"
                                   placeholder="Search countries..."
                                 />
                               </div>
@@ -759,7 +759,7 @@ export default function ContactPage() {
                                 setPhoneNumber(value);
                               }
                             }}
-                            className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
+                            className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200"
                             placeholder="1234567890"
                             required
                           />
@@ -777,7 +777,7 @@ export default function ContactPage() {
 
                     {/* Company Field */}
                     <div className="space-y-2">
-                      <label htmlFor="company" className="block text-sm font-medium text-slate-600">
+                      <label htmlFor="company" className="block text-sm font-medium text-[#3B4456]">
                         Company / Organization
                       </label>
                       <div className="relative">
@@ -790,7 +790,7 @@ export default function ContactPage() {
                           type="text"
                           id="company"
                           name="company"
-                          className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200"
+                          className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200"
                           placeholder="Your Company Name"
                         />
                       </div>
@@ -800,13 +800,13 @@ export default function ContactPage() {
                   {/* Message Section */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm">2</div>
-                      <h4 className="text-lg font-semibold text-slate-900">Tell Us About Your Project</h4>
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm">2</div>
+                      <h4 className="text-lg font-bold text-slate-900">Tell Us About Your Project</h4>
                     </div>
 
                     {/* Message */}
                     <div className="space-y-2">
-                      <label htmlFor="message" className="block text-sm font-medium text-slate-600">
+                      <label htmlFor="message" className="block text-sm font-medium text-[#3B4456]">
                         Project Description <span className="text-slate-500 text-xs">(optional, 0-2000 characters if provided)</span>
                       </label>
                       <div className="relative">
@@ -814,7 +814,7 @@ export default function ContactPage() {
                           id="message"
                           name="message"
                           rows={6}
-                          className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 pb-8 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1945a6] focus:ring-2 focus:ring-[#1945a6]/20 transition-all duration-200 resize-none"
+                          className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 pb-8 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#002387] focus:ring-2 focus:ring-[#002387]/20 transition-all duration-200 resize-none"
                           placeholder="Describe your project goals, requirements, challenges, and any specific features you need. The more details you provide, the better we can help you."
                           onChange={(e) => setMessageLength(e.target.value.length)}
                           maxLength={2000}
@@ -863,15 +863,15 @@ export default function ContactPage() {
                   <div className="space-y-6 pt-6 border-t border-slate-200">
 
                     {/* Consent Checkbox */}
-                    <div className="bg-[#F8FAFC] rounded-lg p-4 border border-slate-200">
+                    <div className="bg-[#F7F8FA] rounded-lg p-4 border border-slate-200">
                       <label className="flex items-start gap-3 cursor-pointer">
                         <input
                           type="checkbox"
                           checked={humanVerified}
                           onChange={(e) => setHumanVerified(e.target.checked)}
-                          className="w-5 h-5 mt-0.5 rounded border-2 border-slate-400 bg-white text-[#1945a6] focus:ring-[#1945a6] focus:ring-2"
+                          className="w-5 h-5 mt-0.5 rounded border-2 border-slate-400 bg-white text-[#002387] focus:ring-[#002387] focus:ring-2"
                         />
-                        <div className="text-sm text-slate-600 leading-relaxed">
+                        <div className="text-sm text-[#3B4456] leading-relaxed">
                           <span className="font-semibold text-slate-900">Privacy Consent:</span> I consent to Altiora Infotech storing and processing my contact details to respond to this enquiry. Your information will be kept secure and used solely for communication purposes.
                         </div>
                       </label>
@@ -881,11 +881,11 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading" || !humanVerified || !email.trim()}
-                      className="w-full rounded-xl bg-gradient-to-r from-[#f4cc6f] via-[#e6b85c] to-[#f4cc6f] px-8 py-4 font-bold text-[#010c22] text-lg hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-4 focus:ring-[#f4cc6f]/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md transform hover:scale-[1.01] active:scale-[0.99] disabled:transform-none"
+                      className="w-full rounded-xl bg-gradient-to-r from-[#C9A227] via-[#B18B1E] to-[#C9A227] px-8 py-4 font-bold text-[#001A66] text-lg hover:shadow-lg hover:shadow-[#C9A227]/25 focus:outline-none focus:ring-4 focus:ring-[#C9A227]/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md transform hover:scale-[1.01] active:scale-[0.99] disabled:transform-none"
                     >
                       {status === "loading" ? (
                         <span className="flex items-center justify-center gap-3">
-                          <svg className="animate-spin w-6 h-6 text-[#010c22]" fill="none" viewBox="0 0 24 24">
+                          <svg className="animate-spin w-6 h-6 text-[#001A66]" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
@@ -893,7 +893,7 @@ export default function ContactPage() {
                         </span>
                       ) : !humanVerified ? (
                         <span className="flex items-center justify-center gap-3">
-                          <svg className="w-6 h-6 text-[#010c22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-6 h-6 text-[#001A66]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
                           Please Accept Privacy Terms
@@ -912,7 +912,7 @@ export default function ContactPage() {
 
             {/* Contact Information Sidebar */}
             <div className="lg:col-span-2 w-full">
-              <div className="bg-[#F8FAFC] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 shadow-lg h-fit sticky top-8">
+              <div className="bg-[#F7F8FA] backdrop-blur-sm border border-slate-200/80 rounded-2xl p-8 shadow-lg h-fit sticky top-8">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">Get In Touch</h3>
                   <p className="text-slate-500">Ready to start your project? We're here to help.</p>
@@ -921,21 +921,21 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   {/* Email Contact */}
                   <div className="group">
-                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#1945a6]/40 transition-all duration-300 hover:shadow-md">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#002387]/40 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center shadow-sm">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-slate-900">Email</h4>
+                          <h4 className="text-lg font-bold text-slate-900">Email</h4>
                           <p className="text-sm text-slate-500">Quick response guaranteed</p>
                         </div>
                       </div>
                       <Link
                         href="mailto:info@altiorainfotech.ca"
-                        className="text-[#1945a6] hover:text-[#12327a] font-semibold transition-colors duration-200 break-all"
+                        className="text-[#002387] hover:text-[#12327a] font-semibold transition-colors duration-200 break-all"
                       >
                         info@altiorainfotech.ca
                       </Link>
@@ -945,52 +945,52 @@ export default function ContactPage() {
 
                   {/* Address */}
                   <div className="group">
-                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#f4cc6f]/60 transition-all duration-300 hover:shadow-md">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#C9A227]/60 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] rounded-full flex items-center justify-center shadow-sm">
-                          <svg className="w-6 h-6 text-[#010c22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
+                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-slate-900">Office Address</h4>
+                          <h4 className="text-lg font-bold text-slate-900">Office Address</h4>
                           <p className="text-sm text-slate-500">Altiora Infotech</p>
                         </div>
                       </div>
-                      <p className="text-slate-600">2210 - 13778 100 Ave, Surrey, BC, Canada</p>
+                      <p className="text-[#3B4456]">2210 - 13778 100 Ave, Surrey, BC, Canada</p>
                     </div>
                   </div>
 
                   {/* Why Choose Us */}
                   <div className="group">
-                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#1945a6]/40 transition-all duration-300 hover:shadow-md">
+                    <div className="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#002387]/40 transition-all duration-300 hover:shadow-md">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-[#1945a6] to-[#12327a] rounded-full flex items-center justify-center shadow-sm">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-md">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-slate-900">Why Choose Us</h4>
+                          <h4 className="text-lg font-bold text-slate-900">Why Choose Us</h4>
                           <p className="text-sm text-slate-500">Your success is our priority</p>
                         </div>
                       </div>
-                      <ul className="space-y-2 text-sm text-slate-600">
+                      <ul className="space-y-2 text-sm text-[#3B4456]">
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#C9A227] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           24/7 support and communication
                         </li>
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#C9A227] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           Agile development methodology
                         </li>
                         <li className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-[#f4cc6f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-[#C9A227] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           Competitive pricing & quality
@@ -1020,7 +1020,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-slate-900">Upload Guidelines</h3>
             </div>
 
-            <div className="text-sm text-slate-600 space-y-3">
+            <div className="text-sm text-[#3B4456] space-y-3">
               <div>
                 <p className="font-medium text-slate-900 mb-2">File Requirements:</p>
                 <ul className="space-y-1 text-slate-500">

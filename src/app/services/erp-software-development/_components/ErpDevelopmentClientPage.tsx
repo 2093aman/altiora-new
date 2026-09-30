@@ -47,7 +47,7 @@ import Header from "@/assets/Header";
 import Footer from "@/assets/Footer";
 import styles from "../erp-software-development.module.css";
 
-const PALETTE = ["#f4cc6f", "#EC4899", "#3B82F6", "#10B981", "#8B5CF6"];
+const PALETTE = ["#C9A227", "#EC4899", "#3B82F6", "#10B981", "#8B5CF6"];
 
 export default function ErpDevelopmentClientPage() {
   const [mounted, setMounted] = useState(false);
@@ -75,7 +75,7 @@ export default function ErpDevelopmentClientPage() {
       description: "Every business operates differently. We develop ERP systems tailored to your processes, ensuring your software supports your operations rather than forcing you to adapt.",
       subLabel: "Our ERP solutions include:",
       items: ["Business process management", "Workflow automation", "Multi-department management", "Real-time reporting", "Document management", "User role management"],
-      color: "#f4cc6f",
+      color: "#C9A227",
     },
     {
       icon: DollarSign,
@@ -115,17 +115,17 @@ export default function ErpDevelopmentClientPage() {
       description: "Optimize purchasing and vendor relationships.",
       subLabel: "Services include:",
       items: ["Vendor management", "Procurement automation", "Purchase approvals", "Contract management", "Supply chain visibility", "Vendor performance reporting"],
-      color: "#f4cc6f",
+      color: "#C9A227",
     },
   ];
 
   const modules = [
-    { icon: DollarSign, title: "Finance & Accounting", description: "Track financial performance, automate accounting processes, and improve financial reporting.", gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { icon: DollarSign, title: "Finance & Accounting", description: "Track financial performance, automate accounting processes, and improve financial reporting.", gradient: "from-[#C9A227] to-[#FF9F43]" },
     { icon: Package, title: "Inventory Management", description: "Monitor stock levels, warehouse operations, procurement activities, and inventory movement.", gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { icon: Users, title: "Human Resources", description: "Manage employee information, payroll, attendance, and recruitment through a centralized platform.", gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { icon: HeartHandshake, title: "Customer Relationship Management", description: "Strengthen customer engagement through integrated sales and service management.", gradient: "from-[#10B981] to-[#06B6D4]" },
-    { icon: Factory, title: "Manufacturing Management", description: "Monitor production planning, quality control, material requirements, and production scheduling.", gradient: "from-[#EC4899] to-[#f4cc6f]" },
-    { icon: BarChart3, title: "Business Intelligence & Analytics", description: "Generate real-time dashboards, KPI reporting, operational insights, and executive decision support.", gradient: "from-[#f4cc6f] to-[#10B981]" },
+    { icon: Factory, title: "Manufacturing Management", description: "Monitor production planning, quality control, material requirements, and production scheduling.", gradient: "from-[#EC4899] to-[#C9A227]" },
+    { icon: BarChart3, title: "Business Intelligence & Analytics", description: "Generate real-time dashboards, KPI reporting, operational insights, and executive decision support.", gradient: "from-[#C9A227] to-[#10B981]" },
   ];
 
   const industries = [
@@ -147,7 +147,7 @@ export default function ErpDevelopmentClientPage() {
   ].map((item, index) => ({ ...item, color: PALETTE[index % PALETTE.length] }));
 
   const techCategories = [
-    { category: "Frontend", icon: Layers, color: "#f4cc6f", items: ["React", "Next.js", "Angular"] },
+    { category: "Frontend", icon: Layers, color: "#C9A227", items: ["React", "Next.js", "Angular"] },
     { category: "Backend", icon: Server, color: "#EC4899", items: ["Node.js", "Python", "Laravel", ".NET"] },
     { category: "Databases", icon: Database, color: "#3B82F6", items: ["PostgreSQL", "MySQL", "Microsoft SQL Server", "MongoDB"] },
     { category: "Cloud Platforms", icon: Cloud, color: "#10B981", items: ["AWS", "Microsoft Azure", "Google Cloud Platform"] },
@@ -164,12 +164,12 @@ export default function ErpDevelopmentClientPage() {
   ];
 
   const whyChoose = [
-    { title: "Custom ERP Solutions", text: "Designed around your unique business processes and operational goals.", icon: Settings, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { title: "Custom ERP Solutions", text: "Designed around your unique business processes and operational goals.", icon: Settings, gradient: "from-[#C9A227] to-[#FF9F43]" },
     { title: "Modular Architecture", text: "Add new modules and features as your business grows.", icon: Layers, gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { title: "Enterprise-Grade Security", text: "Secure authentication, encrypted data storage, and role-based access controls.", icon: ShieldCheck, gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { title: "Seamless Integrations", text: "Connect with CRM, accounting software, payment gateways, HR systems, and third-party applications.", icon: Plug, gradient: "from-[#10B981] to-[#06B6D4]" },
-    { title: "Scalable Cloud Infrastructure", text: "Cloud-ready ERP systems built for long-term business expansion.", icon: Cloud, gradient: "from-[#EC4899] to-[#f4cc6f]" },
-    { title: "End-to-End Services", text: "Consulting, development, implementation, migration, training, and ongoing support.", icon: LifeBuoy, gradient: "from-[#f4cc6f] to-[#10B981]" },
+    { title: "Scalable Cloud Infrastructure", text: "Cloud-ready ERP systems built for long-term business expansion.", icon: Cloud, gradient: "from-[#EC4899] to-[#C9A227]" },
+    { title: "End-to-End Services", text: "Consulting, development, implementation, migration, training, and ongoing support.", icon: LifeBuoy, gradient: "from-[#C9A227] to-[#10B981]" },
   ];
 
   const benefits = [
@@ -199,7 +199,7 @@ export default function ErpDevelopmentClientPage() {
     { Icon: Package, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
     { Icon: Users, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
     { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-    { Icon: Truck, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+    { Icon: Truck, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
   ];
 
   return (
@@ -215,7 +215,7 @@ export default function ErpDevelopmentClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -250,7 +250,7 @@ export default function ErpDevelopmentClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-base sm:text-lg md:text-xl text-slate-700 mb-3 sm:mb-4"
+                  className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-3 sm:mb-4"
                 >
                   Streamline Your Business Operations with Custom ERP Software Development
                 </motion.p>
@@ -259,7 +259,7 @@ export default function ErpDevelopmentClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456] mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
                 >
                   As businesses grow, managing operations across multiple departments becomes increasingly complex. Finance, inventory, procurement, sales, manufacturing, human resources, and customer management often rely on separate systems that don&apos;t communicate efficiently. This lack of integration creates data silos, delays decision-making, and reduces productivity.
                 </motion.p>
@@ -272,7 +272,7 @@ export default function ErpDevelopmentClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Schedule A Consultation Today
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -291,7 +291,7 @@ export default function ErpDevelopmentClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
@@ -299,7 +299,7 @@ export default function ErpDevelopmentClientPage() {
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -311,7 +311,7 @@ export default function ErpDevelopmentClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -331,7 +331,7 @@ export default function ErpDevelopmentClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -346,8 +346,8 @@ export default function ErpDevelopmentClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: ['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'][i],
-                            boxShadow: `0 0 12px ${['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'][i]}80`,
+                            background: ['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'][i],
+                            boxShadow: `0 0 12px ${['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'][i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -392,23 +392,23 @@ export default function ErpDevelopmentClientPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7 }}
-              className="rounded-3xl border border-[#f4cc6f]/20 bg-black/[0.03] backdrop-blur-sm p-6 sm:p-8 md:p-10"
+              className="rounded-3xl border border-[#C9A227]/20 bg-black/[0.03] backdrop-blur-sm p-6 sm:p-8 md:p-10"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex h-2 w-2 rounded-full bg-[#f4cc6f] shadow-[0_0_12px_#f4cc6f]" />
-                <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#f4cc6f]/90 font-semibold">Quick Answer</span>
+                <span className="inline-flex h-2 w-2 rounded-full bg-[#C9A227] shadow-[0_0_12px_#C9A227]" />
+                <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#C9A227]/90 font-semibold">Quick Answer</span>
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 leading-tight">
                 What is ERP software?
               </h2>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
+              <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed mb-6">
                 Enterprise Resource Planning (ERP) software is a centralized platform that integrates business functions such as finance, inventory, sales, HR, procurement, manufacturing, and reporting into a single system.
               </p>
-              <p className="text-slate-600 text-sm sm:text-base font-semibold mb-3">Our ERP Software Development Services:</p>
+              <p className="text-[#3B4456] text-sm sm:text-base font-semibold mb-3">Our ERP Software Development Services:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
+                  <li key={i} className="flex items-start gap-2.5 text-[#3B4456] text-sm sm:text-base">
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C9A227]" />
                     <span>{item.title}</span>
                   </li>
                 ))}
@@ -430,11 +430,11 @@ export default function ErpDevelopmentClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>
                   Overview
                 </span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
 
               <div className="flex flex-col items-center">
@@ -451,19 +451,19 @@ export default function ErpDevelopmentClientPage() {
                     <br />
                     From strategy and architecture to implementation, integration, and long-term support, our team delivers ERP systems that simplify complex operations and empower organizations to scale confidently.
                   </p>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Services Section */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -509,14 +509,14 @@ export default function ErpDevelopmentClientPage() {
 
                     {/* Text */}
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-slate-700 transition-colors">{service.title}</h3>
-                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 transition-colors mb-3">{service.description}</p>
-                      <p className="text-slate-600 text-xs font-semibold mb-2">{service.subLabel}</p>
+                      <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#3B4456] transition-colors">{service.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed group-hover:text-[#3B4456] transition-colors mb-3">{service.description}</p>
+                      <p className="text-[#3B4456] text-xs font-semibold mb-2">{service.subLabel}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {service.items.map((chip, chipIndex) => (
                           <span
                             key={chipIndex}
-                            className="text-[11px] sm:text-xs px-2.5 py-1 rounded-full text-slate-600"
+                            className="text-[11px] sm:text-xs px-2.5 py-1 rounded-full text-[#3B4456]"
                             style={{ background: `${service.color}0f`, border: `1px solid ${service.color}25` }}
                           >
                             {chip}
@@ -568,9 +568,9 @@ export default function ErpDevelopmentClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.description}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.description}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -588,7 +588,7 @@ export default function ErpDevelopmentClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
 
           {mounted && [...Array(10)].map((_, i) => (
@@ -662,7 +662,7 @@ export default function ErpDevelopmentClientPage() {
                       >
                         <item.icon className="w-5 h-5" style={{ color: item.color }} />
                       </motion.div>
-                      <p className="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed">{item.text}</p>
+                      <p className="text-[#3B4456] text-xs sm:text-sm font-medium leading-relaxed">{item.text}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -717,7 +717,7 @@ export default function ErpDevelopmentClientPage() {
                     {cat.items.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="text-xs sm:text-sm px-3 py-1.5 rounded-full text-slate-700"
+                        className="text-xs sm:text-sm px-3 py-1.5 rounded-full text-[#3B4456]"
                         style={{ background: `${cat.color}0f`, border: `1px solid ${cat.color}25` }}
                       >
                         {tech}
@@ -736,7 +736,7 @@ export default function ErpDevelopmentClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -858,9 +858,9 @@ export default function ErpDevelopmentClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -882,16 +882,16 @@ export default function ErpDevelopmentClientPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
-              className="rounded-3xl border border-[#f4cc6f]/20 bg-black/[0.03] backdrop-blur-sm p-6 sm:p-8 md:p-10"
+              className="rounded-3xl border border-[#C9A227]/20 bg-black/[0.03] backdrop-blur-sm p-6 sm:p-8 md:p-10"
             >
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight text-center">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-6 leading-tight text-center">
                 Benefits of Custom{' '}
                 <span className={styles.gradientText}>ERP Software</span>
               </h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {benefits.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
+                  <li key={i} className="flex items-start gap-2.5 text-[#3B4456] text-sm sm:text-base">
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C9A227]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -934,7 +934,7 @@ export default function ErpDevelopmentClientPage() {
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
                       <svg
-                        className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`}
+                        className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -946,7 +946,7 @@ export default function ErpDevelopmentClientPage() {
                     <div
                       className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 mt-3 opacity-100" : "max-h-0 opacity-0"}`}
                     >
-                      <p className="faq-answer text-slate-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="faq-answer text-[#3B4456] text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -966,7 +966,7 @@ export default function ErpDevelopmentClientPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-blue-900/80 to-purple-900/90" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
 
@@ -1006,7 +1006,7 @@ export default function ErpDevelopmentClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Schedule A Consultation Today
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

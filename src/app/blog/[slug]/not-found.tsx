@@ -27,8 +27,8 @@ export default function BlogPostNotFound() {
             </svg>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            <span className="bg-gradient-to-r from-slate-900 via-[#4f7cff] to-slate-900 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mb-4">
+            <span className="text-[#C9A227]">
               Post Not Found
             </span>
           </h1>

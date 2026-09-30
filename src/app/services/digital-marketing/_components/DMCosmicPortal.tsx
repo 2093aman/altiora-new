@@ -141,7 +141,7 @@ const DMCosmicPortal = () => {
           })}
 
           <motion.div
-            className="absolute inset-2 rounded-full border border-[#F4CC6F]/20"
+            className="absolute inset-2 rounded-full border border-[#C9A227]/20"
             animate={{ rotate: 360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           />
@@ -263,7 +263,7 @@ const DMCosmicPortal = () => {
                 {portals[activePortal].funFact}
               </motion.div>
               <motion.div
-                className="text-slate-700 text-sm leading-relaxed font-medium"
+                className="text-[#3B4456] text-sm leading-relaxed font-medium"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -307,8 +307,8 @@ const DMCosmicPortal = () => {
                 >
                   {portal.logo}
                 </motion.div>
-                <h3 className="text-sm font-semibold text-slate-900 mb-1 line-clamp-2">{portal.label}</h3>
-                <p className="text-xs text-slate-600 line-clamp-2">{portal.funFact}</p>
+                <h3 className="text-sm font-bold text-slate-900 mb-1 line-clamp-2">{portal.label}</h3>
+                <p className="text-xs text-[#3B4456] line-clamp-2">{portal.funFact}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -331,7 +331,7 @@ const DMCosmicPortal = () => {
             <div className="text-center">
               <div className="text-4xl mb-3">{portals[activePortal].logo}</div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">{portals[activePortal].label}</h3>
-              <p className="text-sm text-slate-700 leading-relaxed">{portals[activePortal].description}</p>
+              <p className="text-sm text-[#3B4456] leading-relaxed">{portals[activePortal].description}</p>
             </div>
           </motion.div>
         )}

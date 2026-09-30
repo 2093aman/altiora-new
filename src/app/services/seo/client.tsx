@@ -39,6 +39,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "../digital-marketing/dm.module.css";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import { iconGradient } from "@/lib/iconGradients";
 
 // SEO Pillar Card Component
 const SEOPillarCard = ({ pillar, className }: { pillar: any; className?: string }) => {
@@ -55,21 +56,21 @@ const SEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
       <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${pillar.borderColor} ${pillar.bgGradient} backdrop-blur-sm overflow-hidden h-[480px] flex flex-col shadow-sm hover:shadow-md`}>
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A227] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#002387] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Pillar Icon */}
         <motion.div
-          className={`flex items-center justify-center w-16 h-16 flex-shrink-0 rounded-2xl ${pillar.iconBg} mb-6 relative z-10 shadow-sm`}
+          className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded-xl ${pillar.iconBg} mb-6 relative z-10 shadow-md`}
         >
-          <pillar.icon className={`w-8 h-8 flex-shrink-0 ${pillar.iconColor}`} />
+          <pillar.icon className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 ${pillar.iconColor}`} />
         </motion.div>
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">{pillar.name}</h3>
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{pillar.description}</p>
+          <p className="text-[#3B4456] text-base md:text-lg mb-4 leading-relaxed flex-1">{pillar.description}</p>
 
           {/* Stats */}
           <div className="flex items-center justify-between mb-4 p-3 rounded-xl bg-white border border-slate-200/60">
@@ -87,8 +88,8 @@ const SEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {pillar.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
-                <span className="text-xs sm:text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#C9A227]" />
+                <span className="text-xs sm:text-sm text-[#3B4456]">{feature}</span>
               </div>
             ))}
           </div>
@@ -96,7 +97,7 @@ const SEOPillarCard = ({ pillar, className }: { pillar: any; className?: string 
 
         {/* Hover Effect */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
         />
       </div>
     </motion.div>
@@ -122,9 +123,9 @@ const SEODashboard = () => {
   }, []);
 
   return (
-    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
+    <div className="bg-[#F7F8FA] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-[#1945a6] flex items-center justify-center">
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${iconGradient(1)} flex items-center justify-center shadow-md`}>
           <BarChart3 className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -140,15 +141,15 @@ const SEODashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? 'border-[#f4cc6f] bg-[#f4cc6f]/15 shadow-sm'
+                ? 'border-[#C9A227] bg-[#C9A227]/15 shadow-sm'
                 : 'border-slate-200/80 bg-white'
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
+              <Icon className="w-5 h-5 text-[#002387] mb-2" />
               <div className="text-2xl font-extrabold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-bold text-[#1945a6]">{metric.change}</div>
+              <div className="text-xs font-bold text-[#002387]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -188,12 +189,12 @@ export default function SEOClient() {
       description: "Optimize every page to precisely match search intent, improve click-through rates, and convert organic visitors into qualified leads and revenue.",
       avgImprovement: "+145%",
       timeline: "2-4 months",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Search Intent Matching", "Meta Tag Optimization", "Heading Structure", "Internal Link Strategy", "Conversion Optimization", "Schema Markup"]
     },
     {
@@ -202,12 +203,12 @@ export default function SEOClient() {
       description: "Resolve crawl inefficiencies, indexation conflicts, Core Web Vitals issues, and performance bottlenecks that silently block your rankings.",
       avgImprovement: "+89%",
       timeline: "1-3 months",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Core Web Vitals", "Crawl Optimization", "Structured Data", "Site Speed", "Mobile Performance", "Index Management"]
     },
     {
@@ -216,12 +217,12 @@ export default function SEOClient() {
       description: "Build domain authority through niche-relevant placements, digital PR, and strategic backlink acquisition that search engines trust and reward.",
       avgImprovement: "+178%",
       timeline: "3-6 months",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Contextual Backlinks", "Digital PR Campaigns", "Brand Mentions", "Guest Publishing", "Competitor Analysis", "Authority Signals"]
     },
     {
@@ -230,12 +231,12 @@ export default function SEOClient() {
       description: "Build topical authority through structured content clusters engineered to match buyer intent and drive consistent, compounding organic demand.",
       avgImprovement: "+234%",
       timeline: "4-8 months",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Topic Cluster Strategy", "Keyword-Intent Mapping", "Content Gap Analysis", "Semantic Optimization", "E-E-A-T Signals", "Conversion Copy"]
     },
     {
@@ -244,12 +245,12 @@ export default function SEOClient() {
       description: "Dominate local search results and Google Maps for high-intent queries in your service areas with geo-targeted optimization strategies.",
       avgImprovement: "+312%",
       timeline: "60-90 days",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Google Business Profile", "Local Citations", "NAP Consistency", "Review Management", "Local Landing Pages", "Proximity Signals"]
     },
     {
@@ -258,51 +259,51 @@ export default function SEOClient() {
       description: "Track every ranking shift, traffic trend, and conversion path with real-time dashboards built to surface actionable insights not vanity data.",
       avgImprovement: "+95%",
       timeline: "Ongoing",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Rank Tracking", "Traffic Attribution", "Competitor Monitoring", "Conversion Reporting", "Algorithm Impact", "Monthly Roadmaps"]
     }
   ];
 
   const services = [
     {
-      title: <>Keyword Research & <span className="text-[#1945a6]">Strategy</span></>,
+      title: <>Keyword Research & <span className="text-[#002387]">Strategy</span></>,
       description: "We identify buyer-intent keywords at every decision stage to build rankings that grow toward high-value, competitive search terms that drive real revenue.",
-      icon: <FaKeyboard className="w-7 h-7 text-[#010c22]" />,
+      icon: <FaKeyboard className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
     {
-      title: <>On-Page SEO <span className="text-[#1945a6]">Optimization</span></>,
+      title: <>On-Page SEO <span className="text-[#002387]">Optimization</span></>,
       description: "We optimize intent matching, page structure, internal linking hierarchy, and conversion positioning for higher-quality organic traffic and better rankings.",
-      icon: <FileText className="w-7 h-7 text-[#010c22]" />,
+      icon: <FileText className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
     {
-      title: <>Technical SEO & <span className="text-[#1945a6]">Indexability</span></>,
+      title: <>Technical SEO & <span className="text-[#002387]">Indexability</span></>,
       description: "We resolve crawl inefficiencies, duplicate pages, rendering issues, and structured data gaps unlocking rankings already within reach of your domain.",
-      icon: <Settings className="w-7 h-7 text-[#010c22]" />,
+      icon: <Settings className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
     {
-      title: <>Authority & <span className="text-[#1945a6]">Link Building</span></>,
+      title: <>Authority & <span className="text-[#002387]">Link Building</span></>,
       description: "We build topical authority through niche-relevant placements, entity signals, branded search growth, and strategic citation reinforcement.",
-      icon: <LinkIcon className="w-7 h-7 text-[#010c22]" />,
+      icon: <LinkIcon className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
     {
-      title: <>Local <span className="text-[#1945a6]">SEO</span></>,
+      title: <>Local <span className="text-[#002387]">SEO</span></>,
       description: "We optimize business profile relevance, service area pages, local landing structure, and review consistency to dominate high-intent local searches.",
-      icon: <Globe className="w-7 h-7 text-[#010c22]" />,
+      icon: <Globe className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
     {
-      title: <>SEO Analytics & <span className="text-[#1945a6]">Reporting</span></>,
+      title: <>SEO Analytics & <span className="text-[#002387]">Reporting</span></>,
       description: "Comprehensive dashboards with ranking tracking, traffic attribution, competitor insights, and prioritized monthly strategy roadmaps for continuous growth.",
-      icon: <BarChart3 className="w-7 h-7 text-[#010c22]" />,
+      icon: <BarChart3 className="w-7 h-7 text-[#001A66]" />,
       link: "/contact"
     },
   ];
@@ -354,11 +355,11 @@ export default function SEOClient() {
           <div className="w-full max-w-full">
             <div className="grid lg:grid-cols-12 gap-12 items-center w-full max-w-full">
               <div className="lg:col-span-12 space-y-6 w-full max-w-full">
-                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-slate-700 shadow-sm backdrop-blur-sm">
-                  <Search className="w-4 h-4 text-[#1945a6]" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-[#3B4456] shadow-sm backdrop-blur-sm">
+                  <Search className="w-4 h-4 text-[#002387]" />
                   ALTIORA INFOTECH
                 </span>
-                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                   Professional SEO
                   <br />
                   Services
@@ -367,7 +368,7 @@ export default function SEOClient() {
                   For Businesses That Need Consistent Leads Not Just Traffic
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
-                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105 w-[60%] sm:w-auto">
+                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105 w-[60%] sm:w-auto">
                     Get SEO Growth Plan
                     <FaRocket className="ml-2 w-4 h-4" />
                   </Link>
@@ -386,19 +387,19 @@ export default function SEOClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="rounded-3xl border border-[#f4cc6f]/30 bg-[#F8FAFC] p-6 sm:p-8 md:p-10 shadow-sm"
+            className="rounded-3xl border border-[#C9A227]/30 bg-[#F7F8FA] p-6 sm:p-8 md:p-10 shadow-sm"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 text-[#b48312] font-extrabold text-xs uppercase tracking-[0.2em]">
-                <span className="h-2 w-2 rounded-full bg-[#f4cc6f] animate-pulse" />
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C9A227]/15 border border-[#C9A227]/40 text-[#B18B1E] font-extrabold text-xs uppercase tracking-[0.2em]">
+                <span className="h-2 w-2 rounded-full bg-[#C9A227] animate-pulse" />
                 Quick Answer
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 leading-tight">
               What are SEO services and what do they actually deliver?
             </h2>
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
-              SEO services are an ongoing programme of technical, content and authority work that improves your website&apos;s ranking in <span className="text-[#1945a6] font-semibold">Google</span>, <span className="text-[#1945a6] font-semibold">Bing</span> and AI-powered search engines like ChatGPT and Perplexity. Altiora Infotech delivers technical audits, keyword strategy, on-page optimization, local SEO, link building and monthly performance reporting, tuned for traditional search, AEO and GEO together.
+            <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed mb-6">
+              SEO services are an ongoing programme of technical, content and authority work that improves your website&apos;s ranking in <span className="text-[#002387] font-semibold">Google</span>, <span className="text-[#002387] font-semibold">Bing</span> and AI-powered search engines like ChatGPT and Perplexity. Altiora Infotech delivers technical audits, keyword strategy, on-page optimization, local SEO, link building and monthly performance reporting, tuned for traditional search, AEO and GEO together.
             </p>
             <p className="text-slate-900 text-sm sm:text-base font-bold mb-3">Core deliverables in our SEO programme:</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -412,8 +413,8 @@ export default function SEOClient() {
                 "Core Web Vitals and page-speed improvements",
                 "Monthly reporting tied to traffic, leads and revenue",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base">
-                  <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
+                <li key={i} className="flex items-start gap-2.5 text-[#3B4456] text-sm sm:text-base">
+                  <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C9A227]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -435,11 +436,11 @@ export default function SEOClient() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/60 to-transparent" />
-              <span className="text-[#b48312] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#f4cc6f]/15 px-4 py-1.5 rounded-full border border-[#f4cc6f]/40">
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/60 to-transparent" />
+              <span className="text-[#B18B1E] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#C9A227]/15 px-4 py-1.5 rounded-full border border-[#C9A227]/40">
                 Overview
               </span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/60 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/60 to-transparent" />
             </div>
 
             <div className="flex flex-col items-center">
@@ -447,12 +448,12 @@ export default function SEOClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#C9A227]/30 bg-[#F7F8FA] shadow-sm relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-slate-700 font-medium`}>
-                  Our <Link href="/" className="text-[#1945a6] font-bold hover:underline">SEO Services</Link> help businesses turn their website into a reliable acquisition channel through search-intent optimization, technical authority, and long-term ranking strategy. We go beyond keyword rankings we build the organic infrastructure that consistently attracts, engages, and converts your ideal customers. Best suited for service businesses, local companies, SaaS platforms, and high-ticket providers looking for predictable, compounding organic growth.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-[#3B4456] font-medium`}>
+                  Our <Link href="/" className="text-[#002387] font-bold hover:underline">SEO Services</Link> help businesses turn their website into a reliable acquisition channel through search-intent optimization, technical authority, and long-term ranking strategy. We go beyond keyword rankings we build the organic infrastructure that consistently attracts, engages, and converts your ideal customers. Best suited for service businesses, local companies, SaaS platforms, and high-ticket providers looking for predictable, compounding organic growth.
                 </p>
-                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
@@ -463,10 +464,10 @@ export default function SEOClient() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              <span className="text-[#1945a6]">SEO</span> Growth Pillars We Master
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              <span className="text-[#C9A227]">SEO</span> Growth Pillars We Master
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Strategic frameworks engineered to increase qualified organic demand not just traffic numbers.
             </p>
           </div>
@@ -480,14 +481,14 @@ export default function SEOClient() {
       </section>
 
       {/* SEO Performance Dashboard */}
-      <section className="py-20 px-6 bg-[#F8FAFC]">
+      <section className="py-20 px-6 bg-[#F7F8FA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
                 Real-Time SEO Performance
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 leading-relaxed">
                 Track your organic growth with our comprehensive SEO analytics dashboard. Monitor rankings, traffic, and conversions across all your target keywords in real-time.
               </p>
               <div className="space-y-4">
@@ -498,8 +499,8 @@ export default function SEOClient() {
                   "Technical SEO health monitoring and alerts"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700 font-medium">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-[#C9A227]" />
+                    <span className="text-[#3B4456] font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -515,10 +516,10 @@ export default function SEOClient() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our SEO Services & <span className="text-[#1945a6]">What We Do</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
+              Our SEO Services & <span className="text-[#C9A227]">What We Do</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Comprehensive SEO solutions designed to turn your website into a reliable, high-converting organic acquisition channel.
             </p>
           </div>
@@ -560,13 +561,13 @@ export default function SEOClient() {
       </section>
 
       {/* Why Choose Our SEO */}
-      <section className="py-20 px-6 bg-[#F8FAFC]">
+      <section className="py-20 px-6 bg-[#F7F8FA]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our <span className="text-[#1945a6]">SEO Services</span>?
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              Why Choose Our <span className="text-[#C9A227]">SEO Services</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               We combine technical expertise with proven strategies to deliver SEO results that drive sustainable organic growth and real revenue.
             </p>
           </div>
@@ -583,17 +584,17 @@ export default function SEOClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#f4cc6f]/60 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
-                      <Icon className="w-7 h-7 text-[#b48312]" />
+                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#C9A227]/60 flex flex-col overflow-hidden">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-md`}>
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#C9A227] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed flex-1">
+                    <p className="text-base text-[#3B4456] leading-relaxed flex-1">
                       {point.description}
                     </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -607,13 +608,13 @@ export default function SEOClient() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#f4cc6f]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
-                        <Icon className="w-7 h-7 text-[#b48312]" />
+                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#C9A227]/50 flex flex-col overflow-hidden">
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-md`}>
+                        <Icon className="w-7 h-7 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <p className="text-base text-[#3B4456] leading-relaxed flex-1">{point.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -624,7 +625,7 @@ export default function SEOClient() {
               {whyChoosePoints.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-slate-300"}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#C9A227]" : "w-2 bg-slate-300"}`}
                 />
               ))}
             </div>
@@ -634,7 +635,7 @@ export default function SEOClient() {
 
       {/* SEO Process Timeline */}
       <ProcessTimeline
-        title="Our SEO <span className='text-[#1945a6]'>Process</span>"
+        title="Our SEO <span className='text-[#002387]'>Process</span>"
         subtitle="A strategic approach that transforms your website into a search engine authority and organic traffic generator."
         steps={[
           {
@@ -686,10 +687,10 @@ export default function SEOClient() {
       <section className="px-4 md:px-6 py-24 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With <span className="text-[#1945a6]">Altiora Infotech</span>?
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
+              Why Work With <span className="text-[#C9A227]">Altiora Infotech</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Partner with SEO experts who deliver sustainable organic growth and measurable, revenue-linked results.
             </p>
           </div>
@@ -708,18 +709,18 @@ export default function SEOClient() {
               const subtitles = ['Results', 'Techniques', 'Expertise', 'Approach', 'Experience', 'Support'];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#1945a6]/40 hover:shadow-md hover:-translate-y-1">
+                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F7F8FA] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#002387]/40 hover:shadow-md hover:-translate-y-1">
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center shadow-md`}>
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{titles[index]}</h3>
                           <span className="text-sm text-slate-500 font-medium">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg text-[#3B4456] group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-slate-200/80 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -735,10 +736,10 @@ export default function SEOClient() {
       {/* CTA Section */}
       <section className="px-4 md:px-6 py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#f4cc6f]/30 bg-gradient-to-br from-[#010c22] via-[#1945a6] to-[#010c22] text-white shadow-xl overflow-hidden">
+          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#C9A227]/30 bg-gradient-to-br from-[#001A66] via-[#002387] to-[#001A66] text-white shadow-xl overflow-hidden">
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f4cc6f]/20 border border-[#f4cc6f]/40 mb-8 mx-auto shadow-md">
-                <Search className="w-10 h-10 text-[#f4cc6f]" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#C9A227]/20 border border-[#C9A227]/40 mb-8 mx-auto shadow-md">
+                <Search className="w-10 h-10 text-[#C9A227]" />
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                 Ready to Dominate Search Results?
@@ -754,7 +755,7 @@ export default function SEOClient() {
                   href="https://calendly.com/altiorainfotech/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] shadow-lg shadow-[#C9A227]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book SEO Audit

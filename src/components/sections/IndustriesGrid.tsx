@@ -137,8 +137,8 @@ export default function IndustriesGrid() {
   return (
     <section className="px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-2xl sm:text-3xl font-semibold">
-          Industries <span className="text-brand">We Serve</span>
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-center">
+          Industries <span className="text-[#C9A227]">We Serve</span>
         </h2>
         <div className="mx-auto mt-2 h-[3px] w-24 rounded-full bg-brand/80" />
 

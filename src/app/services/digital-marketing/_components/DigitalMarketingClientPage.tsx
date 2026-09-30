@@ -37,6 +37,16 @@ import DMHeroAnimation from "./DMHeroAnimation";
 import DMTrendsPortal from "./DMTrendsPortal";
 import DMCosmicPortal from "./DMCosmicPortal";
 import styles from "../dm.module.css";
+
+const GOLD = "#C9A227";
+const ICON_GRADIENTS = [
+  "from-pink-500 to-purple-500",
+  "from-blue-500 to-cyan-500",
+  "from-green-500 to-emerald-500",
+  "from-red-500 to-orange-500",
+  "from-yellow-500 to-orange-500",
+  "from-teal-500 to-cyan-500",
+];
 //import ClientTestimonials from "@/components/sections/ClientTestimonials";
 
 // Icon mapping
@@ -385,7 +395,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-700">
+    <div className={`${styles.dmRoot} min-h-screen flex flex-col bg-white text-[#111827]`}>
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -411,8 +421,8 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
             >
               <source src="https://pub-712c102a5f654fa5b5f30a2dd821a83d.r2.dev/assets/cml524h6z0004ruouz3x3w5x8/videohome.mp4" type="video/mp4" />
             </video>
-            {/* Dark overlay for better text visibility */}
-            <div className="absolute inset-0 bg-black/60"></div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001A66]/85 via-[#001A66]/60 to-[#001A66]/35" />
           </div>
 
           <div className="max-w-7xl mx-auto relative z-20 h-full flex items-center">
@@ -461,7 +471,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#002387] hover:bg-[#C9A227] border border-white/20 hover:border-[#C9A227] text-white text-sm sm:text-base font-semibold transition-colors duration-300 shadow-md"
                   >
                     Get Started
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -483,21 +493,21 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7 }}
-              className="rounded-3xl border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm p-6 sm:p-8 md:p-10"
+              className="rounded-3xl border border-[#E7E8EC] bg-[#F7F8FA] shadow-sm p-6 sm:p-8 md:p-10"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 text-[#b48312] font-extrabold text-xs uppercase tracking-[0.2em]">
-                  <span className="h-2 w-2 rounded-full bg-[#f4cc6f] animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F4F1E6] border border-[#C9A227]/40 text-[#B18B1E] font-bold text-xs uppercase tracking-[0.2em]">
+                  <span className="h-2 w-2 rounded-full bg-[#C9A227] animate-pulse" />
                   Quick Answer
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-[#0A0A0A] mb-4 leading-tight">
                 What is digital marketing and how does Altiora Infotech approach it?
               </h2>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
-                Digital marketing is the coordinated use of search engines, paid advertising, social media, content and websites to acquire customers and drive measurable revenue. Altiora Infotech delivers <span className="text-[#1945a6] font-semibold">SEO</span>, <span className="text-[#1945a6] font-semibold">Google Ads</span>, paid social, content production, conversion-focused websites and brand strategy as one in-house programme, with AEO and GEO built in so brands also surface in ChatGPT, Perplexity and Google AI Overviews.
+              <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed mb-6">
+                Digital marketing is the coordinated use of search engines, paid advertising, social media, content and websites to acquire customers and drive measurable revenue. Altiora Infotech delivers <span className="text-[#002387] font-semibold">SEO</span>, <span className="text-[#002387] font-semibold">Google Ads</span>, paid social, content production, conversion-focused websites and brand strategy as one in-house programme, with AEO and GEO built in so brands also surface in ChatGPT, Perplexity and Google AI Overviews.
               </p>
-              <p className="text-slate-900 text-sm sm:text-base font-bold mb-3">Core services in our digital marketing programme:</p>
+              <p className="text-[#002387] text-sm sm:text-base font-bold mb-3">Core services in our digital marketing programme:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Search engine optimization (SEO)",
@@ -509,8 +519,8 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   "Marketing strategy and growth consulting",
                   "Answer Engine and Generative Engine Optimization",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
+                  <li key={i} className="flex items-start gap-2.5 text-[#3B4456] text-sm sm:text-base">
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C9A227]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -533,11 +543,11 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
             >
               {/* Top - Label with centered lines */}
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/60 to-transparent" />
-                <span className="text-[#b48312] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#f4cc6f]/15 px-4 py-1.5 rounded-full border border-[#f4cc6f]/40">
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/60 to-transparent" />
+                <span className="text-[#B18B1E] font-bold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#F4F1E6] px-4 py-1.5 rounded-full border border-[#C9A227]/40">
                   Overview
                 </span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/60 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/60 to-transparent" />
               </div>
 
               {/* Main Content Centered */}
@@ -546,16 +556,16 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 1, delay: 0.3 }}
-                  className="max-w-5xl mx-auto pt-[5px] px-8 pb-8 sm:px-12 sm:pb-12 md:px-14 md:pb-14 rounded-[32px] border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
+                  className="max-w-5xl mx-auto pt-[5px] px-8 pb-8 sm:px-12 sm:pb-12 md:px-14 md:pb-14 rounded-[32px] border border-[#E7E8EC] bg-[#F7F8FA] shadow-sm relative overflow-hidden"
                 >
-                  <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-slate-700 font-medium`}>
-                    <span className="">As an experienced <Link href="/about" className="text-[#1945a6] font-bold hover:underline">Digital Marketing Company</Link>, we focus on measurable outcomes not just impressions or clicks.</span> Every strategy is designed to attract high-intent customers and convert them into revenue.
+                  <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-[#3B4456] font-medium`}>
+                    <span className="">As an experienced <Link href="/about" className="text-[#002387] font-bold hover:text-[#C9A227] hover:underline">Digital Marketing Company</Link>, we focus on measurable outcomes not just impressions or clicks.</span> Every strategy is designed to attract high-intent customers and convert them into revenue.
 
                     From local businesses to national brands, our team builds scalable digital ecosystems that drive long-term success.
                   </p>
 
                   {/* Subtle inner light effect */}
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
@@ -563,12 +573,12 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
         </section>
 
         {/* Stats Section */}
-        <section ref={statsRef} className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F8FAFC] border-y border-slate-200/60">
+        <section ref={statsRef} className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F7F8FA] border-y border-[#E7E8EC]">
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4 md:gap-8 relative">
               {/* Vertical dividers between stats (desktop only) */}
-              <div className="hidden sm:block absolute left-1/3 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#f4cc6f]/40 to-transparent" />
-              <div className="hidden sm:block absolute left-2/3 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#f4cc6f]/40 to-transparent" />
+              <div className="hidden sm:block absolute left-1/3 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A227]/40 to-transparent" />
+              <div className="hidden sm:block absolute left-2/3 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A227]/40 to-transparent" />
 
               {[
                 {
@@ -600,7 +610,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   transition={{ duration: 0.6, delay: index * 0.2, type: "spring", stiffness: 100 }}
                   className="text-center py-4"
                 >
-                  <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-3 bg-gradient-to-b from-[#f4cc6f] to-[#d9a234] bg-clip-text text-transparent leading-none">
+                  <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-3 text-[#002387] leading-none">
                     <AnimatedCounter
                       value={stat.value}
                       prefix={stat.prefix}
@@ -608,10 +618,10 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                       inView={statsInView}
                     />
                   </div>
-                  <div className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                  <div className="text-lg sm:text-xl font-bold text-[#002387] mb-2">
                     {stat.label}
                   </div>
-                  <p className="text-sm sm:text-base text-slate-600 max-w-[280px] mx-auto leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#3B4456] max-w-[280px] mx-auto leading-relaxed">
                     {stat.desc}
                   </p>
                 </motion.div>
@@ -631,7 +641,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  background: `radial-gradient(circle, ${['#f4cc6f', '#1945a6', '#3B82F6'][i % 3]}, transparent)`,
+                  background: `radial-gradient(circle, ${['#C9A227', '#002387', '#C9A227'][i % 3]}, transparent)`,
                 }}
                 animate={{
                   y: [0, -30, 0],
@@ -661,7 +671,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
-                Our Digital Marketing <span className="text-[#1945a6]">Services</span>
+                Our Digital Marketing <span className="text-[#C9A227]">Services</span>
               </motion.h2>
               <motion.p
                 className={`${styles.sectionDescription} max-w-4xl mx-auto`}
@@ -699,7 +709,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                         <div
                           className={styles.animatedBorder}
                           style={{
-                            background: `linear-gradient(135deg, ${service.color}, ${service.color}80, transparent)`,
+                            background: `linear-gradient(135deg, ${GOLD}, ${GOLD}80, transparent)`,
                           }}
                         />
 
@@ -707,27 +717,25 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                         <div
                           className={styles.hoverGlow}
                           style={{
-                            background: `radial-gradient(circle at center, ${service.color}40, transparent 70%)`,
+                            background: `radial-gradient(circle at center, ${GOLD}40, transparent 70%)`,
                           }}
                         />
 
                         {/* Icon + Title row */}
                         <div className="flex items-center gap-3 mb-3 relative z-10">
                           <div
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0"
-                            style={{ backgroundColor: `${service.color}20` }}
+                            className={`inline-flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0 bg-gradient-to-br ${ICON_GRADIENTS[index % ICON_GRADIENTS.length]} shadow-md`}
                           >
                             <IconComponent
-                              className="w-5 h-5"
-                              style={{ color: service.color }}
+                              className="w-5 h-5 text-white"
                             />
                           </div>
-                          <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                          <h3 className="text-base sm:text-lg font-bold text-[#C9A227]">
                             {service.title}
                           </h3>
                         </div>
 
-                        <p className="text-sm text-gray-600 mb-3 relative z-10 line-clamp-2">
+                        <p className="text-sm text-[#3B4456] mb-3 relative z-10 line-clamp-2">
                           {service.description}
                         </p>
 
@@ -735,10 +743,9 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                         {service.features && service.features.length > 0 && (
                           <ul className="space-y-1 mb-3 relative z-10">
                             {service.features.map((feature: string, idx: number) => (
-                              <li key={idx} className="flex items-center gap-1.5 text-xs text-gray-600">
+                              <li key={idx} className="flex items-center gap-1.5 text-xs text-[#3B4456]">
                                 <CheckCircle
-                                  className="w-3 h-3 flex-shrink-0"
-                                  style={{ color: service.color }}
+                                  className="w-3 h-3 flex-shrink-0 text-[#C9A227]"
                                 />
                                 <span>{feature}</span>
                               </li>
@@ -748,7 +755,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
 
                         {/* Learn More */}
                         <motion.div
-                          className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold relative z-10 text-[#1945a6] group-hover:text-[#143785]"
+                          className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold relative z-10 text-[#002387] group-hover:text-[#B18B1E]"
                           whileHover={{ x: 5 }}
                         >
                           Learn More
@@ -766,8 +773,8 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
         {/* Grow Your Business Section */}
         <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
           {/* Decorative blurred orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-60 h-60 bg-blue-400/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-60 h-60 bg-[#002387]/5 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Top heading */}
@@ -780,7 +787,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
             >
               <h2 className={`${styles.sectionHeading} max-w-4xl mx-auto`}>
                 We Invest the Time &amp; Expertise to{' '}
-                <span className="text-[#1945a6]">Scale Your Business</span>{' '}
+                <span className="text-[#C9A227]">Scale Your Business</span>{' '}
                 with Strategic Digital Marketing.
               </h2>
             </motion.div>
@@ -810,19 +817,19 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="group relative p-6 sm:p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#f4cc6f]/40 transition-all duration-500 hover:shadow-md"
+                  className="group relative p-6 sm:p-8 rounded-2xl bg-white border border-[#E7E8EC] hover:border-[#C9A227]/50 transition-all duration-300 hover:shadow-md"
                 >
                   {/* Hover glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-xl bg-[#f4cc6f]/15 flex items-center justify-center mb-5 group-hover:bg-[#f4cc6f]/25 transition-colors duration-300">
-                      <item.icon className="w-6 h-6 text-[#b48312]" />
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ICON_GRADIENTS[index % ICON_GRADIENTS.length]} flex items-center justify-center mb-5 shadow-md`}>
+                      <item.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#C9A227] mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#3B4456] leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -836,17 +843,17 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#f4cc6f]/15 via-sky-50 to-white border border-[#f4cc6f]/30"
+              className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl bg-[#F4F1E6] border border-[#C9A227]/30"
             >
               <div className="flex items-center gap-3 text-center sm:text-left">
-                <span className="w-3 h-3 rounded-full bg-[#f4cc6f] animate-pulse flex-shrink-0" />
-                <p className="text-base sm:text-lg text-slate-800 font-bold">
+                <span className="w-3 h-3 rounded-full bg-[#C9A227] animate-pulse flex-shrink-0" />
+                <p className="text-base sm:text-lg text-[#002387] font-bold">
                   Altiora Infotech is here to help let&apos;s build something great together.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-bold text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg flex-shrink-0"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#002387] hover:bg-[#C9A227] text-white font-semibold text-sm sm:text-base transition-colors duration-300 shadow-md flex-shrink-0"
               >
                 Let&apos;s Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -858,7 +865,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
         {/* How We Work Section - Timeline Style */}
         <section ref={workflowRef} className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
           {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F7F8FA] to-white" />
 
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
@@ -874,7 +881,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
               >
-                How Our <a href="https://altiorainfotech.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Digital Marketing Company</a> Delivers Consistent <span className="text-[#1945a6]">Growth</span>
+                How Our <a href="https://altiorainfotech.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Digital Marketing Company</a> Delivers Consistent <span className="text-[#C9A227]">Growth</span>
               </motion.h2>
               <motion.p
                 className={styles.sectionDescription}
@@ -890,7 +897,7 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
             {/* Desktop Timeline */}
             <div className="hidden lg:block relative">
               {/* Connecting Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#f4cc6f]/40 via-[#1945a6]/40 to-[#f4cc6f]/40 transform -translate-y-1/2" />
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227]/40 via-[#002387]/30 to-[#C9A227]/40 transform -translate-y-1/2" />
 
               <div className="grid grid-cols-4 gap-6">
                 {defaultWorkflowSteps.map((step: any, index: number) => {
@@ -909,33 +916,33 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                       {/* Timeline Node */}
                       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                         <motion.div
-                          className="w-14 h-14 rounded-full bg-[#f4cc6f] flex items-center justify-center shadow-lg shadow-[#f4cc6f]/40 text-[#010c22]"
+                          className={`w-14 h-14 rounded-full bg-gradient-to-br ${ICON_GRADIENTS[index % ICON_GRADIENTS.length]} flex items-center justify-center shadow-md text-white`}
                           whileHover={{ scale: 1.15 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <IconComponent className="w-7 h-7 text-[#010c22]" />
+                          <IconComponent className="w-7 h-7 text-white" />
                         </motion.div>
                       </div>
 
                       {/* Card */}
                       <motion.div
-                        className={`relative p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm ${index % 2 === 0 ? 'mb-64' : 'mt-64'}`}
-                        whileHover={{ y: -8, boxShadow: "0 15px 35px rgba(25, 69, 166, 0.12)" }}
+                        className={`relative p-5 rounded-2xl bg-white border border-[#E7E8EC] shadow-sm ${index % 2 === 0 ? 'mb-64' : 'mt-64'}`}
+                        whileHover={{ y: -8, boxShadow: "0 15px 35px rgba(0, 35, 135, 0.12)" }}
                         transition={{ duration: 0.3 }}
                       >
                         <div className="relative z-10">
-                          <h3 className="text-lg font-bold mb-2 text-slate-900">
+                          <h3 className="text-lg font-bold mb-2 text-[#C9A227]">
                             {step.title}
                           </h3>
 
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-sm text-[#3B4456] leading-relaxed">
                             {step.description}
                           </p>
                         </div>
 
                         {/* Arrow indicator */}
                         <div className={`absolute left-1/2 transform -translate-x-1/2 ${index % 2 === 0 ? 'bottom-0 translate-y-8' : 'top-0 -translate-y-8'}`}>
-                          <div className="w-0.5 h-8 bg-gradient-to-b from-[#f4cc6f] to-transparent" />
+                          <div className="w-0.5 h-8 bg-gradient-to-b from-[#C9A227] to-transparent" />
                         </div>
                       </motion.div>
                     </motion.div>
@@ -961,28 +968,28 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   >
                     {/* Timeline line */}
                     {index < defaultWorkflowSteps.length - 1 && (
-                      <div className="absolute left-8 top-16 w-0.5 h-full bg-gradient-to-b from-[#f4cc6f] to-transparent" />
+                      <div className="absolute left-8 top-16 w-0.5 h-full bg-gradient-to-b from-[#C9A227] to-transparent" />
                     )}
 
                     {/* Node */}
                     <motion.div
-                      className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-[#f4cc6f] flex items-center justify-center shadow-lg shadow-[#f4cc6f]/40 text-[#010c22]"
+                      className={`relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${ICON_GRADIENTS[index % ICON_GRADIENTS.length]} flex items-center justify-center shadow-md text-white`}
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <IconComponent className="w-8 h-8 text-[#010c22]" />
+                      <IconComponent className="w-8 h-8 text-white" />
                     </motion.div>
 
                     {/* Card */}
                     <motion.div
-                      className="flex-1 p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm"
-                      whileHover={{ x: 10, boxShadow: "0 10px 30px rgba(25, 69, 166, 0.12)" }}
+                      className="flex-1 p-5 rounded-xl bg-white border border-[#E7E8EC] shadow-sm"
+                      whileHover={{ x: 10, boxShadow: "0 10px 30px rgba(0, 35, 135, 0.12)" }}
                     >
-                      <h3 className="text-lg font-bold mb-2 text-slate-900">
+                      <h3 className="text-lg font-bold mb-2 text-[#C9A227]">
                         {step.title}
                       </h3>
 
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-sm text-[#3B4456] leading-relaxed">
                         {step.description}
                       </p>
                     </motion.div>
@@ -1013,24 +1020,24 @@ export default function DigitalMarketingClientPage({ pageData }: DigitalMarketin
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-950/85 to-slate-900/90" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#002387]/95 via-[#002387]/90 to-[#002387]/95" />
               </div>
 
               <div className="relative z-10">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-5 md:mb-6">
+                <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-white mb-4 sm:mb-5 md:mb-6">
                   Let's Build Your Digital Growth Engine
                 </h2>
 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 leading-relaxed">
                   If you're ready to scale your business with strategic, performance-driven digital marketing, Altiora Infotech is here to help. Let's turn your online presence into a powerful growth engine.
                   <br /><br />
-                📩 Contact us today to discuss your goals and discover how our <Link href="/services/digital-marketing-strategy" className="text-[#f4cc6f] hover:text-[#e6b85c] underline transition-colors">digital marketing services </Link> can help your business grow smarter and faster.
+                📩 Contact us today to discuss your goals and discover how our <Link href="/services/digital-marketing-strategy" className="text-[#C9A227] hover:text-white underline transition-colors">digital marketing services </Link> can help your business grow smarter and faster.
                 </p>
 
                 <div className="flex justify-center">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white text-slate-900 hover:bg-slate-100 text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#C9A227] text-[#002387] hover:bg-white text-sm sm:text-base font-semibold transition-colors duration-300 shadow-md"
                   >
                     Schedule a Consultation
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

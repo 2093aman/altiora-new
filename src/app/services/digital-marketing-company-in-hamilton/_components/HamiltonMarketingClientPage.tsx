@@ -69,8 +69,8 @@ export default function HamiltonMarketingClientPage() {
       title: "Business Discovery",
       text: "We begin by understanding your goals, customers, competitors, and current marketing performance.",
       icon: Search,
-      color: "#f4cc6f",
-      gradientFrom: "#f4cc6f",
+      color: "#C9A227",
+      gradientFrom: "#C9A227",
       gradientTo: "#FF9F43",
     },
     {
@@ -104,7 +104,7 @@ export default function HamiltonMarketingClientPage() {
 
   const coreServices = [
     {
-      icon: Search, color: "#f4cc6f",
+      icon: Search, color: "#C9A227",
       title: "Search Engine Optimization (SEO)",
       description: "Improve your website's visibility through technical SEO, on-page optimization, high-quality content, keyword strategy, and authority building.",
     },
@@ -129,7 +129,7 @@ export default function HamiltonMarketingClientPage() {
       description: "Create fast, responsive, SEO-friendly websites designed to deliver exceptional user experiences and higher conversions.",
     },
     {
-      icon: PenTool, color: "#f4cc6f",
+      icon: PenTool, color: "#C9A227",
       title: "Content Marketing",
       description: "Publish valuable content that educates customers, improves search visibility, and positions your business as an industry authority.",
     },
@@ -141,11 +141,11 @@ export default function HamiltonMarketingClientPage() {
   ];
 
   const whyChoose = [
-    { title: "Data-Driven Marketing", text: "Every strategy is built using research, analytics, and measurable performance metrics.", icon: BarChart3, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { title: "Data-Driven Marketing", text: "Every strategy is built using research, analytics, and measurable performance metrics.", icon: BarChart3, gradient: "from-[#C9A227] to-[#FF9F43]" },
     { title: "Tailored Business Solutions", text: "We design customized campaigns based on your industry, audience, and growth objectives.", icon: Palette, gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { title: "Complete Digital Marketing Expertise", text: "Our team combines SEO, paid advertising, content creation, web development, automation, and analytics into one integrated strategy.", icon: Briefcase, gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { title: "Transparent Reporting", text: "Receive clear performance reports with actionable insights and continuous optimization recommendations.", icon: Eye, gradient: "from-[#10B981] to-[#06B6D4]" },
-    { title: "Long-Term Partnership", text: "We focus on sustainable business growth rather than short-term marketing gains.", icon: Handshake, gradient: "from-[#EC4899] to-[#f4cc6f]" },
+    { title: "Long-Term Partnership", text: "We focus on sustainable business growth rather than short-term marketing gains.", icon: Handshake, gradient: "from-[#EC4899] to-[#C9A227]" },
   ];
 
   const industries = [
@@ -175,7 +175,7 @@ export default function HamiltonMarketingClientPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-700">
+    <div className="min-h-screen flex flex-col bg-white text-[#3B4456]">
       <Header />
       <main className="flex-grow">
 
@@ -188,7 +188,7 @@ export default function HamiltonMarketingClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${(i * 17 + 5) % 100}%`,
                   top: `${(i * 13 + 7) % 100}%`,
@@ -221,7 +221,7 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-base sm:text-lg md:text-xl text-slate-700 mb-3 sm:mb-4"
+                  className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-3 sm:mb-4"
                 >
                   Grow Your Business with a Trusted Digital Marketing Company in Hamilton
                 </motion.p>
@@ -230,10 +230,10 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
-                  className="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456] mb-4 leading-relaxed"
                 >
                   Building a successful business in today&apos;s competitive marketplace requires more than a great product or service. It requires a strategic digital presence that attracts the right audience, builds credibility, and converts visitors into loyal customers. At Altiora Infotech, We are a{' '}
-                  <Link href="/" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Hamilton</Link>
+                  <Link href="/" className="text-[#C9A227] hover:underline">Digital Marketing Company in Hamilton</Link>
                   {' '}committed to helping businesses achieve measurable growth through data-driven digital marketing strategies.
                 </motion.p>
 
@@ -241,7 +241,7 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456] mb-4 leading-relaxed"
                 >
                   Hamilton has become one of Ontario&apos;s fastest-growing business destinations, with thriving industries including healthcare, manufacturing, logistics, construction, education, retail, and professional services. Our experienced team develops customized marketing campaigns using SEO, Google Ads, Meta Ads, website development, Local SEO, content marketing, and AI-powered automation to help businesses stand out in an increasingly competitive digital environment.
                 </motion.p>
@@ -250,7 +250,7 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 1.05 }}
-                  className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456] mb-6 sm:mb-8 leading-relaxed"
                 >
                   Whether you&apos;re a startup, an established company, or expanding into new markets, we create strategies that deliver sustainable business growth and maximize your return on investment.
                 </motion.p>
@@ -263,7 +263,7 @@ export default function HamiltonMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Schedule Your Free Strategy Consultation
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -282,14 +282,14 @@ export default function HamiltonMarketingClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -300,7 +300,7 @@ export default function HamiltonMarketingClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -318,7 +318,7 @@ export default function HamiltonMarketingClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -332,8 +332,8 @@ export default function HamiltonMarketingClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: (['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i],
-                            boxShadow: `0 0 12px ${(['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i]}80`,
+                            background: (['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i],
+                            boxShadow: `0 0 12px ${(['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -346,7 +346,7 @@ export default function HamiltonMarketingClientPage() {
                         { Icon: Search, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
                         { Icon: Globe, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
                         { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-                        { Icon: Zap, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+                        { Icon: Zap, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
                       ].map((item, i) => (
                         <motion.div
                           key={`icon-${i}`}
@@ -385,9 +385,9 @@ export default function HamiltonMarketingClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>Overview</span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
               <div className="flex flex-col items-center">
                 <motion.div
@@ -396,7 +396,7 @@ export default function HamiltonMarketingClientPage() {
                   transition={{ duration: 1, delay: 0.2 }}
                   className="max-w-5xl mx-auto p-8 sm:p-12 md:p-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-left sm:text-center">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 text-left sm:text-center">
                     Why Choose a Digital Marketing Company in Hamilton?
                   </h2>
                   <div className={`${styles.sectionDescription} !max-w-none relative z-10 !text-left sm:!text-center`}>
@@ -404,12 +404,12 @@ export default function HamiltonMarketingClientPage() {
                     <p className="mb-4">Choosing a Digital Marketing Company in Hamilton gives you access to marketing professionals who understand local market trends, customer behavior, and the latest digital technologies. At Altiora Infotech, we create customized strategies that help businesses improve visibility across search engines, social media platforms, and digital advertising channels.</p>
                     <p>Our goal is simple: generate measurable business results through smart, data-driven marketing.</p>
                   </div>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Customized Digital Marketing Solutions for Hamilton Businesses */}
@@ -418,7 +418,7 @@ export default function HamiltonMarketingClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div
@@ -436,7 +436,7 @@ export default function HamiltonMarketingClientPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={customInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-5 text-slate-600 text-sm sm:text-base leading-relaxed"
+              className="space-y-5 text-[#3B4456] text-sm sm:text-base leading-relaxed"
             >
               <p>Every business has unique challenges, opportunities, and objectives. That&apos;s why our approach begins with understanding your company, your customers, and your competition before recommending the right digital marketing strategy.</p>
               <p>We conduct in-depth market research, competitor analysis, audience profiling, and keyword research to identify opportunities that support long-term growth. From improving your search engine rankings to generating qualified leads and increasing online sales, every campaign is designed around your specific business goals.</p>
@@ -450,7 +450,7 @@ export default function HamiltonMarketingClientPage() {
           ref={brandRef}
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white"
         >
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/6 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/6 blur-[140px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -462,7 +462,7 @@ export default function HamiltonMarketingClientPage() {
                 Build a Stronger Brand with{' '}
                 <span className={styles.gradientText}>Performance-Driven Marketing</span>
               </h2>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+              <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                 A recognizable brand combined with effective digital marketing creates sustainable business growth. Our integrated marketing services help businesses strengthen their online presence while improving customer acquisition and retention.
               </p>
             </motion.div>
@@ -471,7 +471,7 @@ export default function HamiltonMarketingClientPage() {
               initial={{ opacity: 0 }}
               animate={brandInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-slate-700 text-sm sm:text-base font-semibold mb-4 text-center"
+              className="text-[#3B4456] text-sm sm:text-base font-semibold mb-4 text-center"
             >
               Our services include:
             </motion.p>
@@ -483,7 +483,7 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={brandInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm px-4 py-2 rounded-full font-medium text-[#f4cc6f] bg-[#f4cc6f]/10 border border-[#f4cc6f]/25"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm px-4 py-2 rounded-full font-medium text-[#C9A227] bg-[#C9A227]/10 border border-[#C9A227]/25"
                 >
                   <CheckCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   {service}
@@ -495,7 +495,7 @@ export default function HamiltonMarketingClientPage() {
               initial={{ opacity: 0 }}
               animate={brandInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-slate-600 text-sm sm:text-base leading-relaxed text-center max-w-3xl mx-auto"
+              className="text-[#3B4456] text-sm sm:text-base leading-relaxed text-center max-w-3xl mx-auto"
             >
               Every campaign is monitored using real-time analytics to optimize performance and improve marketing ROI.
             </motion.p>
@@ -524,7 +524,7 @@ export default function HamiltonMarketingClientPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={economyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-5 text-slate-600 text-sm sm:text-base leading-relaxed"
+              className="space-y-5 text-[#3B4456] text-sm sm:text-base leading-relaxed"
             >
               <p>Hamilton has transformed into a vibrant centre for innovation, healthcare, advanced manufacturing, logistics, higher education, and professional services. Businesses across these industries compete not only locally but also throughout Ontario and Canada.</p>
               <p>Consumers increasingly search online before choosing products or services. They compare businesses through Google Search, Google Maps, websites, reviews, and social media. Companies with strong digital visibility earn greater trust and attract more qualified customers.</p>
@@ -538,7 +538,7 @@ export default function HamiltonMarketingClientPage() {
           ref={frameworkRef}
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white"
         >
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -596,7 +596,7 @@ export default function HamiltonMarketingClientPage() {
                     </div>
                     <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                       <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{step.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">{step.text}</p>
                     </div>
                   </div>
                 </div>
@@ -608,7 +608,7 @@ export default function HamiltonMarketingClientPage() {
         {/* Our Digital Marketing Services */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={servicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="text-center mb-14">
@@ -631,7 +631,7 @@ export default function HamiltonMarketingClientPage() {
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-2">{service.title}</h3>
                   </div>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{service.description}</p>
+                  <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -656,9 +656,9 @@ export default function HamiltonMarketingClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -676,13 +676,13 @@ export default function HamiltonMarketingClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={industriesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-8">
               <h2 className={styles.sectionHeading}>Industries <span className={styles.gradientText}>We Serve</span></h2>
-              <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
+              <p className="text-[#3B4456] text-base sm:text-lg max-w-2xl mx-auto">
                 Our team helps businesses across Hamilton succeed in competitive markets, including:
               </p>
             </motion.div>
@@ -694,9 +694,9 @@ export default function HamiltonMarketingClientPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={industriesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm px-4 py-2 rounded-full font-medium text-slate-700 bg-black/[0.04] border border-black/10"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm px-4 py-2 rounded-full font-medium text-[#3B4456] bg-black/[0.04] border border-black/10"
                 >
-                  <Briefcase className="w-3.5 h-3.5 flex-shrink-0 text-[#f4cc6f]" />
+                  <Briefcase className="w-3.5 h-3.5 flex-shrink-0 text-[#C9A227]" />
                   {industry}
                 </motion.span>
               ))}
@@ -706,7 +706,7 @@ export default function HamiltonMarketingClientPage() {
               initial={{ opacity: 0 }}
               animate={industriesInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-slate-600 text-sm sm:text-base leading-relaxed text-center max-w-3xl mx-auto"
+              className="text-[#3B4456] text-sm sm:text-base leading-relaxed text-center max-w-3xl mx-auto"
             >
               Every industry receives a customized digital marketing strategy designed to maximize growth opportunities.
             </motion.p>
@@ -717,18 +717,18 @@ export default function HamiltonMarketingClientPage() {
         {/* Other Locations We Serve */}
         <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10 relative bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
               Serving Businesses Across Canada
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
               Beyond Hamilton, we also operate as a{' '}
-              <Link href="/services/digital-marketing-company-in-ottawa" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Ottawa</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-ottawa" className="text-[#C9A227] hover:underline">Digital Marketing Company in Ottawa</Link>{' '}
               and support businesses in{' '}
-              <Link href="/services/digital-marketing-company-in-montreal" className="text-[#f4cc6f] hover:underline">Montreal</Link>.{' '}
+              <Link href="/services/digital-marketing-company-in-montreal" className="text-[#C9A227] hover:underline">Montreal</Link>.{' '}
               Our{' '}
-              <Link href="/services/digital-marketing-company-in-halifax" className="text-[#f4cc6f] hover:underline">Halifax team</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-halifax" className="text-[#C9A227] hover:underline">Halifax team</Link>{' '}
               brings the same data-driven approach to{' '}
-              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#f4cc6f] hover:underline">growing brands in Kerrville</Link>.
+              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#C9A227] hover:underline">growing brands in Kerrville</Link>.
             </p>
           </div>
         </section>
@@ -745,12 +745,12 @@ export default function HamiltonMarketingClientPage() {
                   <button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:bg-black/[0.05] hover:border-black/20">
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
-                      <svg className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
                     <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 mt-3 opacity-100" : "max-h-0 opacity-0"}`}>
-                      <p className="faq-answer text-slate-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="faq-answer text-[#3B4456] text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -765,7 +765,7 @@ export default function HamiltonMarketingClientPage() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="relative rounded-3xl overflow-hidden p-8 sm:p-12 md:p-16 text-center">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-blue-900/80 to-purple-900/90" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
               <div className="relative z-10">
@@ -783,7 +783,7 @@ export default function HamiltonMarketingClientPage() {
                   Let&apos;s grow your business with smarter digital marketing.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.8 }}>
-                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40">
+                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40">
                     Get Your Free Marketing Consultation
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>

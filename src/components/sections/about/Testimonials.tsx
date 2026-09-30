@@ -18,7 +18,7 @@ export default function AboutTestimonials() {
     <section className="px-6 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">Happy Clients</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900">Happy Clients</h2>
           <div className="flex gap-2">
             <button onClick={() => scroll("left")} className="rounded-full border border-black/20 px-3 py-1.5 text-sm hover:bg-black/10 text-slate-700">←</button>
             <button onClick={() => scroll("right")} className="rounded-full border border-black/20 px-3 py-1.5 text-sm hover:bg-black/10 text-slate-700">→</button>

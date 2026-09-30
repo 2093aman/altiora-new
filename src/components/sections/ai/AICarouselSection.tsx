@@ -74,7 +74,7 @@ export function AICarouselSection() {
     <section className="px-6 py-16 overflow-hidden">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Why a Well‑Developed Platform Matters</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-white">Why a Well‑Developed Platform Matters</h2>
           <p className="mt-4 text-white/80 max-w-3xl mx-auto leading-relaxed">
             Businesses thrive on intelligence, adaptability, and scale. AI‑based solutions simplify
             management, improve decision‑making, and deliver effortless experiences that unlock
@@ -123,7 +123,7 @@ export function AICarouselSection() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold" style={{ color: "#3490F3" }}>
+                  <h3 className="text-lg font-bold" style={{ color: "#3490F3" }}>
                     {s.title}
                   </h3>
                   <p className="mt-2 text-white/80 leading-relaxed">{s.description}</p>

@@ -51,6 +51,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "../digital-marketing/dm.module.css";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import { iconGradient } from "@/lib/iconGradients";
 
 // Platform Card Component
 const PlatformCard = ({ platform, className }: { platform: any; className?: string }) => {
@@ -67,19 +68,19 @@ const PlatformCard = ({ platform, className }: { platform: any; className?: stri
             <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${platform.borderColor} ${platform.bgGradient} backdrop-blur-sm overflow-hidden h-full min-h-[480px] flex flex-col shadow-sm hover:shadow-md`}>
                 {/* Animated Background Pattern */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A227] rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#002387] rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
                 </div>
 
                 {/* Platform Icon */}
-                <motion.div className={`flex items-center justify-center w-16 h-16 flex-shrink-0 rounded-2xl ${platform.iconBg} mb-6 relative z-10 shadow-sm`}>
-                    <platform.icon className={`w-8 h-8 flex-shrink-0 ${platform.iconColor}`} />
+                <motion.div className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded-xl ${platform.iconBg} mb-6 relative z-10 shadow-md`}>
+                    <platform.icon className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 ${platform.iconColor}`} />
                 </motion.div>
 
                 {/* Content */}
                 <div className="relative z-10 flex-1 flex flex-col">
                     <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">{platform.name}</h3>
-                    <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{platform.description}</p>
+                    <p className="text-[#3B4456] text-base md:text-lg mb-4 leading-relaxed flex-1">{platform.description}</p>
 
                     {/* Stats */}
                     <div className="flex items-center justify-between mb-4 p-3 rounded-xl bg-white border border-slate-200/60">
@@ -97,15 +98,15 @@ const PlatformCard = ({ platform, className }: { platform: any; className?: stri
                     <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                         {platform.features.map((feature: string, index: number) => (
                             <div key={index} className="flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
-                                <span className="text-xs sm:text-sm text-slate-600">{feature}</span>
+                                <CheckCircle className="w-4 h-4 text-[#C9A227]" />
+                                <span className="text-xs sm:text-sm text-[#3B4456]">{feature}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Hover Effect */}
-                <motion.div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
+                <motion.div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
             </div>
         </motion.div>
     );
@@ -116,10 +117,10 @@ const AppDashboard = () => {
     const [activeMetric, setActiveMetric] = useState(0);
 
     const metrics = [
-        { label: "Apps Delivered", value: "150+", change: "On Time", color: "text-[#1945a6]", icon: Smartphone },
-        { label: "Avg Rating", value: "4.8★", change: "App Stores", color: "text-[#1945a6]", icon: Star },
-        { label: "Retention Rate", value: "87%", change: "+12% Avg", color: "text-[#1945a6]", icon: RefreshCw },
-        { label: "Client ROI", value: "3.6x", change: "Avg Return", color: "text-[#1945a6]", icon: TrendingUp },
+        { label: "Apps Delivered", value: "150+", change: "On Time", color: "text-[#002387]", icon: Smartphone },
+        { label: "Avg Rating", value: "4.8★", change: "App Stores", color: "text-[#002387]", icon: Star },
+        { label: "Retention Rate", value: "87%", change: "+12% Avg", color: "text-[#002387]", icon: RefreshCw },
+        { label: "Client ROI", value: "3.6x", change: "Avg Return", color: "text-[#002387]", icon: TrendingUp },
     ];
 
     useEffect(() => {
@@ -130,9 +131,9 @@ const AppDashboard = () => {
     }, []);
 
     return (
-        <div className="bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
+        <div className="bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1945a6] to-[#12327a] flex items-center justify-center shadow-md">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${iconGradient(1)} flex items-center justify-center shadow-md`}>
                     <BarChart3 className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -147,14 +148,14 @@ const AppDashboard = () => {
                     return (
                         <motion.div
                             key={index}
-                            className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#f4cc6f] bg-[#f4cc6f]/15" : "border-slate-200 bg-white"
+                            className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index ? "border-[#C9A227] bg-[#C9A227]/15" : "border-slate-200 bg-white"
                                 }`}
                             animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
                         >
-                            <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
+                            <Icon className="w-5 h-5 text-[#002387] mb-2" />
                             <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
                             <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-                            <div className="text-xs font-semibold text-[#1945a6]">{metric.change}</div>
+                            <div className="text-xs font-semibold text-[#002387]">{metric.change}</div>
                         </motion.div>
                     );
                 })}
@@ -193,12 +194,12 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "iOS Devices",
             stat2: "4.9★",
             stat2Label: "Avg Rating",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["Swift & SwiftUI", "ARKit Integration", "Apple Pay", "Push Notifications", "Core Data", "App Store Launch"],
         },
         {
@@ -209,12 +210,12 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "Android Users",
             stat2: "4.8★",
             stat2Label: "Avg Rating",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["Kotlin & Jetpack", "Google Pay Integration", "Firebase Backend", "Offline-First Design", "Material Design 3", "Play Store Launch"],
         },
         {
@@ -225,12 +226,12 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "Faster Delivery",
             stat2: "1 Codebase",
             stat2Label: "2 Platforms",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["Shared Codebase", "Native Modules", "Hot Reloading", "Third-Party APIs", "Expo Framework", "OTA Updates"],
         },
         {
@@ -241,12 +242,12 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "Rendering Speed",
             stat2: "99%",
             stat2Label: "Code Shared",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["Dart Language", "Custom UI Widgets", "State Management", "Firebase Integration", "Adaptive Layouts", "Web & Desktop Support"],
         },
         {
@@ -257,12 +258,12 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "Uptime SLA",
             stat2: "<50ms",
             stat2Label: "API Response",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["REST & GraphQL APIs", "Node.js / Python", "AWS / GCP / Azure", "Real-Time Sockets", "Auth & Security", "CI/CD Pipelines"],
         },
         {
@@ -273,49 +274,49 @@ export default function MobileAppDevelopmentClient() {
             stat1Label: "Higher Retention",
             stat2: "98%",
             stat2Label: "Client Approval",
-            borderColor: "border-slate-200/80 hover:border-[#1945a6]/30",
-            bgGradient: "bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9]",
-            iconBg: "bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c]",
-            iconColor: "text-[#010c22]",
-            textColor: "text-[#1945a6]",
-            hoverGradient: "bg-gradient-to-br from-[#1945a6]/5 to-[#f4cc6f]/5",
+            borderColor: "border-slate-200/80 hover:border-[#002387]/30",
+            bgGradient: "bg-gradient-to-br from-[#F7F8FA] to-[#F1F5F9]",
+            iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+            iconColor: "text-white",
+            textColor: "text-[#002387]",
+            hoverGradient: "bg-gradient-to-br from-[#002387]/5 to-[#C9A227]/5",
             features: ["User Research", "Wireframing", "Figma Prototypes", "Usability Testing", "Design Systems", "Accessibility (WCAG)"],
         },
     ];
 
     const services = [
         {
-            title: <>iOS App <span className="text-[#1945a6]">Development</span></>,
+            title: <>iOS App <span className="text-[#002387]">Development</span></>,
             description: "Native Swift & SwiftUI apps built for performance, elegance, and flawless App Store submission with full Apple ecosystem integration.",
             icon: <FaApple className="w-8 h-8 text-slate-900" />,
             link: "/contact",
         },
         {
-            title: <>Android App <span className="text-[#1945a6]">Development</span></>,
+            title: <>Android App <span className="text-[#002387]">Development</span></>,
             description: "Kotlin-powered Android apps optimized across all screen sizes, with Material Design 3 and seamless Google Play Store deployment.",
             icon: <FaAndroid className="w-8 h-8 text-slate-900" />,
             link: "/contact",
         },
         {
-            title: <>Cross-Platform <span className="text-[#1945a6]">Development</span></>,
+            title: <>Cross-Platform <span className="text-[#002387]">Development</span></>,
             description: "React Native and Flutter solutions that deliver native-quality experiences on both platforms from a single, maintainable codebase.",
             icon: <FaMobileAlt className="w-8 h-8 text-slate-900" />,
             link: "/contact",
         },
         {
-            title: <>Mobile UI/UX <span className="text-[#1945a6]">Design</span></>,
+            title: <>Mobile UI/UX <span className="text-[#002387]">Design</span></>,
             description: "Research-driven mobile design with wireframes, interactive prototypes, and pixel-perfect UI that maximizes usability and user retention.",
             icon: <MonitorSmartphone className="w-8 h-8 text-slate-900" />,
             link: "/contact",
         },
         {
-            title: <>Backend & API <span className="text-[#1945a6]">Integration</span></>,
+            title: <>Backend & API <span className="text-[#002387]">Integration</span></>,
             description: "Scalable cloud backends, RESTful and GraphQL APIs, real-time features, and secure authentication systems to power your mobile app.",
             icon: <FaCloudUploadAlt className="w-8 h-8 text-slate-900" />,
             link: "/contact",
         },
         {
-            title: <>App Maintenance & <span className="text-[#1945a6]">Support</span></>,
+            title: <>App Maintenance & <span className="text-[#002387]">Support</span></>,
             description: "Ongoing performance monitoring, OS update compatibility, bug fixes, feature enhancements, and analytics-driven optimization post-launch.",
             icon: <BarChart3 className="w-8 h-8 text-slate-900" />,
             link: "/contact",
@@ -375,7 +376,7 @@ export default function MobileAppDevelopmentClient() {
                                     <Smartphone className="w-4 h-4" />
                                     ALTIORA INFOTECH
                                 </span>
-                                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                                     Mobile App
                                     <br />
                                     Development
@@ -386,7 +387,7 @@ export default function MobileAppDevelopmentClient() {
                                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
                                     <Link
                                         href="/contact"
-                                        className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105 w-[60%] sm:w-auto"
+                                        className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105 w-[60%] sm:w-auto"
                                     >
                                         Start Your App
                                         <FaRocket className="ml-2 w-4 h-4" />
@@ -408,9 +409,9 @@ export default function MobileAppDevelopmentClient() {
                         className="text-center"
                     >
                         <div className="flex items-center justify-center gap-6 mb-8">
-                            <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
-                            <span className="px-4 py-1.5 rounded-full bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 text-[#b48312] text-sm font-semibold tracking-wide">Overview</span>
-                            <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                            <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
+                            <span className="px-4 py-1.5 rounded-full bg-[#C9A227]/15 border border-[#C9A227]/40 text-[#B18B1E] text-sm font-semibold tracking-wide">Overview</span>
+                            <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -418,27 +419,27 @@ export default function MobileAppDevelopmentClient() {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                                 transition={{ duration: 1, delay: 0.3 }}
-                                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-slate-200 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
+                                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[40px] border border-slate-200 bg-[#F7F8FA] shadow-sm relative overflow-hidden"
                             >
-                                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
-                                    In a mobile-first world, your app is often the first and most important touchpoint between your business and your customers. At Altiora Infotech, we design and develop native iOS, Android, and cross-platform <Link href="/" className="text-[#1945a6] font-semibold hover:underline">mobile applications</Link> that combine engineering excellence with exceptional user experience. From early-stage startups launching their first MVP to established enterprises modernizing legacy platforms, our end-to-end mobile development process covers strategy, design, development, QA, launch, and ongoing optimization. We build apps that don&apos;t just look great they perform beautifully, scale reliably, and drive measurable business results from day one.
+                                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-[#3B4456]`}>
+                                    In a mobile-first world, your app is often the first and most important touchpoint between your business and your customers. At Altiora Infotech, we design and develop native iOS, Android, and cross-platform <Link href="/" className="text-[#002387] font-semibold hover:underline">mobile applications</Link> that combine engineering excellence with exceptional user experience. From early-stage startups launching their first MVP to established enterprises modernizing legacy platforms, our end-to-end mobile development process covers strategy, design, development, QA, launch, and ongoing optimization. We build apps that don&apos;t just look great they perform beautifully, scale reliably, and drive measurable business results from day one.
                                 </p>
-                                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                             </motion.div>
                         </div>
                     </motion.div>
                 </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
             </section>
 
             {/* Platforms & Technologies Showcase */}
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                            <span className="text-[#1945a6]">Platforms</span> & Technologies We Master
+                        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+                            <span className="text-[#C9A227]">Platforms</span> & Technologies We Master
                         </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
                             From native platforms to cross-platform frameworks we choose the right technology for your goals, users, and budget.
                         </p>
                     </div>
@@ -452,14 +453,14 @@ export default function MobileAppDevelopmentClient() {
             </section>
 
             {/* App Performance Dashboard */}
-            <section className="py-20 px-6 bg-[#F8FAFC]">
+            <section className="py-20 px-6 bg-[#F7F8FA]">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
+                            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
                                 Proven Results Across Every App
                             </h2>
-                            <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 leading-relaxed">
                                 We measure success by the real-world impact of the apps we build from App Store ratings and user retention to revenue growth and ROI for our clients.
                             </p>
                             <div className="space-y-4">
@@ -470,8 +471,8 @@ export default function MobileAppDevelopmentClient() {
                                     "Transparent milestone tracking and live sprint progress dashboards",
                                 ].map((feature, index) => (
                                     <div key={index} className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                                        <span className="text-slate-700">{feature}</span>
+                                        <CheckCircle className="w-5 h-5 text-[#C9A227]" />
+                                        <span className="text-[#3B4456]">{feature}</span>
                                     </div>
                                 ))}
                             </div>
@@ -487,10 +488,10 @@ export default function MobileAppDevelopmentClient() {
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
+                        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
                             Our Mobile App Development Services
                         </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
                             End-to-end mobile app development solutions from concept and design to deployment, scaling, and ongoing improvement.
                         </p>
                     </div>
@@ -516,13 +517,13 @@ export default function MobileAppDevelopmentClient() {
             </section>
 
             {/* Why Choose Our Mobile App Development */}
-            <section className="py-20 px-6 bg-[#F8FAFC]">
+            <section className="py-20 px-6 bg-[#F7F8FA]">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
+                        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
                             Why Choose Our Mobile App Development?
                         </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
                             We combine technical depth, user-centered design, and agile execution to build mobile apps that stand out in crowded app stores and deliver lasting business value.
                         </p>
                     </div>
@@ -533,13 +534,13 @@ export default function MobileAppDevelopmentClient() {
                             const Icon = point.icon;
                             return (
                                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="group relative">
-                                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#1945a6]/30 flex flex-col overflow-hidden">
-                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-sm">
-                                            <Icon className="w-7 h-7 text-[#010c22]" />
+                                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#002387]/30 flex flex-col overflow-hidden">
+                                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-sm`}>
+                                            <Icon className="w-7 h-7 text-[#001A66]" />
                                         </div>
-                                        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">{point.title}</h3>
-                                        <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-1">{point.description}</p>
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                                        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#C9A227] transition-colors duration-300">{point.title}</h3>
+                                        <p className="text-base text-[#3B4456] leading-relaxed group-hover:text-[#3B4456] transition-colors duration-300 flex-1">{point.description}</p>
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                                     </div>
                                 </motion.div>
                             );
@@ -553,13 +554,13 @@ export default function MobileAppDevelopmentClient() {
                                 const Icon = point.icon;
                                 return (
                                     <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                                        <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#1945a6]/30 flex flex-col overflow-hidden">
-                                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f4cc6f] to-[#e6b85c] flex items-center justify-center mb-5 flex-shrink-0 shadow-sm">
-                                                <Icon className="w-7 h-7 text-[#010c22]" />
+                                        <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#002387]/30 flex flex-col overflow-hidden">
+                                            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-sm`}>
+                                                <Icon className="w-7 h-7 text-[#001A66]" />
                                             </div>
                                             <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                                            <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                                            <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                                            <p className="text-base text-[#3B4456] leading-relaxed flex-1">{point.description}</p>
+                                            <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                                         </div>
                                     </div>
                                 );
@@ -567,7 +568,7 @@ export default function MobileAppDevelopmentClient() {
                         </div>
                         <div className="flex justify-center gap-2 mt-4">
                             {whyChoosePoints.map((_, index) => (
-                                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#1945a6]" : "w-2 bg-slate-300"}`} />
+                                <div key={index} className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#002387]" : "w-2 bg-slate-300"}`} />
                             ))}
                         </div>
                     </div>
@@ -628,10 +629,10 @@ export default function MobileAppDevelopmentClient() {
             <section className="px-4 md:px-6 py-24 md:py-20">
                 <div className="max-w-6xl mx-auto w-full">
                     <div className="text-center mb-8">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
+                        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
                             Why Work With Altiora Infotech?
                         </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
                             Partner with a mobile development team that combines technical excellence with a deep commitment to your business success.
                         </p>
                     </div>
@@ -650,7 +651,7 @@ export default function MobileAppDevelopmentClient() {
                             const subtitles = ["Expertise", "Delivery", "Approach", "Design", "Architecture", "Support"];
                             return (
                                 <div key={index} className="group relative cursor-pointer">
-                                    <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-slate-300 hover:shadow-xl hover:-translate-y-1">
+                                    <div className="relative rounded-2xl border border-slate-200/80 bg-[#F7F8FA] backdrop-blur-sm p-4 md:p-6 transition-all duration-500 hover:bg-white hover:border-slate-300 hover:shadow-xl hover:-translate-y-1">
                                         <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                                         <div className="relative z-10">
                                             <div className="flex items-center gap-3 md:gap-4 mb-4">
@@ -658,11 +659,11 @@ export default function MobileAppDevelopmentClient() {
                                                     <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                                                 </div>
                                                 <div>
-                                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{titles[index]}</h3>
                                                     <span className="text-sm text-slate-500">{subtitles[index]}</span>
                                                 </div>
                                             </div>
-                                            <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                                            <p className="text-base sm:text-lg md:text-xl text-[#3B4456] group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                                             <div className="mt-3 md:mt-4 h-1 w-full bg-slate-200 rounded-full overflow-hidden hidden md:block">
                                                 <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                                             </div>
@@ -682,11 +683,11 @@ export default function MobileAppDevelopmentClient() {
                         <div className="absolute inset-0">
                             <Image src="/images/agentic-ai/cta/AI-Infrastructure-cta.png" alt="Mobile App Development" fill className="object-cover rounded-3xl" />
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#001A66]/95 via-[#0a1038]/85 to-[#001A66]/95" />
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
                         <div className="relative z-10">
-                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
-                                <Smartphone className="w-10 h-10 text-[#f4cc6f]" />
+                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#C9A227]/20 to-[#B18B1E]/20 ring-2 ring-[#C9A227]/30 mb-8 mx-auto">
+                                <Smartphone className="w-10 h-10 text-[#C9A227]" />
                             </div>
                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                                 Ready to Build Your Mobile App?
@@ -702,7 +703,7 @@ export default function MobileAppDevelopmentClient() {
                                     href="https://calendly.com/altiorainfotech/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
+                                    className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
                                 >
                                     <FaRocket className="mr-2 w-5 h-5" />
                                     Book Free App Consultation

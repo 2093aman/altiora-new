@@ -129,7 +129,7 @@ export default function BlogStrip() {
     return (
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Blog</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Blog</h2>
           <div className="mt-6 flex gap-4">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-[320px] h-[240px] bg-[#F3F6FC] rounded-2xl animate-pulse" />
@@ -144,7 +144,7 @@ export default function BlogStrip() {
     return (
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Blog</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Blog</h2>
           <div className="mt-6 p-6 bg-red-50 border border-red-200 rounded-lg">
             <p className="text-red-600">Failed to load blog posts: {error}</p>
             <p className="text-sm text-red-500 mt-2">Please check the admin panel connection.</p>
@@ -158,7 +158,7 @@ export default function BlogStrip() {
     return (
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Blog</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Blog</h2>
           <div className="mt-6 p-6 bg-[#F3F6FC] border border-black/10 rounded-lg text-center">
             <p className="text-slate-600">No blog posts available.</p>
           </div>
@@ -171,7 +171,7 @@ export default function BlogStrip() {
     <section className="px-6 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Blog</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Blog</h2>
           <div className="hidden sm:flex gap-2">
             <button
               onClick={() => scrollByCards(-1)}

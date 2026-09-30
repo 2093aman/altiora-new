@@ -143,7 +143,7 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white text-slate-900">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4">Service Not Found</h1>
           <p className="text-xl mb-8">{error || 'The requested service could not be found.'}</p>
           <Link href="/services/web3" className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg transition-all duration-300">
             Back to Web3 Services
@@ -183,10 +183,10 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
                   <FaCode className="w-4 h-4" />
                   ALTIORA INFOTECH
                 </span>
-                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                   {serviceData.heroSection.title.split(' ').slice(0, -1).join(' ')}
                   <br />
-                  <span className="text-[#f4cc6f]">{serviceData.heroSection.title.split(' ').slice(-1)[0]}</span>
+                  <span className="text-[#C9A227]">{serviceData.heroSection.title.split(' ').slice(-1)[0]}</span>
                 </h1>
                 <p className="text-xl sm:text-2xl text-white/90">
                   {serviceData.heroSection.description}
@@ -207,7 +207,7 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
       <section className="px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-slate-900 text-center">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
               {serviceData.whatIsSection.title}
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600">
@@ -239,7 +239,7 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-cyan-900/10" />
           <div className="max-w-7xl mx-auto relative z-10 w-full">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-slate-900 text-center">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
                 {serviceData.whyMattersSection.title}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-slate-600">
@@ -301,10 +301,10 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 via-transparent to-blue-500/5" />
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4 md:mb-6">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4 md:mb-6">
               Why Choose Altiora Infotech?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8 md:mb-12">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8 md:mb-12">
               We design solutions that align with your business goals.
             </p>
             <div className="max-w-5xl mx-auto mb-12">
@@ -333,10 +333,10 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-3">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-3">
               Our Service Offerings
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-slate-600 max-w-3xl mx-auto">
               Comprehensive development services for every need.
             </p>
           </div>
@@ -361,10 +361,10 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
         <section className="px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4 md:mb-6">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4 md:mb-6">
                 Our Development Process
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 A structured, transparent, and iterative process to transform your idea into a live product.
               </p>
             </div>
@@ -453,10 +453,10 @@ export default function Web3ServicePage({ serviceType }: Web3ServicePageProps) {
       <section className="px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent mb-4">
               Why Work With Altiora Infotech?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Partner with experts who deliver results.
             </p>
           </div>

@@ -26,14 +26,14 @@ export default function ServiceLayout({
       >
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
-            <p className="uppercase tracking-[0.2em] text-xs text-slate-600">
+            <p className="uppercase tracking-[0.2em] text-xs text-[#3B4456]">
               Services
             </p>
-            <h1 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mt-3 tracking-tight text-slate-900 drop-shadow-lg">
               {title}
             </h1>
             {subtitle ? (
-              <p className="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed text-base sm:text-lg">
+              <p className="mt-4 text-[#3B4456] max-w-2xl mx-auto leading-relaxed text-base sm:text-lg">
                 {subtitle}
               </p>
             ) : null}

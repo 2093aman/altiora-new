@@ -57,8 +57,8 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900" dangerouslySetInnerHTML={{ __html: title }} />
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900" dangerouslySetInnerHTML={{ __html: title }} />
+          <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-slate-600 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -70,10 +70,10 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
             <div className="flex justify-center mb-6">
               <button
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="group px-4 py-1.5 text-sm rounded-full bg-gradient-to-r from-[#f4cc6f]/10 to-[#e6b85c]/10 backdrop-blur-sm border border-[#f4cc6f]/30 text-[#f4cc6f] hover:from-[#f4cc6f]/20 hover:to-[#e6b85c]/20 hover:border-[#f4cc6f]/50 transition-all duration-300"
+                className="group px-4 py-1.5 text-sm rounded-full bg-gradient-to-r from-[#C9A227]/10 to-[#B18B1E]/10 backdrop-blur-sm border border-[#C9A227]/30 text-[#C9A227] hover:from-[#C9A227]/20 hover:to-[#B18B1E]/20 hover:border-[#C9A227]/50 transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full bg-[#f4cc6f] ${isAutoPlaying ? 'animate-pulse' : ''}`} />
+                  <div className={`w-2 h-2 rounded-full bg-[#C9A227] ${isAutoPlaying ? 'animate-pulse' : ''}`} />
                   {isAutoPlaying ? 'Auto-Playing' : 'Paused'} Process
                 </span>
               </button>
@@ -88,13 +88,13 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                     cy="50"
                     r="45"
                     fill="none"
-                    stroke="rgba(100,116,139,0.25)"
+                    stroke="rgba(0,35,135,0.18)"
                     strokeWidth="2"
                   />
                 </svg>
 
                 {/* Animated Background Glow */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f4cc6f]/5 to-[#e6b85c]/5 blur-xl animate-pulse" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C9A227]/5 to-[#B18B1E]/5 blur-xl animate-pulse" />
 
                 {/* Progress Steps */}
                 {steps.map((step, index) => {
@@ -115,7 +115,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                           cy="50"
                           r="45"
                           fill="none"
-                          stroke={isActive || isCompleted ? "rgba(100,116,139,0.8)" : "rgba(100,116,139,0.3)"}
+                          stroke={isActive || isCompleted ? "#002387" : "rgba(0,35,135,0.3)"}
                           strokeWidth="4"
                           strokeLinecap="round"
                           className="transition-all duration-1000 ease-in-out"
@@ -123,7 +123,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                             strokeDasharray: `${(1 / steps.length) * 2 * Math.PI * 45} ${2 * Math.PI * 45}`,
                             strokeDashoffset: `-${(index / steps.length) * 2 * Math.PI * 45}`,
                             opacity: isActive || isCompleted ? 1 : 0.3,
-                            filter: isActive ? 'drop-shadow(0 0 8px rgba(100,116,139,0.4))' : 'none'
+                            filter: isActive ? 'drop-shadow(0 0 8px rgba(0,35,135,0.4))' : 'none'
                           }}
                         />
                       </svg>
@@ -170,7 +170,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
 
                         {/* Step Number */}
                         <div className={`absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm font-bold transition-colors duration-300 ${
-                          isActive ? 'text-slate-900' : 'text-slate-400'
+                          isActive ? 'text-[#C9A227]' : 'text-[#C9A227]/70'
                         }`}>
                           {step.step}
                         </div>
@@ -181,8 +181,8 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
 
                 {/* Center Content */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center bg-white/90 backdrop-blur-sm rounded-full flex flex-col items-center justify-center border border-[#f4cc6f]/30 shadow-sm" style={{ width: '109px', height: '109px' }}>
-                    <div className="text-3xl font-bold text-[#f4cc6f] mb-1">
+                  <div className="text-center bg-white/90 backdrop-blur-sm rounded-full flex flex-col items-center justify-center border border-[#C9A227]/30 shadow-sm" style={{ width: '109px', height: '109px' }}>
+                    <div className="text-3xl font-bold text-[#C9A227] mb-1">
                       {activeStep + 1}/{steps.length}
                     </div>
                     <div className="text-slate-500 text-xs">
@@ -228,7 +228,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                       setIsAutoPlaying(false);
                     }}
                     disabled={activeStep === 0}
-                    className="px-4 py-1.5 text-sm rounded-full border border-[#f4cc6f]/30 text-[#f4cc6f] hover:bg-[#f4cc6f]/10 hover:border-[#f4cc6f]/50 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+                    className="px-4 py-1.5 text-sm rounded-full border border-[#C9A227]/30 text-[#C9A227] hover:bg-[#C9A227]/10 hover:border-[#C9A227]/50 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
                   >
                     ← Previous
                   </button>
@@ -238,7 +238,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                       setIsAutoPlaying(false);
                     }}
                     disabled={activeStep === steps.length - 1}
-                    className="px-4 py-1.5 text-sm rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] font-semibold hover:shadow-lg hover:shadow-[#f4cc6f]/25 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:shadow-none"
+                    className="px-4 py-1.5 text-sm rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] font-semibold hover:shadow-lg hover:shadow-[#C9A227]/25 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:shadow-none"
                   >
                     Next →
                   </button>

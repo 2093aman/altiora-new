@@ -441,7 +441,7 @@ const TechnologyStackSection: React.FC = () => {
         <section className="py-16 px-6" style={{ backgroundColor: '#ffffff' }}>
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-900">
+                    <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-4 text-slate-900">
                         Our Technology Stack
                     </h2>
 

@@ -98,7 +98,7 @@ export default async function BlogPostPage({
         <article className="max-w-4xl mx-auto px-6 py-12">
           {/* Title */}
           <header className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6 text-slate-900">
               {post.title}
             </h1>
           </header>

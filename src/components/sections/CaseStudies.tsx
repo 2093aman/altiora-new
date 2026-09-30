@@ -9,7 +9,7 @@ export default function CaseStudies() {
     <section className="px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Proof of impact</h2>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Proof of impact</h2>
           <Link href="/work" className="text-[#1D5AC9] underline">View all</Link>
         </div>
 

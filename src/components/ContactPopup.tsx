@@ -679,7 +679,7 @@ const ContactPopup: React.FC<ContactPopupProps> = ({
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">1</div>
-                  <h4 className="text-lg font-semibold text-slate-900">Personal Information</h4>
+                  <h4 className="text-lg font-bold text-slate-900">Personal Information</h4>
                 </div>
 
                 {/* Name Fields */}
@@ -851,7 +851,7 @@ const ContactPopup: React.FC<ContactPopupProps> = ({
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">2</div>
-                  <h4 className="text-lg font-semibold text-slate-900">Project Details</h4>
+                  <h4 className="text-lg font-bold text-slate-900">Project Details</h4>
                 </div>
 
                 {/* Services Interested In */}
@@ -1063,7 +1063,7 @@ const ContactPopup: React.FC<ContactPopupProps> = ({
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">3</div>
-                  <h4 className="text-lg font-semibold text-slate-900">Tell Us About Your Project</h4>
+                  <h4 className="text-lg font-bold text-slate-900">Tell Us About Your Project</h4>
                 </div>
 
                 {/* Message */}
@@ -1097,7 +1097,7 @@ const ContactPopup: React.FC<ContactPopupProps> = ({
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">4</div>
-                  <h4 className="text-lg font-semibold text-slate-900">File Attachments</h4>
+                  <h4 className="text-lg font-bold text-slate-900">File Attachments</h4>
                   <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full">Optional</span>
                   <button
                     type="button"

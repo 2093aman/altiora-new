@@ -81,7 +81,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div
-        className="relative border-b border-black/10 bg-white backdrop-blur-md"
+        className="relative border-b border-[#E7E8EC] bg-white backdrop-blur-md"
         style={{ WebkitBackdropFilter: "blur(12px)" }}
       >
         <div className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
@@ -111,12 +111,12 @@ export default function Header() {
                 href="/about"
                 className={[
                   "relative px-3 py-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30",
-                  isActive("/about") ? "text-black" : "text-gray-700 hover:text-black",
+                  isActive("/about") ? "text-[#C9A227]" : "text-[#002387] hover:text-[#C9A227]",
                 ].join(" ")}
               >
                 About Us
                 {isActive("/about") && (
-                  <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
+                  <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[#C9A227]" />
                 )}
               </Link>
 
@@ -131,7 +131,7 @@ export default function Header() {
                   type="button"
                   className={[
                     "relative px-3 py-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 inline-flex items-center gap-1",
-                    isServicesActive ? "text-black" : "text-gray-700 hover:text-black",
+                    isServicesActive ? "text-[#C9A227]" : "text-[#002387] hover:text-[#C9A227]",
                   ].join(" ")}
                   onClick={() => setServicesOpen((v) => !v)}
                 >
@@ -146,14 +146,14 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isServicesActive && (
-                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
+                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[#C9A227]" />
                   )}
                 </button>
 
                 {/* Dropdown */}
                 <div
                   className={[
-                    "absolute top-full left-0 mt-1 w-56 rounded-xl border border-black/10 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/20 py-2 transition-all duration-200 origin-top",
+                    "absolute top-full left-0 mt-1 w-56 rounded-xl border border-[#E7E8EC] bg-white shadow-lg shadow-[#002387]/10 py-2 transition-all duration-200 origin-top",
                     servicesOpen
                       ? "opacity-100 scale-100 pointer-events-auto"
                       : "opacity-0 scale-95 pointer-events-none",
@@ -166,8 +166,8 @@ export default function Header() {
                       className={[
                         "block px-4 py-2 text-sm transition-colors",
                         isActive(service.href)
-                          ? "text-black bg-black/5"
-                          : "text-gray-700 hover:text-black hover:bg-black/5",
+                          ? "text-[#C9A227] bg-[#F7F8FA]"
+                          : "text-[#002387] hover:text-[#C9A227] hover:bg-[#F7F8FA]",
                       ].join(" ")}
                     >
                       {service.label}
@@ -183,12 +183,12 @@ export default function Header() {
                   href={item.href}
                   className={[
                     "relative px-3 py-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30",
-                    isActive(item.href) ? "text-black" : "text-gray-700 hover:text-black",
+                    isActive(item.href) ? "text-[#C9A227]" : "text-[#002387] hover:text-[#C9A227]",
                   ].join(" ")}
                 >
                   {item.label}
                   {isActive(item.href) && (
-                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[linear-gradient(90deg,#222342,#3b82f6,#222342)]" />
+                    <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] block h-[3px] rounded-full bg-[#C9A227]" />
                   )}
                 </Link>
               ))}
@@ -205,7 +205,7 @@ export default function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-200 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[#002387] hover:bg-[#F7F8FA] hover:text-[#C9A227] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A227]/50"
             >
               {open ? (
                 <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -240,8 +240,8 @@ export default function Header() {
                 className={[
                   "relative rounded-lg px-3 py-2 text-sm transition-colors text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 flex items-center justify-between",
                   isServicesActive
-                    ? "bg-black/5 text-black"
-                    : "text-gray-700 hover:bg-black/5 hover:text-black",
+                    ? "bg-[#F7F8FA] text-[#C9A227]"
+                    : "text-[#002387] hover:bg-[#F7F8FA] hover:text-[#C9A227]",
                 ].join(" ")}
               >
                 Services
@@ -271,8 +271,8 @@ export default function Header() {
                       className={[
                         "rounded-lg px-3 py-1.5 text-sm transition-colors",
                         isActive(service.href)
-                          ? "text-black bg-black/5"
-                          : "text-gray-600 hover:bg-black/5 hover:text-black",
+                          ? "text-[#C9A227] bg-[#F7F8FA]"
+                          : "text-[#3B4456] hover:bg-[#F7F8FA] hover:text-[#C9A227]",
                       ].join(" ")}
                     >
                       {service.label}
@@ -289,8 +289,8 @@ export default function Header() {
                   className={[
                     "relative rounded-lg px-3 py-2 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30",
                     isActive(item.href)
-                      ? "bg-black/5 text-black"
-                      : "text-gray-700 hover:bg-black/5 hover:text-black",
+                      ? "bg-[#F7F8FA] text-[#C9A227]"
+                      : "text-[#002387] hover:bg-[#F7F8FA] hover:text-[#C9A227]",
                   ].join(" ")}
                 >
                   {item.label}

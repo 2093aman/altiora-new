@@ -195,7 +195,7 @@ export default function ClientTestimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-semibold">Client Testimonials</h2>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Client Testimonials</h2>
             <p className="mt-2 text-slate-600">
               Wins we’re proud of from design sprints to production launches.
             </p>

@@ -20,8 +20,8 @@ export default function Products() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold">
-            About <span className="text-brand">Us</span>
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">
+            About <span className="text-[#C9A227]">Us</span>
           </h2>
 
           {/* optional CTAs; tweak routes as needed */}

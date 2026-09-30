@@ -59,8 +59,8 @@ export default async function BlogIndex() {
               <span className="h-2 w-2 rounded-full bg-[#1945a6]" />
               Latest Insights
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-3 drop-shadow">
-              <span className="text-[#1945a6]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mb-3 drop-shadow">
+              <span className="text-[#C9A227]">
                 Ideas shaping the future
               </span>
             </h1>
