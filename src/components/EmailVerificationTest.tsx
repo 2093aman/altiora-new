@@ -205,7 +205,7 @@ const EmailVerificationTest: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-white mb-2">Email Verification Test System</h2>
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-white mb-2">Email Verification Test System</h2>
         <p className="text-slate-400">Test email verification with WebSocket connection and image validation</p>
         
         {/* WebSocket Status */}
@@ -227,7 +227,7 @@ const EmailVerificationTest: React.FC = () => {
 
       {/* Manual Email Test */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold text-white mb-4">Manual Email Test</h3>
+        <h3 className="text-lg font-bold text-white mb-4">Manual Email Test</h3>
         <div className="flex gap-4 mb-4">
           <input
             type="email"
@@ -288,7 +288,7 @@ const EmailVerificationTest: React.FC = () => {
       {/* Verification Progress */}
       {steps.length > 0 && (
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Verification Progress</h3>
+          <h3 className="text-lg font-bold text-white mb-4">Verification Progress</h3>
           <div className="space-y-2">
             {steps.map((step, index) => (
               <div key={index} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
@@ -314,7 +314,7 @@ const EmailVerificationTest: React.FC = () => {
       {/* Current Result */}
       {result && (
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Verification Result</h3>
+          <h3 className="text-lg font-bold text-white mb-4">Verification Result</h3>
           <div className={`p-4 rounded-lg border ${
             result.isValid 
               ? 'bg-green-500/10 border-green-400/30' 
@@ -368,7 +368,7 @@ const EmailVerificationTest: React.FC = () => {
       {/* Test Results History */}
       {testResults.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Test Results History</h3>
+          <h3 className="text-lg font-bold text-white mb-4">Test Results History</h3>
           <div className="space-y-2 max-h-96 overflow-y-auto">
             {testResults.map((testResult, index) => (
               <div key={index} className={`p-3 rounded-lg border text-sm ${

@@ -7,7 +7,7 @@ export default function Resources() {
   return (
     <section className="px-6 py-16 bg-[#F3F6FC] border-y border-black/10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold">Resources</h2>
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold">Resources</h2>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
           {resources.map((r, i) => (
             <Reveal key={i} className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm hover:bg-slate-50 transition">

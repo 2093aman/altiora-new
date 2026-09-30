@@ -68,7 +68,7 @@ export default function DMTrendsPortal({ trends }: DMTrendsPortalProps) {
             </motion.div>
             
             {/* Title */}
-            <h3 className="text-sm md:text-base font-semibold text-slate-900 text-center mb-2">
+            <h3 className="text-sm md:text-base font-bold text-slate-900 text-center mb-2">
               {trend.title}
             </h3>
             
@@ -82,13 +82,13 @@ export default function DMTrendsPortal({ trends }: DMTrendsPortalProps) {
                   transition={{ duration: 0.2 }}
                   className="absolute top-full mt-2 z-20 w-48"
                 >
-                  <div className="bg-white border border-[#f4cc6f]/30 rounded-lg p-3 shadow-lg">
-                    <div className="text-xs text-slate-700 text-center">
+                  <div className="bg-white border border-[#C9A227]/30 rounded-lg p-3 shadow-lg">
+                    <div className="text-xs text-[#3B4456] text-center">
                       {trend.description}
                     </div>
                   </div>
                   {/* Arrow */}
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white border-l border-t border-[#f4cc6f]/30 rotate-45"></div>
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white border-l border-t border-[#C9A227]/30 rotate-45"></div>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -39,7 +39,7 @@ export default function PrivacyPage() {
               <p className="uppercase tracking-[0.22em] text-xs sm:text-[13px] text-slate-700">
                 Legal
               </p>
-              <h1 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight drop-shadow">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mt-3 tracking-tight drop-shadow">
                 Privacy Policy
               </h1>
               <p className="mt-4 text-slate-700 text-base sm:text-lg leading-relaxed">
@@ -305,7 +305,7 @@ export default function PrivacyPage() {
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-r from-[#1a2468] via-[#2a3ea9] to-[#0b1749] p-6 sm:p-8">
                 <div className="absolute inset-0 opacity-25 bg-[radial-gradient(1200px_600px_at_10%_-20%,rgba(255,255,255,0.25),transparent_60%)]" />
                 <div className="relative">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
                     Questions about your privacy?
                   </h3>
                   <p className="mt-2 text-white/85 max-w-2xl">

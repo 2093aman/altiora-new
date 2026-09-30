@@ -55,28 +55,28 @@ export default function MontrealMarketingClientPage() {
   ];
 
   const growthProcess = [
-    { number: "01", title: "Research & Discovery", text: "We analyze your business, industry, competitors, and customer journey to identify growth opportunities.", icon: Search, color: "#f4cc6f", iconBg: "linear-gradient(135deg, #f4cc6f, #FF9F43, #e6b85c)", iconText: "#010b22" },
+    { number: "01", title: "Research & Discovery", text: "We analyze your business, industry, competitors, and customer journey to identify growth opportunities.", icon: Search, color: "#C9A227", iconBg: "linear-gradient(135deg, #C9A227, #FF9F43, #B18B1E)", iconText: "#001A66" },
     { number: "02", title: "Strategy Development", text: "Based on research, we create a customized digital marketing strategy focused on measurable business objectives.", icon: Target, color: "#3B82F6", iconBg: "linear-gradient(135deg, #3B82F6, #06B6D4, #2563EB)", iconText: "#ffffff" },
     { number: "03", title: "Campaign Execution", text: "Our specialists implement SEO, paid advertising, content marketing, website optimization, and social media campaigns across multiple channels.", icon: Megaphone, color: "#10B981", iconBg: "linear-gradient(135deg, #10B981, #06B6D4)", iconText: "#ffffff" },
     { number: "04", title: "Performance Optimization", text: "Through continuous monitoring and analytics, we refine campaigns to improve lead quality, conversion rates, and overall marketing performance.", icon: BarChart3, color: "#8B5CF6", iconBg: "linear-gradient(135deg, #8B5CF6, #7C3AED)", iconText: "#ffffff" },
   ];
 
   const coreServices = [
-    { icon: Search, color: "#f4cc6f", title: "Search Engine Optimization", description: "Improve search engine rankings with technical SEO, keyword optimization, content strategy, backlink development, and local search optimization." },
+    { icon: Search, color: "#C9A227", title: "Search Engine Optimization", description: "Improve search engine rankings with technical SEO, keyword optimization, content strategy, backlink development, and local search optimization." },
     { icon: MapPin, color: "#EC4899", title: "Local SEO", description: "Increase visibility in Google Maps and location-based searches, helping nearby customers discover your business." },
     { icon: Target, color: "#3B82F6", title: "Google Ads", description: "Generate qualified leads with targeted PPC campaigns designed to maximize advertising performance while controlling costs." },
     { icon: Share2, color: "#10B981", title: "Social Media Marketing", description: "Build meaningful customer relationships through engaging content, strategic advertising, and community management across major social platforms." },
     { icon: Monitor, color: "#8B5CF6", title: "Website Design & Development", description: "Create responsive, fast-loading websites that provide exceptional user experiences while supporting SEO and lead generation." },
-    { icon: PenTool, color: "#f4cc6f", title: "Content Marketing", description: "Publish valuable, optimized content that educates customers, builds authority, and strengthens your online presence." },
+    { icon: PenTool, color: "#C9A227", title: "Content Marketing", description: "Publish valuable, optimized content that educates customers, builds authority, and strengthens your online presence." },
     { icon: Zap, color: "#EC4899", title: "AI Marketing Solutions", description: "Leverage automation and artificial intelligence to improve efficiency, customer engagement, and campaign performance." },
   ];
 
   const whyChooseUs = [
-    { title: "Customized Marketing Strategies", text: "Every business receives a personalized marketing plan built around its objectives, audience, and industry.", icon: Palette, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { title: "Customized Marketing Strategies", text: "Every business receives a personalized marketing plan built around its objectives, audience, and industry.", icon: Palette, gradient: "from-[#C9A227] to-[#FF9F43]" },
     { title: "Data-Driven Execution", text: "We use analytics and measurable KPIs to guide every campaign decision.", icon: BarChart3, gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { title: "Complete Digital Expertise", text: "Our team integrates SEO, paid advertising, web development, social media, content marketing, and automation into a unified growth strategy.", icon: Briefcase, gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { title: "Transparent Reporting", text: "You'll receive regular performance reports with actionable insights and clear recommendations.", icon: Eye, gradient: "from-[#10B981] to-[#06B6D4]" },
-    { title: "Long-Term Business Growth", text: "We focus on sustainable marketing strategies that continue delivering value as your business evolves.", icon: TrendingUp, gradient: "from-[#EC4899] to-[#f4cc6f]" },
+    { title: "Long-Term Business Growth", text: "We focus on sustainable marketing strategies that continue delivering value as your business evolves.", icon: TrendingUp, gradient: "from-[#EC4899] to-[#C9A227]" },
   ];
 
   const services11 = [
@@ -109,7 +109,7 @@ export default function MontrealMarketingClientPage() {
     "Non-Profit Organizations",
   ];
 
-  const pillColors = ["#f4cc6f", "#EC4899", "#3B82F6", "#10B981", "#8B5CF6"];
+  const pillColors = ["#C9A227", "#EC4899", "#3B82F6", "#10B981", "#8B5CF6"];
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
@@ -125,7 +125,7 @@ export default function MontrealMarketingClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${(i * 17 + 5) % 100}%`,
                   top: `${(i * 13 + 7) % 100}%`,
@@ -158,7 +158,7 @@ export default function MontrealMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-base sm:text-lg md:text-xl text-slate-600 mb-3 sm:mb-4"
+                  className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-3 sm:mb-4"
                 >
                   Accelerate Your Business Growth with a Leading Digital Marketing Company in Montreal
                 </motion.p>
@@ -170,7 +170,7 @@ export default function MontrealMarketingClientPage() {
                   className="text-sm sm:text-base text-slate-500 mb-4 leading-relaxed"
                 >
                   Growing a business in Montreal requires more than a strong product or service. It requires a digital marketing strategy that connects with the city&apos;s diverse audience. At{' '}
-                  <Link href="/" className="text-[#f4cc6f] hover:underline">Altiora Infotech</Link>
+                  <Link href="/" className="text-[#C9A227] hover:underline">Altiora Infotech</Link>
                   , we are a Digital Marketing Company in Montreal that helps businesses improve online visibility, generate qualified leads, and increase revenue through strategic, data-driven digital marketing solutions.
                 </motion.p>
 
@@ -200,7 +200,7 @@ export default function MontrealMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Book Your Free Strategy Session
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -219,14 +219,14 @@ export default function MontrealMarketingClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -237,7 +237,7 @@ export default function MontrealMarketingClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -255,7 +255,7 @@ export default function MontrealMarketingClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -269,8 +269,8 @@ export default function MontrealMarketingClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: (['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i],
-                            boxShadow: `0 0 12px ${(['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i]}80`,
+                            background: (['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i],
+                            boxShadow: `0 0 12px ${(['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -283,7 +283,7 @@ export default function MontrealMarketingClientPage() {
                         { Icon: Search, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
                         { Icon: Globe, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
                         { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-                        { Icon: Zap, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+                        { Icon: Zap, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
                       ].map((item, i) => (
                         <motion.div
                           key={`icon-${i}`}
@@ -322,9 +322,9 @@ export default function MontrealMarketingClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>Overview</span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
               <div className="flex flex-col items-center">
                 <motion.div
@@ -333,7 +333,7 @@ export default function MontrealMarketingClientPage() {
                   transition={{ duration: 1, delay: 0.2 }}
                   className="max-w-5xl mx-auto p-8 sm:p-12 md:p-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-left sm:text-center">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 text-left sm:text-center">
                     Why Choose a Digital Marketing Company in Montreal?
                   </h2>
                   <div className={`${styles.sectionDescription} !max-w-none relative z-10 !text-left sm:!text-center`}>
@@ -341,18 +341,18 @@ export default function MontrealMarketingClientPage() {
                     <p className="mb-4">Working with a Digital Marketing Company in Montreal gives your business access to professionals who understand search trends, consumer behaviour, and digital marketing best practices tailored to the local market.</p>
                     <p>At Altiora Infotech, we combine creativity with analytics to build marketing campaigns that generate traffic, improve search visibility, strengthen brand authority, and convert visitors into loyal customers.</p>
                   </div>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Strategic Digital Marketing for Montreal Businesses */}
         <section ref={strategicRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-4xl mx-auto relative z-10">
@@ -371,7 +371,7 @@ export default function MontrealMarketingClientPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={strategicInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-5 text-slate-600 text-base sm:text-lg leading-relaxed text-center"
+              className="space-y-5 text-[#3B4456] text-base sm:text-lg leading-relaxed text-center"
             >
               <p>Every successful marketing campaign starts with understanding the business behind it.</p>
               <p>Our team begins by evaluating your objectives, target audience, competitors, and current online performance. We identify opportunities to improve your digital presence and create a customized marketing roadmap aligned with your business goals.</p>
@@ -396,7 +396,7 @@ export default function MontrealMarketingClientPage() {
               <p className="text-slate-500 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl mx-auto">
                 Strong branding helps customers recognize and trust your business, while performance marketing ensures your message reaches the right audience at the right time.
               </p>
-              <p className="text-slate-600 text-base sm:text-lg font-semibold mt-6">
+              <p className="text-[#3B4456] text-base sm:text-lg font-semibold mt-6">
                 Our integrated digital marketing services include:
               </p>
             </motion.div>
@@ -452,7 +452,7 @@ export default function MontrealMarketingClientPage() {
                   transition={{ duration: 1, delay: 0.2 }}
                   className="max-w-5xl mx-auto p-8 sm:p-12 md:p-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-left sm:text-center">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 text-left sm:text-center">
                     Understanding <span className={styles.gradientText}>Montreal&apos;s Digital Market</span>
                   </h2>
                   <div className={`${styles.sectionDescription} !max-w-none relative z-10 !text-left sm:!text-center`}>
@@ -460,7 +460,7 @@ export default function MontrealMarketingClientPage() {
                     <p className="mb-4">Businesses that invest in digital marketing gain a competitive advantage by improving search visibility, attracting qualified traffic, and building trust with potential customers.</p>
                     <p>Our strategies are designed to help businesses adapt to changing consumer behaviour while creating sustainable digital growth.</p>
                   </div>
-                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
@@ -472,7 +472,7 @@ export default function MontrealMarketingClientPage() {
           ref={processRef}
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white"
         >
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -541,7 +541,7 @@ export default function MontrealMarketingClientPage() {
         {/* Our Digital Marketing Services */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={servicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="text-center mb-14">
@@ -589,9 +589,9 @@ export default function MontrealMarketingClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -609,7 +609,7 @@ export default function MontrealMarketingClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-5xl mx-auto relative z-10">
@@ -656,18 +656,18 @@ export default function MontrealMarketingClientPage() {
         {/* Other Locations We Serve */}
         <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10 relative bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
               Serving Businesses Across Canada
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
               Beyond Montreal, we also operate as a{' '}
-              <Link href="/services/digital-marketing-company-in-halifax" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Halifax</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-halifax" className="text-[#C9A227] hover:underline">Digital Marketing Company in Halifax</Link>{' '}
               and support businesses in{' '}
-              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#f4cc6f] hover:underline">Kerrville</Link>.{' '}
+              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#C9A227] hover:underline">Kerrville</Link>.{' '}
               Our{' '}
-              <Link href="/services/digital-marketing-company-in-vancouver" className="text-[#f4cc6f] hover:underline">Vancouver team</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-vancouver" className="text-[#C9A227] hover:underline">Vancouver team</Link>{' '}
               brings the same data-driven approach to{' '}
-              <Link href="/services/digital-marketing-company-in-surrey" className="text-[#f4cc6f] hover:underline">growing brands in Surrey</Link>.
+              <Link href="/services/digital-marketing-company-in-surrey" className="text-[#C9A227] hover:underline">growing brands in Surrey</Link>.
             </p>
           </div>
         </section>
@@ -684,12 +684,12 @@ export default function MontrealMarketingClientPage() {
                   <button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:bg-black/[0.05] hover:border-black/20">
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
-                      <svg className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
                     <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 mt-3 opacity-100" : "max-h-0 opacity-0"}`}>
-                      <p className="faq-answer text-slate-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="faq-answer text-[#3B4456] text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -704,7 +704,7 @@ export default function MontrealMarketingClientPage() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="relative rounded-3xl overflow-hidden p-8 sm:p-12 md:p-16 text-center">
               <div className="absolute inset-0 bg-gradient-to-r from-[#F3EEFE] via-[#EAF0FF] to-[#F3EEFE]" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
               <div className="relative z-10">
@@ -712,17 +712,17 @@ export default function MontrealMarketingClientPage() {
                   Ready to Grow Your{' '}
                   <span className={styles.gradientText}>Business in Montreal?</span>
                 </motion.h2>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.4 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.4 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-4 max-w-2xl mx-auto leading-relaxed">
                   Digital success begins with the right strategy. At Altiora Infotech, we help businesses build stronger brands, attract qualified customers, and achieve measurable growth through innovative digital marketing solutions.
                 </motion.p>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.5 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.5 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-4 max-w-2xl mx-auto leading-relaxed">
                   If you&apos;re looking for a trusted Digital Marketing Company in Montreal, our team is ready to create a customized marketing strategy that supports your long-term business objectives.
                 </motion.p>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.6 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.6 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
                   Let&apos;s turn your digital potential into measurable business growth.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.8 }}>
-                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40">
+                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40">
                     Get Your Free Marketing Consultation
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>

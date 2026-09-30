@@ -64,7 +64,7 @@ export default function HalifaxMarketingClientPage() {
       title: "Business Discovery",
       text: "We begin by understanding your business goals, competitors, target audience, and current digital performance.",
       icon: Search,
-      color: "#f4cc6f",
+      color: "#C9A227",
     },
     {
       number: "02",
@@ -91,7 +91,7 @@ export default function HalifaxMarketingClientPage() {
 
   const services = [
     {
-      icon: Search, color: "#f4cc6f",
+      icon: Search, color: "#C9A227",
       title: "Search Engine Optimization (SEO)",
       description: "Improve your organic rankings through technical SEO, keyword research, on-page optimization, high-quality content, and authority-building strategies.",
     },
@@ -116,7 +116,7 @@ export default function HalifaxMarketingClientPage() {
       description: "Create responsive, fast-loading, SEO-friendly websites that enhance user experience and convert visitors into customers.",
     },
     {
-      icon: FileText, color: "#f4cc6f",
+      icon: FileText, color: "#C9A227",
       title: "Content Marketing",
       description: "Publish valuable content that educates your audience, strengthens your authority, and supports long-term organic growth.",
     },
@@ -128,11 +128,11 @@ export default function HalifaxMarketingClientPage() {
   ];
 
   const whyChoose = [
-    { title: "Customized Marketing Strategies", text: "Every campaign is tailored to your business objectives, audience, and competitive environment.", icon: Target, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { title: "Customized Marketing Strategies", text: "Every campaign is tailored to your business objectives, audience, and competitive environment.", icon: Target, gradient: "from-[#C9A227] to-[#FF9F43]" },
     { title: "Data-Driven Decision Making", text: "Our marketing strategies are guided by analytics, measurable KPIs, and continuous performance improvements.", icon: BarChart3, gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { title: "Complete Digital Marketing Expertise", text: "From SEO and paid advertising to web development, content marketing, automation, and analytics, we provide complete digital growth solutions.", icon: Briefcase, gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { title: "Transparent Reporting", text: "Receive detailed reports that clearly demonstrate campaign performance, lead generation, and future optimization opportunities.", icon: Eye, gradient: "from-[#10B981] to-[#06B6D4]" },
-    { title: "Long-Term Growth Partnership", text: "We focus on building sustainable marketing systems that continue delivering measurable results as your business grows.", icon: Globe, gradient: "from-[#EC4899] to-[#f4cc6f]" },
+    { title: "Long-Term Growth Partnership", text: "We focus on building sustainable marketing systems that continue delivering measurable results as your business grows.", icon: Globe, gradient: "from-[#EC4899] to-[#C9A227]" },
   ];
 
   const industries = [
@@ -175,7 +175,7 @@ export default function HalifaxMarketingClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${(i * 17 + 5) % 100}%`,
                   top: `${(i * 13 + 7) % 100}%`,
@@ -208,7 +208,7 @@ export default function HalifaxMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-base sm:text-lg md:text-xl text-slate-600 mb-3 sm:mb-4"
+                  className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-3 sm:mb-4"
                 >
                   Scale Your Business with a Trusted Digital Marketing Company in Halifax
                 </motion.p>
@@ -220,7 +220,7 @@ export default function HalifaxMarketingClientPage() {
                   className="text-sm sm:text-base text-slate-500 mb-4 leading-relaxed"
                 >
                   Growing a business in today&apos;s digital-first economy requires more than traditional marketing. It demands a strategic online presence that attracts the right audience and converts interest into measurable business growth. At Altiora Infotech, we are a{' '}
-                  <Link href="/" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Halifax</Link>
+                  <Link href="/" className="text-[#C9A227] hover:underline">Digital Marketing Company in Halifax</Link>
                   {' '}dedicated to helping businesses improve visibility, generate qualified leads, and increase revenue through customized digital marketing solutions.
                 </motion.p>
 
@@ -250,7 +250,7 @@ export default function HalifaxMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Book Your Free Digital Marketing Consultation
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -269,14 +269,14 @@ export default function HalifaxMarketingClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -287,7 +287,7 @@ export default function HalifaxMarketingClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -305,7 +305,7 @@ export default function HalifaxMarketingClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -319,8 +319,8 @@ export default function HalifaxMarketingClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: (['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i],
-                            boxShadow: `0 0 12px ${(['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i]}80`,
+                            background: (['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i],
+                            boxShadow: `0 0 12px ${(['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -333,7 +333,7 @@ export default function HalifaxMarketingClientPage() {
                         { Icon: Search, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
                         { Icon: Globe, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
                         { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-                        { Icon: Zap, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+                        { Icon: Zap, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
                       ].map((item, i) => (
                         <motion.div
                           key={`icon-${i}`}
@@ -372,9 +372,9 @@ export default function HalifaxMarketingClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>Overview</span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
               <div className="flex flex-col items-center">
                 <motion.div
@@ -383,7 +383,7 @@ export default function HalifaxMarketingClientPage() {
                   transition={{ duration: 1, delay: 0.2 }}
                   className="max-w-5xl mx-auto p-8 sm:p-12 md:p-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-left sm:text-center">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 text-left sm:text-center">
                     Why Choose a Digital Marketing Company in Halifax?
                   </h2>
                   <div className={`${styles.sectionDescription} !max-w-none relative z-10 !text-left sm:!text-center`}>
@@ -391,18 +391,18 @@ export default function HalifaxMarketingClientPage() {
                     <p className="mb-4">Partnering with a Digital Marketing Company in Halifax helps your business reach customers where they spend their time online. At Altiora Infotech, we combine market research, data analysis, creativity, and technology to create digital marketing campaigns that increase visibility, strengthen brand credibility, and drive qualified leads.</p>
                     <p>Our objective is to help businesses grow through measurable, performance-driven marketing strategies that deliver lasting value.</p>
                   </div>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Digital Marketing Solutions Built for Halifax Businesses */}
         <section ref={solutionsRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={solutionsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center">
@@ -418,14 +418,14 @@ export default function HalifaxMarketingClientPage() {
 
         {/* Branding & Performance Marketing That Delivers Results */}
         <section ref={brandingRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/6 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/6 blur-[140px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={brandingInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-10">
               <h2 className={styles.sectionHeading}>Branding &amp; Performance Marketing That <span className={styles.gradientText}>Delivers Results</span></h2>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-3">
+              <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-3">
                 Successful businesses combine strong branding with strategic marketing. Our integrated approach ensures your business builds credibility while consistently reaching the right audience across multiple digital channels.
               </p>
-              <p className="text-slate-600 text-base sm:text-lg font-semibold">Our services include:</p>
+              <p className="text-[#3B4456] text-base sm:text-lg font-semibold">Our services include:</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -436,10 +436,10 @@ export default function HalifaxMarketingClientPage() {
               {brandingServices.map((item, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#f4cc6f]/25 text-slate-700"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#C9A227]/25 text-[#3B4456]"
                   style={{ background: "rgba(244,204,111,0.06)" }}
                 >
-                  <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
+                  <CheckCircle className="w-4 h-4 text-[#C9A227]" />
                   {item}
                 </span>
               ))}
@@ -475,7 +475,7 @@ export default function HalifaxMarketingClientPage() {
           ref={frameworkRef}
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white"
         >
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -517,7 +517,7 @@ export default function HalifaxMarketingClientPage() {
                         className="w-12 h-12 rounded-2xl flex items-center justify-center -mt-3 relative z-10"
                         style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}bb)`, boxShadow: `0 8px 30px ${step.color}35` }}
                       >
-                        <step.icon className="w-6 h-6 text-[#010b22]" />
+                        <step.icon className="w-6 h-6 text-[#001A66]" />
                       </div>
                     </div>
                     <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center">
@@ -534,7 +534,7 @@ export default function HalifaxMarketingClientPage() {
         {/* Our Digital Marketing Services */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={servicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="text-center mb-10">
@@ -582,9 +582,9 @@ export default function HalifaxMarketingClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -602,7 +602,7 @@ export default function HalifaxMarketingClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-5xl mx-auto relative z-10">
@@ -622,7 +622,7 @@ export default function HalifaxMarketingClientPage() {
               {industries.map((industry, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#3B82F6]/25 text-slate-700"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#3B82F6]/25 text-[#3B4456]"
                   style={{ background: "rgba(59,130,246,0.06)" }}
                 >
                   <Briefcase className="w-4 h-4 text-[#3B82F6]" />
@@ -646,18 +646,18 @@ export default function HalifaxMarketingClientPage() {
         {/* Other Locations We Serve */}
         <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10 relative bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
               Serving Businesses Across Canada
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
               Beyond Halifax, we also operate as a{' '}
-              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Kerrville</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-kerrville" className="text-[#C9A227] hover:underline">Digital Marketing Company in Kerrville</Link>{' '}
               and support businesses in{' '}
-              <Link href="/services/digital-marketing-company-in-vancouver" className="text-[#f4cc6f] hover:underline">Vancouver</Link>.{' '}
+              <Link href="/services/digital-marketing-company-in-vancouver" className="text-[#C9A227] hover:underline">Vancouver</Link>.{' '}
               Our{' '}
-              <Link href="/services/digital-marketing-company-in-surrey" className="text-[#f4cc6f] hover:underline">Surrey team</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-surrey" className="text-[#C9A227] hover:underline">Surrey team</Link>{' '}
               brings the same data-driven approach to{' '}
-              <Link href="/services/digital-marketing-company-in-burnaby" className="text-[#f4cc6f] hover:underline">growing brands in Burnaby</Link>.
+              <Link href="/services/digital-marketing-company-in-burnaby" className="text-[#C9A227] hover:underline">growing brands in Burnaby</Link>.
             </p>
           </div>
         </section>
@@ -674,12 +674,12 @@ export default function HalifaxMarketingClientPage() {
                   <button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:bg-black/[0.05] hover:border-black/20">
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
-                      <svg className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
                     <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 mt-3 opacity-100" : "max-h-0 opacity-0"}`}>
-                      <p className="faq-answer text-slate-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="faq-answer text-[#3B4456] text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -694,7 +694,7 @@ export default function HalifaxMarketingClientPage() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="relative rounded-3xl overflow-hidden p-8 sm:p-12 md:p-16 text-center">
               <div className="absolute inset-0 bg-gradient-to-r from-[#F3EEFE] via-[#EAF0FF] to-[#F3EEFE]" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
               <div className="relative z-10">
@@ -702,17 +702,17 @@ export default function HalifaxMarketingClientPage() {
                   Ready to Grow Your{' '}
                   <span className={styles.gradientText}>Business in Halifax?</span>
                 </motion.h2>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-4 max-w-2xl mx-auto leading-relaxed">
                   Digital marketing is one of the most effective ways to attract new customers, strengthen your online presence, and achieve sustainable business growth. At Altiora Infotech, we combine strategic thinking, creativity, and advanced digital technologies to deliver marketing solutions that produce measurable results.
                 </motion.p>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.45 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.45 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-4 max-w-2xl mx-auto leading-relaxed">
                   If you&apos;re looking for a reliable Digital Marketing Company in Halifax, our team is ready to develop a customized strategy that helps your business increase visibility, generate qualified leads, and accelerate long-term growth.
                 </motion.p>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.55 }} className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed font-semibold">
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.55 }} className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed font-semibold">
                   Let&apos;s build your digital success together.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.65 }}>
-                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40">
+                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40">
                     Schedule Your Free Strategy Session
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>

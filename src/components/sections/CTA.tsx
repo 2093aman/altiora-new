@@ -7,7 +7,7 @@ export default function CTA() {
       <div className="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-gradient-to-r from-[#1C5A52] to-[#1145AF] p-8 sm:p-12">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-semibold">Ready to build</h3>
+            <h3 className="text-2xl font-bold">Ready to build</h3>
             <p className="text-white/80 mt-1 max-w-xl">
               Get a working prototype, integrations, and a limited go-live in four weeks with reporting and clear next steps.
             </p>

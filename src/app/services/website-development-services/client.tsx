@@ -39,6 +39,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "../digital-marketing/dm.module.css";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import { iconGradient } from "@/lib/iconGradients";
 
 // Website Type Card Component
 const WebsiteTypeCard = ({ websiteType, className }: { websiteType: any; className?: string }) => {
@@ -51,21 +52,21 @@ const WebsiteTypeCard = ({ websiteType, className }: { websiteType: any; classNa
       <div className={`relative rounded-3xl p-6 md:p-8 border transition-all duration-500 ${websiteType.borderColor} ${websiteType.bgGradient} backdrop-blur-sm overflow-hidden h-[460px] flex flex-col shadow-sm hover:shadow-md`}>
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4cc6f] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#1945a6] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A227] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#002387] rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Icon */}
         <motion.div
-          className={`flex items-center justify-center w-16 h-16 flex-shrink-0 rounded-2xl ${websiteType.iconBg} mb-6 relative z-10 shadow-sm`}
+          className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded-xl ${websiteType.iconBg} mb-6 relative z-10 shadow-md`}
         >
-          <websiteType.icon className={`w-8 h-8 flex-shrink-0 ${websiteType.iconColor}`} />
+          <websiteType.icon className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 ${websiteType.iconColor}`} />
         </motion.div>
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: websiteType.highlightedName }} />
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{websiteType.description}</p>
+          <p className="text-[#3B4456] text-base md:text-lg mb-4 leading-relaxed flex-1">{websiteType.description}</p>
 
           {/* Stats */}
           <div className="flex items-center justify-between mb-4 p-3 rounded-xl bg-white border border-slate-200/60">
@@ -83,8 +84,8 @@ const WebsiteTypeCard = ({ websiteType, className }: { websiteType: any; classNa
           <div className="grid grid-cols-2 gap-x-4 gap-y-2">
             {websiteType.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#f4cc6f]" />
-                <span className="text-xs sm:text-sm text-slate-600">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-[#C9A227]" />
+                <span className="text-xs sm:text-sm text-[#3B4456]">{feature}</span>
               </div>
             ))}
           </div>
@@ -92,7 +93,7 @@ const WebsiteTypeCard = ({ websiteType, className }: { websiteType: any; classNa
 
         {/* Hover Effect */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"
         />
       </div>
     </motion.div>
@@ -118,9 +119,9 @@ const WebsitePerformanceWidget = () => {
   }, []);
 
   return (
-    <div className="bg-[#F8FAFC] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
+    <div className="bg-[#F7F8FA] backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-[#1945a6] flex items-center justify-center">
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${iconGradient(1)} flex items-center justify-center shadow-md`}>
           <BarChart3 className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -136,15 +137,15 @@ const WebsitePerformanceWidget = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                  ? "border-[#f4cc6f] bg-[#f4cc6f]/15 shadow-sm"
+                  ? "border-[#C9A227] bg-[#C9A227]/15 shadow-sm"
                   : "border-slate-200/80 bg-white"
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
             >
-              <Icon className="w-5 h-5 text-[#1945a6] mb-2" />
+              <Icon className="w-5 h-5 text-[#002387] mb-2" />
               <div className="text-2xl font-extrabold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className="text-xs font-bold text-[#1945a6]">{metric.change}</div>
+              <div className="text-xs font-bold text-[#002387]">{metric.change}</div>
             </motion.div>
           );
         })}
@@ -180,161 +181,161 @@ export default function WebsiteDevelopmentClient() {
   const websiteTypes = [
     {
       name: "Business Website",
-      highlightedName: "Business <span class='text-[#1945a6]'>Website</span>",
+      highlightedName: "Business <span class='text-[#C9A227]'>Website</span>",
       icon: Globe,
       description: "Professional corporate websites that build credibility and generate leads for your business 24/7.",
       stat1: "3x",
       stat1Label: "More Leads",
       stat2: "94%",
       stat2Label: "First Impressions",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Custom Design", "Lead Capture Forms", "SEO Optimized", "Analytics Integrated", "CMS Powered", "Mobile Responsive"],
     },
     {
       name: "E-Commerce Store",
-      highlightedName: "E-Commerce <span class='text-[#1945a6]'>Store</span>",
+      highlightedName: "E-Commerce <span class='text-[#C9A227]'>Store</span>",
       icon: ShoppingCart,
       description: "High-converting online stores with seamless checkout, inventory management, and payment integration.",
       stat1: "2.8x",
       stat1Label: "Avg. Conversion",
       stat2: "$0",
       stat2Label: "Transaction Fee",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Product Catalog", "Secure Checkout", "Payment Gateways", "Inventory Management", "Order Tracking", "Discount Codes"],
     },
     {
       name: "Landing Page",
-      highlightedName: "Landing <span class='text-[#1945a6]'>Page</span>",
+      highlightedName: "Landing <span class='text-[#C9A227]'>Page</span>",
       icon: Target,
       description: "Laser-focused landing pages optimized for a single goal converting visitors into leads or customers.",
       stat1: "5.7%",
       stat1Label: "Avg. CVR",
       stat2: "< 2s",
       stat2Label: "Load Time",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["A/B Testing Ready", "CRO Optimized", "Fast Loading", "Clear CTA Design", "Form Integration", "Pixel Tracking"],
     },
     {
       name: "Portfolio Website",
-      highlightedName: "Portfolio <span class='text-[#1945a6]'>Website</span>",
+      highlightedName: "Portfolio <span class='text-[#C9A227]'>Website</span>",
       icon: Layout,
       description: "Showcase your work with elegant portfolio sites that impress clients and win more projects.",
       stat1: "4x",
       stat1Label: "Client Inquiries",
       stat2: "100%",
       stat2Label: "Custom Design",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Gallery Layouts", "Case Studies", "Contact Forms", "Project Filters", "Testimonials", "Brand Story"],
     },
     {
       name: "SaaS / Web App",
-      highlightedName: "SaaS / <span class='text-[#1945a6]'>Web App</span>",
+      highlightedName: "SaaS / <span class='text-[#C9A227]'>Web App</span>",
       icon: Code,
       description: "Scalable web applications with user dashboards, authentication, and custom workflows for your product.",
       stat1: "99.9%",
       stat1Label: "Uptime SLA",
       stat2: "∞",
       stat2Label: "Scalability",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["User Auth System", "Dashboard UI", "API Integration", "Database Design", "Admin Panel", "Subscription Plans"],
     },
     {
       name: "WordPress Website",
-      highlightedName: "WordPress <span class='text-[#1945a6]'>Website</span>",
+      highlightedName: "WordPress <span class='text-[#C9A227]'>Website</span>",
       icon: Settings,
       description: "Fully custom WordPress sites that are easy to manage, scalable, and optimized for search engines.",
       stat1: "43%",
       stat1Label: "Of The Web",
       stat2: "Easy",
       stat2Label: "Self-Management",
-      borderColor: "border-slate-200/80 hover:border-[#f4cc6f]/60",
-      bgGradient: "bg-[#F8FAFC]",
-      iconBg: "bg-[#f4cc6f]/15 border border-[#f4cc6f]/40",
-      iconColor: "text-[#b48312]",
-      textColor: "text-[#1945a6]",
-      hoverGradient: "bg-gradient-to-br from-[#f4cc6f]/10 to-transparent",
+      borderColor: "border-slate-200/80 hover:border-[#C9A227]/60",
+      bgGradient: "bg-[#F7F8FA]",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
+      iconColor: "text-white",
+      textColor: "text-[#002387]",
+      hoverGradient: "bg-gradient-to-br from-[#C9A227]/10 to-transparent",
       features: ["Custom Theme", "Plugin Setup", "SEO Plugins", "Blog Ready", "Easy Editor", "Security Hardened"],
     },
   ];
 
   const services = [
     {
-      title: <>CRM <span className="text-[#1945a6]">Development</span></>,
+      title: <>CRM <span className="text-[#002387]">Development</span></>,
       description: "Custom CRM solutions to manage customer relationships, track sales pipelines, and automate workflows for business growth.",
-      icon: <Layout className="w-7 h-7 text-[#010c22]" />,
+      icon: <Layout className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>SaaS <span className="text-[#1945a6]">Development</span></>,
+      title: <>SaaS <span className="text-[#002387]">Development</span></>,
       description: "Scalable SaaS platforms with subscription management, user dashboards, and multi-tenant architecture.",
-      icon: <Code className="w-7 h-7 text-[#010c22]" />,
+      icon: <Code className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>Webapp <span className="text-[#1945a6]">Development</span></>,
+      title: <>Webapp <span className="text-[#002387]">Development</span></>,
       description: "Full-featured web applications with custom functionality, user authentication, and database integration.",
-      icon: <Globe className="w-7 h-7 text-[#010c22]" />,
+      icon: <Globe className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>UI/UX <span className="text-[#1945a6]">Design</span></>,
+      title: <>UI/UX <span className="text-[#002387]">Design</span></>,
       description: "User-centered design that creates intuitive, engaging experiences and drives higher conversion rates.",
-      icon: <Eye className="w-7 h-7 text-[#010c22]" />,
+      icon: <Eye className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>E-Commerce <span className="text-[#1945a6]">Development</span></>,
+      title: <>E-Commerce <span className="text-[#002387]">Development</span></>,
       description: "Full-featured online stores with product management, secure payments, and seamless shopping experience.",
-      icon: <ShoppingCart className="w-7 h-7 text-[#010c22]" />,
+      icon: <ShoppingCart className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>Custom Website <span className="text-[#1945a6]">Design</span></>,
+      title: <>Custom Website <span className="text-[#002387]">Design</span></>,
       description: "Unique, brand-aligned designs built from scratch to make your business stand out and convert visitors into customers.",
-      icon: <Layout className="w-7 h-7 text-[#010c22]" />,
+      icon: <Layout className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>Landing Page <span className="text-[#1945a6]">Design</span></>,
+      title: <>Landing Page <span className="text-[#002387]">Design</span></>,
       description: "High-converting single-page designs focused on one goal turning visitors into qualified leads.",
-      icon: <Target className="w-7 h-7 text-[#010c22]" />,
+      icon: <Target className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>Website <span className="text-[#1945a6]">Redesign</span></>,
+      title: <>Website <span className="text-[#002387]">Redesign</span></>,
       description: "Modernize your outdated website with a fresh design, improved UX, and significantly better performance.",
-      icon: <RefreshCw className="w-7 h-7 text-[#010c22]" />,
+      icon: <RefreshCw className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
     {
-      title: <>Performance <span className="text-[#1945a6]">Optimization</span></>,
+      title: <>Performance <span className="text-[#002387]">Optimization</span></>,
       description: "Speed audits, Core Web Vitals improvements, and technical fixes for faster, higher-ranking websites.",
-      icon: <Zap className="w-7 h-7 text-[#010c22]" />,
+      icon: <Zap className="w-7 h-7 text-[#001A66]" />,
       link: "/contact",
     },
   ];
@@ -386,11 +387,11 @@ export default function WebsiteDevelopmentClient() {
           <div className="w-full max-w-full">
             <div className="grid lg:grid-cols-12 gap-12 items-center w-full max-w-full">
               <div className="lg:col-span-12 space-y-6 w-full max-w-full">
-                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-slate-700 shadow-sm backdrop-blur-sm">
-                  <Globe className="w-4 h-4 text-[#1945a6]" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-[#3B4456] shadow-sm backdrop-blur-sm">
+                  <Globe className="w-4 h-4 text-[#002387]" />
                   ALTIORA INFOTECH
                 </span>
-                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                   Website Development
                   <br />
                   Services
@@ -401,7 +402,7 @@ export default function WebsiteDevelopmentClient() {
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
                   <Link
                     href="/contact"
-                    className="w-[60%] sm:w-auto inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
+                    className="w-[60%] sm:w-auto inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
                   >
                     Start Your Project
                     <FaRocket className="ml-2 w-4 h-4" />
@@ -426,11 +427,11 @@ export default function WebsiteDevelopmentClient() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/60 to-transparent" />
-              <span className="text-[#b48312] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#f4cc6f]/15 px-4 py-1.5 rounded-full border border-[#f4cc6f]/40">
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/60 to-transparent" />
+              <span className="text-[#B18B1E] font-extrabold text-sm sm:text-base uppercase tracking-[0.3em] bg-[#C9A227]/15 px-4 py-1.5 rounded-full border border-[#C9A227]/40">
                 Overview
               </span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/60 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/60 to-transparent" />
             </div>
 
             <div className="flex flex-col items-center">
@@ -438,12 +439,12 @@ export default function WebsiteDevelopmentClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={overviewInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#f4cc6f]/30 bg-[#F8FAFC] shadow-sm relative overflow-hidden"
+                className="max-w-5xl mx-auto py-8 px-8 sm:py-12 sm:px-12 md:py-14 md:px-14 rounded-[32px] border border-[#C9A227]/30 bg-[#F7F8FA] shadow-sm relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-slate-700 font-medium`}>
-                  Our <Link href="/" className="text-[#1945a6] font-bold hover:underline">Website Development Services</Link> help businesses establish a powerful online presence with custom-built, high-performance websites designed to convert visitors into customers. From sleek corporate sites to full-featured e-commerce platforms, we craft every website with precision combining modern design, clean code, and conversion-focused strategy. Best suited for small businesses, service companies, e-commerce brands, and SaaS startups ready to grow online.
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 text-[#3B4456] font-medium`}>
+                  Our <Link href="/" className="text-[#002387] font-bold hover:underline">Website Development Services</Link> help businesses establish a powerful online presence with custom-built, high-performance websites designed to convert visitors into customers. From sleek corporate sites to full-featured e-commerce platforms, we craft every website with precision combining modern design, clean code, and conversion-focused strategy. Best suited for small businesses, service companies, e-commerce brands, and SaaS startups ready to grow online.
                 </p>
-                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
@@ -454,10 +455,10 @@ export default function WebsiteDevelopmentClient() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Website Solutions We <span className="text-[#1945a6]">Build</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              Website Solutions We <span className="text-[#C9A227]">Build</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               From simple landing pages to complex web applications, we build every type of website your business needs.
             </p>
           </div>
@@ -471,14 +472,14 @@ export default function WebsiteDevelopmentClient() {
       </section>
 
       {/* Website Performance Section */}
-      <section className="py-20 px-6 bg-[#F8FAFC]">
+      <section className="py-20 px-6 bg-[#F7F8FA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
                 Performance-First Development
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 leading-relaxed">
                 Every website we build is engineered for speed, SEO, and conversion. We optimize Core Web Vitals, ensure mobile responsiveness, and build with clean, semantic code that search engines love.
               </p>
               <div className="space-y-4">
@@ -489,8 +490,8 @@ export default function WebsiteDevelopmentClient() {
                   "Conversion-rate optimization built in",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700 font-medium">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-[#C9A227]" />
+                    <span className="text-[#3B4456] font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -506,10 +507,10 @@ export default function WebsiteDevelopmentClient() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Development <span className="text-[#1945a6]">Services</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
+              Our Development <span className="text-[#C9A227]">Services</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Comprehensive web development solutions designed to build, grow, and maintain your online presence.
             </p>
           </div>
@@ -531,13 +532,13 @@ export default function WebsiteDevelopmentClient() {
       </section>
 
       {/* Why Choose Our Website Development */}
-      <section className="py-20 px-6 bg-[#F8FAFC]">
+      <section className="py-20 px-6 bg-[#F7F8FA]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our <span className="text-[#1945a6]">Website Development</span>?
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              Why Choose Our <span className="text-[#C9A227]">Website Development</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               We combine design excellence with technical precision to deliver websites that drive real business results.
             </p>
           </div>
@@ -554,17 +555,17 @@ export default function WebsiteDevelopmentClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#f4cc6f]/60 flex flex-col overflow-hidden">
-                    <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
-                      <Icon className="w-7 h-7 text-[#b48312]" />
+                  <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#C9A227]/60 flex flex-col overflow-hidden">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-md`}>
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1945a6] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#C9A227] transition-colors duration-300">
                       {point.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed flex-1">
+                    <p className="text-base text-[#3B4456] leading-relaxed flex-1">
                       {point.description}
                     </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                   </div>
                 </motion.div>
               );
@@ -578,13 +579,13 @@ export default function WebsiteDevelopmentClient() {
                 const Icon = point.icon;
                 return (
                   <div key={index} className="group relative flex-shrink-0 w-[82vw] snap-start">
-                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#f4cc6f]/50 flex flex-col overflow-hidden">
-                      <div className="w-14 h-14 rounded-2xl bg-[#f4cc6f]/15 border border-[#f4cc6f]/40 flex items-center justify-center mb-5 flex-shrink-0">
-                        <Icon className="w-7 h-7 text-[#b48312]" />
+                    <div className="relative h-full p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:border-[#C9A227]/50 flex flex-col overflow-hidden">
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconGradient(index)} flex items-center justify-center mb-5 flex-shrink-0 shadow-md`}>
+                        <Icon className="w-7 h-7 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-                      <p className="text-base text-slate-600 leading-relaxed flex-1">{point.description}</p>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                      <p className="text-base text-[#3B4456] leading-relaxed flex-1">{point.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
                     </div>
                   </div>
                 );
@@ -595,7 +596,7 @@ export default function WebsiteDevelopmentClient() {
               {whyChoosePoints.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#f4cc6f]" : "w-2 bg-slate-300"
+                  className={`h-2 rounded-full transition-all duration-300 ${activeSlide === index ? "w-6 bg-[#C9A227]" : "w-2 bg-slate-300"
                     }`}
                 />
               ))}
@@ -606,7 +607,7 @@ export default function WebsiteDevelopmentClient() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Our Website Development <span className='text-[#1945a6]'>Process</span>"
+        title="Our Website Development <span className='text-[#002387]'>Process</span>"
         subtitle="A structured approach from discovery to launch that ensures your website is beautiful, functional, and built to convert."
         steps={[
           {
@@ -658,10 +659,10 @@ export default function WebsiteDevelopmentClient() {
       <section className="px-4 md:px-6 py-24 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With <span className="text-[#1945a6]">Altiora Infotech</span>?
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
+              Why Work With <span className="text-[#C9A227]">Altiora Infotech</span>?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Partner with website development experts who deliver measurable results.
             </p>
           </div>
@@ -687,18 +688,18 @@ export default function WebsiteDevelopmentClient() {
               const subtitles = ["Expertise", "Designs", "Focused", "First", "Architecture", "Partnership"];
               return (
                 <div key={index} className="group relative cursor-pointer">
-                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FAFC] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#1945a6]/40 hover:shadow-md hover:-translate-y-1">
+                  <div className="relative rounded-2xl border border-slate-200/80 bg-[#F7F8FA] backdrop-blur-sm p-4 md:p-6 transition-all duration-300 hover:bg-white hover:border-[#002387]/40 hover:shadow-md hover:-translate-y-1">
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 md:gap-4 mb-4">
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center shadow-md`}>
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#1945a6] transition-colors duration-300">{titles[index]}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{titles[index]}</h3>
                           <span className="text-sm text-slate-500 font-medium">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg text-[#3B4456] group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-slate-200/80 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -714,10 +715,10 @@ export default function WebsiteDevelopmentClient() {
       {/* CTA Section */}
       <section className="px-4 md:px-6 py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#f4cc6f]/30 bg-gradient-to-br from-[#010c22] via-[#1945a6] to-[#010c22] text-white shadow-xl overflow-hidden">
+          <div className="relative p-8 sm:p-12 md:p-16 text-center rounded-3xl border border-[#C9A227]/30 bg-gradient-to-br from-[#001A66] via-[#002387] to-[#001A66] text-white shadow-xl overflow-hidden">
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f4cc6f]/20 border border-[#f4cc6f]/40 mb-8 mx-auto shadow-md">
-                <Globe className="w-10 h-10 text-[#f4cc6f]" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#C9A227]/20 border border-[#C9A227]/40 mb-8 mx-auto shadow-md">
+                <Globe className="w-10 h-10 text-[#C9A227]" />
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                 Ready to Build Your Dream Website?
@@ -733,7 +734,7 @@ export default function WebsiteDevelopmentClient() {
                   href="https://calendly.com/altiorainfotech/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-bold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] shadow-lg shadow-[#C9A227]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book Strategy Call

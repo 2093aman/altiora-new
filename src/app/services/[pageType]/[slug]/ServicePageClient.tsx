@@ -29,7 +29,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
         >
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6">
               {pageData.heroSection.title}
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-4">
@@ -66,7 +66,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
                     <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">
                       {stat.prefix}{stat.value}{stat.suffix}
                     </div>
-                    <div className="text-gray-600">{stat.label}</div>
+                    <div className="text-[#3B4456]">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -78,10 +78,10 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
         {pageData.overviewSection && (
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-slate-900 mb-6 text-center">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-6 text-center">
                 {pageData.overviewSection.title}
               </h2>
-              <p className="text-lg text-gray-600 max-w-4xl mx-auto text-center">
+              <p className="text-lg text-[#3B4456] max-w-4xl mx-auto text-center">
                 {pageData.overviewSection.description}
               </p>
             </div>
@@ -92,13 +92,13 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
         <section className="py-20 bg-[#F3F6FC]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
                 {pageData.servicesSection.title}
               </h2>
-              <p className="text-xl text-gray-600 mb-2">
+              <p className="text-xl text-[#3B4456] mb-2">
                 {pageData.servicesSection.subtitle}
               </p>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <p className="text-[#3B4456] max-w-3xl mx-auto">
                 {pageData.servicesSection.description}
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
                 >
                   <div className="text-4xl mb-4">{card.icon}</div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 mb-4">{card.description}</p>
+                  <p className="text-[#3B4456] mb-4">{card.description}</p>
                   {!card.comingSoon ? (
                     <Link
                       href={card.link}
@@ -131,7 +131,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
         {pageData.blockchainCTA && (
           <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
             <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-white mb-4">
                 {pageData.blockchainCTA.title}
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -152,10 +152,10 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
                   {pageData.whyChooseSection.title}
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-[#3B4456]">
                   {pageData.whyChooseSection.subtitle}
                 </p>
               </div>
@@ -167,7 +167,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
                   >
                     <div className="text-4xl mb-4">{item.icon}</div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-gray-600 mb-4">{item.description}</p>
+                    <p className="text-[#3B4456] mb-4">{item.description}</p>
                     <div className="text-blue-400 font-semibold">{item.trustMetric}</div>
                   </div>
                 ))}
@@ -181,13 +181,13 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
           <section className="py-20 bg-[#F3F6FC]">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
                   {pageData.howWeWorkSection.title}
                 </h2>
-                <p className="text-xl text-gray-600 mb-4">
+                <p className="text-xl text-[#3B4456] mb-4">
                   {pageData.howWeWorkSection.subtitle}
                 </p>
-                <p className="text-gray-600 max-w-3xl mx-auto">
+                <p className="text-[#3B4456] max-w-3xl mx-auto">
                   {pageData.howWeWorkSection.description}
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
                       {step.step}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
+                    <p className="text-[#3B4456]">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -226,10 +226,10 @@ export default function ServicePageClient({ pageData }: ServicePageClientProps) 
         {pageData.finalCTASection && (
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-6">
                 {pageData.finalCTASection.title}
               </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-[#3B4456] mb-8 max-w-3xl mx-auto">
                 {pageData.finalCTASection.description}
               </p>
               <div className="flex flex-wrap gap-4 justify-center">

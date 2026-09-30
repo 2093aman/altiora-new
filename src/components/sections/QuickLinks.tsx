@@ -115,7 +115,7 @@ function Card({ label, href, desc, image, icon }: QuickItem) {
             </span>
           </div>
 
-          <h3 className="mt-3 text-lg sm:text-xl font-semibold leading-tight text-white [text-shadow:0_2px_18px_rgba(0,0,0,.35)]">
+          <h3 className="mt-3 text-lg sm:text-xl font-bold leading-tight text-white [text-shadow:0_2px_18px_rgba(0,0,0,.35)]">
             {label}
           </h3>
           <p className="mt-1 text-xs sm:text-sm text-white/80">{desc}</p>

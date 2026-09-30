@@ -86,7 +86,7 @@ export default function IndigenousMarketingClientPage() {
       icon: Megaphone,
       title: "Digital Advertising",
       description: "Campaigns across Google and social platforms designed for leads and revenue \u2014 not impressions.",
-      color: "#f4cc6f",
+      color: "#C9A227",
     },
     {
       icon: Search,
@@ -116,7 +116,7 @@ export default function IndigenousMarketingClientPage() {
       icon: Video,
       title: "Video & Content Production",
       description: "Short\u2011form and promotional content supporting awareness and conversions.",
-      color: "#f4cc6f",
+      color: "#C9A227",
     },
     {
       icon: Target,
@@ -145,7 +145,7 @@ export default function IndigenousMarketingClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -180,7 +180,7 @@ export default function IndigenousMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-sm sm:text-base md:text-lg text-slate-600 mb-3 sm:mb-4"
+                  className="text-sm sm:text-base md:text-lg text-[#3B4456] mb-3 sm:mb-4"
                 >
                   Grow awareness while preserving authenticity.
                 </motion.p>
@@ -193,7 +193,7 @@ export default function IndigenousMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Talk to a Marketing Expert
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -212,7 +212,7 @@ export default function IndigenousMarketingClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
@@ -220,7 +220,7 @@ export default function IndigenousMarketingClientPage() {
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -232,7 +232,7 @@ export default function IndigenousMarketingClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -252,7 +252,7 @@ export default function IndigenousMarketingClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -267,8 +267,8 @@ export default function IndigenousMarketingClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: ['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'][i],
-                            boxShadow: `0 0 12px ${['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'][i]}80`,
+                            background: ['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'][i],
+                            boxShadow: `0 0 12px ${['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'][i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -285,7 +285,7 @@ export default function IndigenousMarketingClientPage() {
                         { Icon: Search, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
                         { Icon: Globe, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
                         { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-                        { Icon: Zap, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+                        { Icon: Zap, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
                       ].map((item, i) => (
                         <motion.div
                           key={`icon-${i}`}
@@ -319,19 +319,19 @@ export default function IndigenousMarketingClientPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7 }}
-              className="rounded-3xl border border-[#f4cc6f]/20 bg-[#F3F6FC] backdrop-blur-sm p-6 sm:p-8 md:p-10"
+              className="rounded-3xl border border-[#C9A227]/20 bg-[#F3F6FC] backdrop-blur-sm p-6 sm:p-8 md:p-10"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex h-2 w-2 rounded-full bg-[#f4cc6f] shadow-[0_0_12px_#f4cc6f]" />
-                <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#f4cc6f]/90 font-semibold">Quick Answer</span>
+                <span className="inline-flex h-2 w-2 rounded-full bg-[#C9A227] shadow-[0_0_12px_#C9A227]" />
+                <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#C9A227]/90 font-semibold">Quick Answer</span>
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 leading-tight">
                 What does a digital marketing company for Indigenous communities actually do?
               </h2>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
+              <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed mb-6">
                 Altiora Infotech is a digital marketing company that partners with First Nations Councils, Economic Development Corporations, Indigenous tourism operators and Indigenous-owned businesses on culturally-grounded branding, citizen engagement and growth campaigns, built relationship-first, signed off by community, and delivered with measurable outcomes.
               </p>
-              <p className="text-slate-600 text-sm sm:text-base font-semibold mb-3">Core services we deliver for Indigenous partners:</p>
+              <p className="text-[#3B4456] text-sm sm:text-base font-semibold mb-3">Core services we deliver for Indigenous partners:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Culturally-grounded brand identity and visual storytelling",
@@ -341,8 +341,8 @@ export default function IndigenousMarketingClientPage() {
                   "Websites for Nations, EDCs and Indigenous-owned businesses",
                   "Community-aware reporting and revenue-share engagement options",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm sm:text-base">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#f4cc6f]" />
+                  <li key={i} className="flex items-start gap-2.5 text-[#3B4456] text-sm sm:text-base">
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C9A227]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -364,11 +364,11 @@ export default function IndigenousMarketingClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>
                   Overview
                 </span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
 
               <div className="flex flex-col items-center">
@@ -381,20 +381,20 @@ export default function IndigenousMarketingClientPage() {
                   <p className={`${styles.sectionDescription} !max-w-none relative z-10`}>
                     Effective communication for Indigenous organizations prioritizes trust, clarity, and community respect. We design strategies that increase visibility while maintaining cultural integrity.
                   </p>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Time & Growth Section */}
         <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           {/* Rich background effects */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EC4899]/4 blur-[150px] rounded-full pointer-events-none" />
 
@@ -417,7 +417,7 @@ export default function IndigenousMarketingClientPage() {
                 height: `${2 + Math.random() * 3}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: ['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
+                background: ['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
               }}
               animate={{
                 y: [0, -20 - Math.random() * 20, 0],
@@ -457,17 +457,17 @@ export default function IndigenousMarketingClientPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-6"
               >
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+                <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed">
                   Business owners rarely struggle because they lack ideas, they struggle because they lack time and structured execution.
                 </p>
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+                <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed">
                   We help by:
                 </p>
 
                 {/* Points */}
                 <div className="space-y-3 pt-2">
                   {[
-                    { text: "Removing trial\u2011and\u2011error marketing decisions", icon: Target, color: "#f4cc6f" },
+                    { text: "Removing trial\u2011and\u2011error marketing decisions", icon: Target, color: "#C9A227" },
                     { text: "Building predictable lead systems", icon: Clock, color: "#EC4899" },
                     { text: "Creating long\u2011term brand visibility", icon: Briefcase, color: "#3B82F6" },
                   ].map((item, index) => (
@@ -485,12 +485,12 @@ export default function IndigenousMarketingClientPage() {
                       >
                         <item.icon className="w-5 h-5" style={{ color: item.color }} />
                       </div>
-                      <span className="text-slate-700 text-base font-medium">{item.text}</span>
+                      <span className="text-[#3B4456] text-base font-medium">{item.text}</span>
                     </motion.div>
                   ))}
                 </div>
 
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed pt-2">
+                <p className="text-[#3B4456] text-base sm:text-lg leading-relaxed pt-2">
                   Our goal is simple: allow you to focus on operations while we handle acquisition and growth.
                 </p>
               </motion.div>
@@ -505,14 +505,14 @@ export default function IndigenousMarketingClientPage() {
               >
                 <div className="relative p-8 sm:p-10 rounded-3xl overflow-hidden">
                   {/* Card background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/10 via-[#EC4899]/5 to-[#8B5CF6]/10 rounded-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 via-[#EC4899]/5 to-[#8B5CF6]/10 rounded-3xl" />
                   <div className="absolute inset-[1px] rounded-3xl bg-white/95 backdrop-blur-xl" />
 
                   {/* Animated border */}
                   <motion.div
                     className="absolute inset-0 rounded-3xl"
                     style={{
-                      background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #f4cc6f)",
+                      background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #C9A227)",
                       padding: "3px",
                       WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                       WebkitMaskComposite: "xor",
@@ -523,7 +523,7 @@ export default function IndigenousMarketingClientPage() {
                   />
 
                   {/* Glow behind card */}
-                  <div className="absolute -inset-4 bg-[#f4cc6f]/5 blur-[40px] rounded-full pointer-events-none" />
+                  <div className="absolute -inset-4 bg-[#C9A227]/5 blur-[40px] rounded-full pointer-events-none" />
 
                   <div className="relative z-10 text-center">
                     {/* Clock icon with animation */}
@@ -537,9 +537,9 @@ export default function IndigenousMarketingClientPage() {
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <Clock className="w-10 h-10 text-[#f4cc6f]" />
+                      <Clock className="w-10 h-10 text-[#C9A227]" />
                       <motion.div
-                        className="absolute inset-0 rounded-2xl border border-[#f4cc6f]/30"
+                        className="absolute inset-0 rounded-2xl border border-[#C9A227]/30"
                         animate={{ scale: [1, 1.3, 1.3], opacity: [0.5, 0, 0] }}
                         transition={{ duration: 2.5, repeat: Infinity }}
                       />
@@ -554,7 +554,7 @@ export default function IndigenousMarketingClientPage() {
 
                     <Link
                       href="/contact"
-                      className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                      className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                     >
                       Get Started Today
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -569,7 +569,7 @@ export default function IndigenousMarketingClientPage() {
         {/* Market Reality in Vancouver */}
         <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
           {/* Rich background effects */}
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/6 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/6 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#3B82F6]/6 blur-[100px] rounded-full pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EC4899]/3 blur-[150px] rounded-full pointer-events-none" />
 
@@ -592,7 +592,7 @@ export default function IndigenousMarketingClientPage() {
                 height: `${2 + Math.random() * 3}px`,
                 left: `${10 + Math.random() * 80}%`,
                 top: `${10 + Math.random() * 80}%`,
-                background: ['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
+                background: ['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
               }}
               animate={{
                 y: [0, -20 - Math.random() * 15, 0],
@@ -627,7 +627,7 @@ export default function IndigenousMarketingClientPage() {
             {/* Cards grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
               {[
-                { text: "Trust and relationship-building precede every successful campaign, community endorsement matters more than impressions", icon: Target, color: "#f4cc6f" },
+                { text: "Trust and relationship-building precede every successful campaign, community endorsement matters more than impressions", icon: Target, color: "#C9A227" },
                 { text: "Cultural authenticity in language, imagery and storytelling consistently outperforms standard creative templates", icon: Globe, color: "#EC4899" },
                 { text: "Economic Development Corporations, tourism operators and cultural enterprises share buying journeys very unlike standard B2B", icon: Search, color: "#3B82F6" },
                 { text: "Multi-stakeholder approval cycles mean campaigns must be designed for slower, consensus-driven decision-making", icon: Monitor, color: "#10B981" },
@@ -676,7 +676,7 @@ export default function IndigenousMarketingClientPage() {
                       >
                         <item.icon className="w-6 h-6" style={{ color: item.color }} />
                       </motion.div>
-                      <p className="text-slate-700 text-sm sm:text-base font-medium leading-relaxed">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base font-medium leading-relaxed">{item.text}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -689,7 +689,7 @@ export default function IndigenousMarketingClientPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-slate-600 text-base sm:text-lg leading-relaxed text-center mt-12 max-w-2xl mx-auto"
+              className="text-[#3B4456] text-base sm:text-lg leading-relaxed text-center mt-12 max-w-2xl mx-auto"
             >
               Honouring these patterns, not bypassing them, is what makes a campaign welcome inside an Indigenous community rather than an outside intrusion.
             </motion.p>
@@ -703,7 +703,7 @@ export default function IndigenousMarketingClientPage() {
           className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
@@ -726,24 +726,24 @@ export default function IndigenousMarketingClientPage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="relative mb-6 group"
             >
-              <div className="relative rounded-3xl overflow-hidden border border-[#f4cc6f]/15 hover:border-[#f4cc6f]/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(244,204,111,0.08)]">
+              <div className="relative rounded-3xl overflow-hidden border border-[#C9A227]/15 hover:border-[#C9A227]/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(244,204,111,0.08)]">
                 {/* Multi-layer gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#f4cc6f]/[0.08] via-[#FF9F43]/[0.04] to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#f4cc6f]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#C9A227]/[0.08] via-[#FF9F43]/[0.04] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C9A227]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 {/* Animated left stripe */}
                 <motion.div
                   className="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-3xl"
-                  style={{ background: "linear-gradient(to bottom, #f4cc6f, #FF9F43, #f4cc6f)", backgroundSize: "100% 200%" }}
+                  style={{ background: "linear-gradient(to bottom, #C9A227, #FF9F43, #C9A227)", backgroundSize: "100% 200%" }}
                   animate={{ backgroundPosition: ["0% 0%", "0% 100%", "0% 0%"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
                 {/* Corner glow */}
-                <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#f4cc6f]/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-[#f4cc6f]/15 transition-all duration-500" />
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#C9A227]/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-[#C9A227]/15 transition-all duration-500" />
 
                 <div className="relative flex flex-col md:flex-row items-stretch">
                   {/* Left Giant number + icon */}
                   <div className="flex-shrink-0 flex flex-col items-center justify-center p-8 md:p-10 md:w-48 lg:w-56 relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f4cc6f]/[0.06] to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/[0.06] to-transparent" />
                     <div className="relative z-10 flex flex-col items-center">
                       <motion.span
                         className="text-[5rem] md:text-[6rem] font-black leading-none select-none"
@@ -755,11 +755,11 @@ export default function IndigenousMarketingClientPage() {
                       </motion.span>
                       <motion.div
                         className="w-14 h-14 rounded-2xl flex items-center justify-center -mt-4 relative z-10"
-                        style={{ background: "linear-gradient(135deg, #f4cc6f, #FF9F43, #e6b85c)", boxShadow: "0 8px 30px rgba(244,204,111,0.35), 0 0 20px rgba(255,159,67,0.2)" }}
+                        style={{ background: "linear-gradient(135deg, #C9A227, #FF9F43, #B18B1E)", boxShadow: "0 8px 30px rgba(244,204,111,0.35), 0 0 20px rgba(255,159,67,0.2)" }}
                         whileHover={{ scale: 1.1, rotate: -5 }}
                         transition={{ type: "spring", stiffness: 200 }}
                       >
-                        <Palette className="w-7 h-7 text-[#010b22]" />
+                        <Palette className="w-7 h-7 text-[#001A66]" />
                       </motion.div>
                     </div>
                   </div>
@@ -767,9 +767,9 @@ export default function IndigenousMarketingClientPage() {
                   {/* Right Content */}
                   <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                     <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                      Position Your <span style={{ background: "linear-gradient(135deg, #f4cc6f, #FF9F43, #f4cc6f)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Brand</span>
+                      Position Your <span style={{ background: "linear-gradient(135deg, #C9A227, #FF9F43, #C9A227)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Brand</span>
                     </h3>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
                       We improve visual identity and website experience so customers trust your business instantly.
                     </p>
                   </div>
@@ -780,7 +780,7 @@ export default function IndigenousMarketingClientPage() {
               <div className="hidden md:flex justify-center py-2">
                 <motion.div
                   className="w-[2px] h-10 rounded-full"
-                  style={{ background: "linear-gradient(to bottom, #f4cc6f, #3B82F6)" }}
+                  style={{ background: "linear-gradient(to bottom, #C9A227, #3B82F6)" }}
                   initial={{ scaleY: 0, opacity: 0 }}
                   animate={lookGreatInView ? { scaleY: 1, opacity: 0.5 } : { scaleY: 0, opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
@@ -834,9 +834,9 @@ export default function IndigenousMarketingClientPage() {
                   {/* Left Content */}
                   <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                     <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                      Get <span style={{ background: "linear-gradient(135deg, #3B82F6, #06B6D4, #3B82F6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Seen</span>
+                      Get <span className="text-[#C9A227]">Seen</span>
                     </h3>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
                       We drive high&#8209;intent traffic using SEO and paid advertising targeting local searches.
                     </p>
                   </div>
@@ -905,9 +905,9 @@ export default function IndigenousMarketingClientPage() {
                   {/* Right Content */}
                   <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                     <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                      Generate <span className="text-[#8B5CF6]">Results</span>
+                      Generate <span className="text-[#C9A227]">Results</span>
                     </h3>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">
                       Traffic converts into enquiries through structured landing pages and funnels.
                     </p>
                   </div>
@@ -923,7 +923,7 @@ export default function IndigenousMarketingClientPage() {
           className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white"
         >
           {/* Rich background effects */}
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#f4cc6f]/6 blur-[150px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C9A227]/6 blur-[150px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#8B5CF6]/6 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#EC4899]/3 blur-[180px] rounded-full pointer-events-none" />
 
@@ -946,7 +946,7 @@ export default function IndigenousMarketingClientPage() {
                 height: `${2 + Math.random() * 3}px`,
                 left: `${10 + Math.random() * 80}%`,
                 top: `${10 + Math.random() * 80}%`,
-                background: ['#f4cc6f', '#EC4899', '#3B82F6', '#8B5CF6', '#06B6D4'][i % 5],
+                background: ['#C9A227', '#EC4899', '#3B82F6', '#8B5CF6', '#06B6D4'][i % 5],
               }}
               animate={{
                 y: [0, -25 - Math.random() * 15, 0],
@@ -995,7 +995,7 @@ export default function IndigenousMarketingClientPage() {
                   <div className="absolute top-0 left-0 right-0 h-[2px] overflow-hidden">
                     <motion.div
                       className="h-full w-1/3"
-                      style={{ background: "linear-gradient(90deg, transparent, #f4cc6f, #EC4899, transparent)" }}
+                      style={{ background: "linear-gradient(90deg, transparent, #C9A227, #EC4899, transparent)" }}
                       animate={{ x: ["-100%", "400%"] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     />
@@ -1009,7 +1009,7 @@ export default function IndigenousMarketingClientPage() {
                       transition={{ duration: 0.5, delay: 0.4 }}
                       className="text-center mb-10"
                     >
-                      <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#f4cc6f]/20 text-[#f4cc6f]/80"
+                      <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#C9A227]/20 text-[#C9A227]/80"
                         style={{ background: "rgba(244,204,111,0.06)" }}
                       >
                         Our Approach
@@ -1022,7 +1022,7 @@ export default function IndigenousMarketingClientPage() {
                       <div className="hidden md:block absolute top-[3.5rem] left-[16%] right-[16%] h-[1px]">
                         <motion.div
                           className="h-full w-full"
-                          style={{ background: "linear-gradient(90deg, #f4cc6f40, #EC489940, #3B82F640)" }}
+                          style={{ background: "linear-gradient(90deg, #C9A22740, #EC489940, #3B82F640)" }}
                           initial={{ scaleX: 0 }}
                           animate={growInView ? { scaleX: 1 } : {}}
                           transition={{ duration: 1.2, delay: 0.8 }}
@@ -1034,7 +1034,7 @@ export default function IndigenousMarketingClientPage() {
                           {
                             text: "Intent\u2011driven search traffic",
                             icon: Search,
-                            color: "#f4cc6f",
+                            color: "#C9A227",
                             number: "01",
                             description: "Target users actively searching for your services",
                           },
@@ -1084,7 +1084,7 @@ export default function IndigenousMarketingClientPage() {
                               {/* Number badge */}
                               <div
                                 className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold z-20"
-                                style={{ background: item.color, color: "#010b22" }}
+                                style={{ background: item.color, color: "#001A66" }}
                               >
                                 {item.number}
                               </div>
@@ -1115,7 +1115,7 @@ export default function IndigenousMarketingClientPage() {
                           animate={{ rotate: [0, 360] }}
                           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                         >
-                          <Zap className="w-6 h-6 text-[#f4cc6f]" />
+                          <Zap className="w-6 h-6 text-[#C9A227]" />
                         </motion.div>
                         <div>
                           <p className="text-slate-900 font-semibold text-base sm:text-lg">Connected marketing ecosystem</p>
@@ -1125,7 +1125,7 @@ export default function IndigenousMarketingClientPage() {
 
                       <Link
                         href="/contact"
-                        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40 whitespace-nowrap flex-shrink-0"
+                        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40 whitespace-nowrap flex-shrink-0"
                       >
                         Start Growing
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -1141,7 +1141,7 @@ export default function IndigenousMarketingClientPage() {
         {/* Services Section */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
 
           <div className="max-w-5xl mx-auto relative z-10">
@@ -1188,7 +1188,7 @@ export default function IndigenousMarketingClientPage() {
                     {/* Text */}
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-slate-800 transition-colors">{service.title}</h3>
-                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 transition-colors">{service.description}</p>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed group-hover:text-[#3B4456] transition-colors">{service.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1222,12 +1222,12 @@ export default function IndigenousMarketingClientPage() {
             {/* Card grid same layout as SEO page */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {[
-                { title: "Cultural", subtitle: "Understanding", text: "We respect and incorporate Indigenous values and cultural sensitivity in all marketing strategies.", icon: Target, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+                { title: "Cultural", subtitle: "Understanding", text: "We respect and incorporate Indigenous values and cultural sensitivity in all marketing strategies.", icon: Target, gradient: "from-[#C9A227] to-[#FF9F43]" },
                 { title: "All Services", subtitle: "Under One Roof", text: "Our dedicated team handles SEO, paid advertising, branding, and web development \u2014 one team, one strategy, one point of contact.", icon: Briefcase, gradient: "from-[#3B82F6] to-[#06B6D4]" },
                 { title: "Community\u2011Focused", subtitle: "Approach", text: "Every campaign respects Indigenous sovereignty and community values while achieving business goals.", icon: BarChart3, gradient: "from-[#8B5CF6] to-[#EC4899]" },
                 { title: "Transparent", subtitle: "Reporting", text: "With consistent communication, you always know where your marketing budget is going and what returns it generates.", icon: Eye, gradient: "from-[#10B981] to-[#06B6D4]" },
-                { title: "Long\u2011Term", subtitle: "Partnership", text: "We focus on sustainable growth and building lasting relationships with Indigenous communities.", icon: Zap, gradient: "from-[#EC4899] to-[#f4cc6f]" },
-                { title: "Indigenous", subtitle: "Expertise", text: "We understand the unique needs, values, and opportunities within Indigenous business communities.", icon: Globe, gradient: "from-[#f4cc6f] to-[#10B981]" },
+                { title: "Long\u2011Term", subtitle: "Partnership", text: "We focus on sustainable growth and building lasting relationships with Indigenous communities.", icon: Zap, gradient: "from-[#EC4899] to-[#C9A227]" },
+                { title: "Indigenous", subtitle: "Expertise", text: "We understand the unique needs, values, and opportunities within Indigenous business communities.", icon: Globe, gradient: "from-[#C9A227] to-[#10B981]" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -1244,11 +1244,11 @@ export default function IndigenousMarketingClientPage() {
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                          <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                           <span className="text-sm text-slate-500">{item.subtitle}</span>
                         </div>
                       </div>
-                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -1267,7 +1267,7 @@ export default function IndigenousMarketingClientPage() {
         >
           {/* Rich background effects */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-white to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EC4899]/4 blur-[150px] rounded-full pointer-events-none" />
 
@@ -1290,7 +1290,7 @@ export default function IndigenousMarketingClientPage() {
                 height: `${2 + Math.random() * 3}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: ['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
+                background: ['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6'][i % 5],
               }}
               animate={{
                 y: [0, -20 - Math.random() * 20, 0],
@@ -1321,12 +1321,12 @@ export default function IndigenousMarketingClientPage() {
             {/* Industries grid */}
             <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
               {[
-                { text: "Immigration consultants", icon: Globe, color: "#f4cc6f" },
+                { text: "Immigration consultants", icon: Globe, color: "#C9A227" },
                 { text: "Real estate agents & mortgage brokers", icon: Building2, color: "#EC4899" },
                 { text: "Medical & dental clinics", icon: Briefcase, color: "#3B82F6" },
                 { text: "Construction & renovation companies", icon: PenTool, color: "#10B981" },
                 { text: "Education consultants", icon: Target, color: "#8B5CF6" },
-                { text: "Restaurants & retail businesses", icon: Megaphone, color: "#f4cc6f" },
+                { text: "Restaurants & retail businesses", icon: Megaphone, color: "#C9A227" },
                 { text: "Professional services", icon: BarChart3, color: "#EC4899" },
               ].map((item, index) => (
                 <motion.div
@@ -1360,7 +1360,7 @@ export default function IndigenousMarketingClientPage() {
                       >
                         <item.icon className="w-5 h-5" style={{ color: item.color }} />
                       </motion.div>
-                      <p className="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed">{item.text}</p>
+                      <p className="text-[#3B4456] text-xs sm:text-sm font-medium leading-relaxed">{item.text}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1382,7 +1382,7 @@ export default function IndigenousMarketingClientPage() {
         {/* Communities & Sectors We Support */}
         <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#10B981]/6 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-[#f4cc6f]/6 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-[#C9A227]/6 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
@@ -1420,7 +1420,7 @@ export default function IndigenousMarketingClientPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.05 * index }}
-                  className="rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-center text-sm sm:text-base text-slate-700 hover:border-[#f4cc6f]/40 hover:bg-black/[0.06] transition-all duration-300"
+                  className="rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-center text-sm sm:text-base text-[#3B4456] hover:border-[#C9A227]/40 hover:bg-black/[0.06] transition-all duration-300"
                 >
                   {area}
                 </motion.div>
@@ -1432,14 +1432,14 @@ export default function IndigenousMarketingClientPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-slate-600 text-base sm:text-lg leading-relaxed text-center mt-10 max-w-3xl mx-auto"
+              className="text-[#3B4456] text-base sm:text-lg leading-relaxed text-center mt-10 max-w-3xl mx-auto"
             >
               We approach every engagement with culturally-grounded{' '}
-              <Link href="/services/branding" className="text-[#f4cc6f] underline-offset-4 hover:underline">
+              <Link href="/services/branding" className="text-[#C9A227] underline-offset-4 hover:underline">
                 branding and identity work
               </Link>
               {' '}backed by a measurable{' '}
-              <Link href="/services/digital-marketing-strategy" className="text-[#f4cc6f] underline-offset-4 hover:underline">
+              <Link href="/services/digital-marketing-strategy" className="text-[#C9A227] underline-offset-4 hover:underline">
                 digital marketing strategy
               </Link>
               {' '}so community voice and commercial outcomes move forward together.
@@ -1484,7 +1484,7 @@ export default function IndigenousMarketingClientPage() {
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
                       <svg
-                        className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`}
+                        className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1496,7 +1496,7 @@ export default function IndigenousMarketingClientPage() {
                     <div
                       className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-40 mt-3 opacity-100" : "max-h-0 opacity-0"}`}
                     >
-                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="text-[#3B4456] text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -1516,7 +1516,7 @@ export default function IndigenousMarketingClientPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-blue-900/80 to-purple-900/90" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
 
@@ -1547,7 +1547,7 @@ export default function IndigenousMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Let&apos;s talk about growing my business
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

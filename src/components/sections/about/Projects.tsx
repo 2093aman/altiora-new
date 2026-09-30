@@ -9,7 +9,7 @@ export default function AboutProjects() {
   return (
     <section className="px-6 py-16 border-y border-black/10 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">Projects</h2>
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900">Projects</h2>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <Reveal key={i} className="rounded-2xl border border-black/10 bg-[#F3F6FC] hover:bg-black/5 transition">

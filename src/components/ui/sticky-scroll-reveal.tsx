@@ -169,7 +169,7 @@ export const StickyScroll = ({
                     </motion.div>
                   </div>
                   
-                  <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 lg:mb-6">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-3 lg:mb-6">
                     {item.title}
                   </h2>
                   <p className="text-base lg:text-xl text-slate-700 leading-relaxed max-w-lg mx-auto px-2 lg:px-0">

@@ -121,7 +121,7 @@ export default function TechnologyStackSection() {
     <section className="py-20 tech-stack-section bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-4 text-slate-900">
             Our Technology Stack
           </h2>
         </div>
@@ -210,7 +210,7 @@ export default function TechnologyStackSection() {
                     </div>
 
                     {/* Name */}
-                    <h5 className="tech-name text-slate-800 font-semibold text-lg relative z-10 transition-all duration-300">
+                    <h5 className="tech-name text-slate-800 font-bold text-lg relative z-10 transition-all duration-300">
                       {tech.name}
                     </h5>
                   </div>

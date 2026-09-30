@@ -64,7 +64,7 @@ export default function DNAAnimation({
 
       {/* Header Section */}
       <div className="text-center mb-16 px-6">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-6">
           {title}
         </h2>
         <p className="mt-4 text-xl leading-7 text-slate-600 max-w-4xl mx-auto">

@@ -67,10 +67,10 @@ export default function VictoriaMarketingClientPage() {
       title: "Business Discovery",
       text: "We begin by understanding your goals, customers, competitors, and current digital performance.",
       icon: Eye,
-      color: "#f4cc6f",
-      gradientColors: "linear-gradient(to bottom, #f4cc6f, #FF9F43, #f4cc6f)",
-      iconGradient: "linear-gradient(135deg, #f4cc6f, #FF9F43, #e6b85c)",
-      iconTextColor: "#010b22",
+      color: "#C9A227",
+      gradientColors: "linear-gradient(to bottom, #C9A227, #FF9F43, #C9A227)",
+      iconGradient: "linear-gradient(135deg, #C9A227, #FF9F43, #B18B1E)",
+      iconTextColor: "#001A66",
     },
     {
       number: "02",
@@ -105,21 +105,21 @@ export default function VictoriaMarketingClientPage() {
   ];
 
   const coreServices = [
-    { icon: Search, color: "#f4cc6f", title: "Search Engine Optimization (SEO)", description: "Improve your search engine rankings with technical SEO, content optimization, keyword research, and authority-building strategies." },
+    { icon: Search, color: "#C9A227", title: "Search Engine Optimization (SEO)", description: "Improve your search engine rankings with technical SEO, content optimization, keyword research, and authority-building strategies." },
     { icon: MapPin, color: "#EC4899", title: "Local SEO", description: "Increase visibility in Google Maps and local search results so nearby customers can easily find your business." },
     { icon: Target, color: "#3B82F6", title: "Google Ads Management", description: "Generate qualified leads through highly targeted Pay-Per-Click campaigns designed to maximize advertising performance." },
     { icon: Share2, color: "#10B981", title: "Social Media Marketing", description: "Build stronger customer relationships and increase brand awareness through engaging content and strategic advertising." },
     { icon: Monitor, color: "#8B5CF6", title: "Website Design & Development", description: "Create modern, responsive websites that deliver exceptional user experiences while supporting SEO and lead generation." },
-    { icon: FileText, color: "#f4cc6f", title: "Content Marketing", description: "Develop valuable content that educates customers, improves search visibility, and establishes industry authority." },
+    { icon: FileText, color: "#C9A227", title: "Content Marketing", description: "Develop valuable content that educates customers, improves search visibility, and establishes industry authority." },
     { icon: Bot, color: "#EC4899", title: "AI Marketing & Automation", description: "Automate repetitive marketing tasks, improve customer engagement, and streamline lead nurturing using intelligent AI solutions." },
   ];
 
   const whyChooseUs = [
-    { title: "Customized Digital Strategies", text: "Every campaign is tailored to your business objectives, audience, and competitive landscape.", icon: Palette, gradient: "from-[#f4cc6f] to-[#FF9F43]" },
+    { title: "Customized Digital Strategies", text: "Every campaign is tailored to your business objectives, audience, and competitive landscape.", icon: Palette, gradient: "from-[#C9A227] to-[#FF9F43]" },
     { title: "Data-Driven Marketing", text: "We use analytics, research, and measurable KPIs to guide every marketing decision.", icon: BarChart3, gradient: "from-[#3B82F6] to-[#06B6D4]" },
     { title: "Complete Digital Expertise", text: "Our team integrates SEO, paid advertising, website development, content marketing, automation, and analytics into one comprehensive strategy.", icon: Briefcase, gradient: "from-[#8B5CF6] to-[#EC4899]" },
     { title: "Transparent Reporting", text: "You'll receive regular performance reports with actionable recommendations and measurable insights.", icon: Eye, gradient: "from-[#10B981] to-[#06B6D4]" },
-    { title: "Long-Term Growth Focus", text: "We build sustainable marketing systems that continue generating value as your business expands.", icon: TrendingUp, gradient: "from-[#EC4899] to-[#f4cc6f]" },
+    { title: "Long-Term Growth Focus", text: "We build sustainable marketing systems that continue generating value as your business expands.", icon: TrendingUp, gradient: "from-[#EC4899] to-[#C9A227]" },
   ];
 
   const industries = [
@@ -148,7 +148,7 @@ export default function VictoriaMarketingClientPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-700">
+    <div className="min-h-screen flex flex-col bg-white text-[#3B4456]">
       <Header />
       <main className="flex-grow">
 
@@ -161,7 +161,7 @@ export default function VictoriaMarketingClientPage() {
             {mounted && [...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#f4cc6f] rounded-full opacity-20 animate-pulse"
+                className="absolute w-1 h-1 bg-[#C9A227] rounded-full opacity-20 animate-pulse"
                 style={{
                   left: `${(i * 17 + 5) % 100}%`,
                   top: `${(i * 13 + 7) % 100}%`,
@@ -194,7 +194,7 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-base sm:text-lg md:text-xl text-slate-600/80 mb-3 sm:mb-4"
+                  className="text-base sm:text-lg md:text-xl text-[#3B4456]/80 mb-3 sm:mb-4"
                 >
                   Grow Your Business with a Trusted Digital Marketing Company in Victoria
                 </motion.p>
@@ -203,10 +203,10 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
-                  className="text-sm sm:text-base text-slate-600/65 mb-4 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456]/65 mb-4 leading-relaxed"
                 >
                   Standing out in today&apos;s competitive marketplace requires more than a website or occasional social media posts. Businesses need a strategic digital marketing partner that understands how to attract the right audience, build brand authority, and convert online visitors into loyal customers. At Altiora Infotech, we are a{' '}
-                  <Link href="/" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Victoria</Link>
+                  <Link href="/" className="text-[#C9A227] hover:underline">Digital Marketing Company in Victoria</Link>
                   {' '}committed to helping businesses achieve sustainable growth through innovative, data-driven marketing solutions.
                 </motion.p>
 
@@ -214,7 +214,7 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="text-sm sm:text-base text-slate-600/65 mb-4 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456]/65 mb-4 leading-relaxed"
                 >
                   Victoria is known for its thriving tourism, healthcare, real estate, education, retail, technology, and professional services sectors. As consumer behavior continues shifting toward online research and digital purchasing, businesses need a strong online presence to remain competitive. Our team delivers customized SEO, Google Ads, Meta Ads, website development, Local SEO, content marketing, AI-powered automation, and performance marketing strategies designed to help businesses grow with confidence.
                 </motion.p>
@@ -223,7 +223,7 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: 1.05 }}
-                  className="text-sm sm:text-base text-slate-600/65 mb-6 sm:mb-8 leading-relaxed"
+                  className="text-sm sm:text-base text-[#3B4456]/65 mb-6 sm:mb-8 leading-relaxed"
                 >
                   Whether you&apos;re a startup, a local business, or an established enterprise, we create digital marketing campaigns tailored to your goals and built for long-term success.
                 </motion.p>
@@ -236,7 +236,7 @@ export default function VictoriaMarketingClientPage() {
                 >
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40"
                   >
                     Schedule Your Free Digital Marketing Consultation
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -262,14 +262,14 @@ export default function VictoriaMarketingClientPage() {
                     <>
                       <motion.div
                         className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full opacity-30 blur-3xl"
-                        style={{ background: "radial-gradient(circle, #f4cc6f, #EC4899, #3B82F6, transparent)" }}
+                        style={{ background: "radial-gradient(circle, #C9A227, #EC4899, #3B82F6, transparent)" }}
                         animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <motion.div
                         className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full"
                         style={{
-                          background: "conic-gradient(from 0deg, #f4cc6f, #EC4899, #8B5CF6, #3B82F6, #10B981, #f4cc6f)",
+                          background: "conic-gradient(from 0deg, #C9A227, #EC4899, #8B5CF6, #3B82F6, #10B981, #C9A227)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -280,7 +280,7 @@ export default function VictoriaMarketingClientPage() {
                       <motion.div
                         className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
                         style={{
-                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #f4cc6f, #10B981, #3B82F6)",
+                          background: "conic-gradient(from 180deg, #3B82F6, #8B5CF6, #EC4899, #C9A227, #10B981, #3B82F6)",
                           padding: "2px",
                           WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
                           mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 2px))",
@@ -298,7 +298,7 @@ export default function VictoriaMarketingClientPage() {
                         <motion.div
                           className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-2xl flex items-center justify-center shadow-2xl"
                           style={{
-                            background: "linear-gradient(135deg, #f4cc6f, #EC4899, #8B5CF6)",
+                            background: "linear-gradient(135deg, #C9A227, #EC4899, #8B5CF6)",
                             boxShadow: "0 20px 60px rgba(244,204,111,0.3), 0 0 40px rgba(236,72,153,0.2), 0 0 60px rgba(139,92,246,0.15)",
                           }}
                           animate={{ y: [0, -12, 0] }}
@@ -312,8 +312,8 @@ export default function VictoriaMarketingClientPage() {
                           key={`dot-${i}`}
                           className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full"
                           style={{
-                            background: (['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i],
-                            boxShadow: `0 0 12px ${(['#f4cc6f', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#f4cc6f'] as string[])[i]}80`,
+                            background: (['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i],
+                            boxShadow: `0 0 12px ${(['#C9A227', '#EC4899', '#3B82F6', '#10B981', '#8B5CF6', '#C9A227'] as string[])[i]}80`,
                             top: `${15 + Math.sin(i * 1.05) * 35}%`,
                             left: `${50 + Math.cos(i * 1.05) * 40}%`,
                           }}
@@ -326,7 +326,7 @@ export default function VictoriaMarketingClientPage() {
                         { Icon: Search, color: "#3B82F6", bg: "rgba(59,130,246,0.15)", top: "20%", left: "80%" },
                         { Icon: Globe, color: "#10B981", bg: "rgba(16,185,129,0.15)", top: "65%", left: "5%" },
                         { Icon: BarChart3, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", top: "72%", left: "82%" },
-                        { Icon: Zap, color: "#f4cc6f", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
+                        { Icon: Zap, color: "#C9A227", bg: "rgba(244,204,111,0.15)", top: "42%", left: "88%" },
                       ].map((item, i) => (
                         <motion.div
                           key={`icon-${i}`}
@@ -365,9 +365,9 @@ export default function VictoriaMarketingClientPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-6 mb-8">
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
                 <span className={styles.overviewTitle}>Overview</span>
-                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+                <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
               </div>
               <div className="flex flex-col items-center">
                 <motion.div
@@ -376,7 +376,7 @@ export default function VictoriaMarketingClientPage() {
                   transition={{ duration: 1, delay: 0.2 }}
                   className="max-w-5xl mx-auto p-8 sm:p-12 md:p-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-left sm:text-center">
+                  <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4 text-left sm:text-center">
                     Why Choose a Digital Marketing Company in Victoria?
                   </h2>
                   <div className={`${styles.sectionDescription} !max-w-none relative z-10 !text-left sm:!text-center`}>
@@ -384,18 +384,18 @@ export default function VictoriaMarketingClientPage() {
                     <p className="mb-4">Working with a Digital Marketing Company in Victoria gives your business a competitive advantage by improving search visibility, strengthening your online reputation, and generating qualified leads through targeted digital strategies.</p>
                     <p>At Altiora Infotech, we combine market research, creativity, and analytics to build customized campaigns that deliver measurable business results instead of simply increasing website traffic.</p>
                   </div>
-                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
         </section>
 
         {/* Digital Marketing Solutions Designed for Victoria Businesses */}
         <section ref={solutionsRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={solutionsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-8">
@@ -414,11 +414,11 @@ export default function VictoriaMarketingClientPage() {
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={brandingInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-8">
               <h2 className={styles.sectionHeading}>Branding & Performance Marketing That <span className={styles.gradientText}>Delivers Results</span></h2>
-              <p className="text-slate-600/60 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+              <p className="text-[#3B4456]/60 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                 A successful digital strategy combines strong branding with measurable marketing performance. We help businesses establish credibility while attracting customers across multiple digital channels.
               </p>
             </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={brandingInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }} className="text-slate-600/75 text-base font-semibold text-center mb-5">
+            <motion.p initial={{ opacity: 0 }} animate={brandingInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }} className="text-[#3B4456]/75 text-base font-semibold text-center mb-5">
               Our services include:
             </motion.p>
             <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-10">
@@ -428,14 +428,14 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={brandingInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.05 * i }}
-                  className="text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#f4cc6f]/25 text-slate-600/85"
+                  className="text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#C9A227]/25 text-[#3B4456]/85"
                   style={{ background: "rgba(244,204,111,0.06)" }}
                 >
                   {service}
                 </motion.span>
               ))}
             </div>
-            <motion.p initial={{ opacity: 0 }} animate={brandingInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.4 }} className="text-slate-600/60 text-base sm:text-lg leading-relaxed text-center max-w-3xl mx-auto">
+            <motion.p initial={{ opacity: 0 }} animate={brandingInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.4 }} className="text-[#3B4456]/60 text-base sm:text-lg leading-relaxed text-center max-w-3xl mx-auto">
               Every campaign is continuously optimized using performance data to improve engagement, lead quality, and return on investment.
             </motion.p>
           </div>
@@ -444,7 +444,7 @@ export default function VictoriaMarketingClientPage() {
         {/* Understanding Victoria's Digital Business Landscape */}
         <section ref={landscapeRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={landscapeInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-8">
               <h2 className={styles.sectionHeading}>Understanding <span className={styles.gradientText}>Victoria&apos;s Digital Business Landscape</span></h2>
@@ -459,7 +459,7 @@ export default function VictoriaMarketingClientPage() {
 
         {/* Our Growth Process */}
         <section ref={growthRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-white">
-          <div className="absolute top-0 left-0 w-80 h-80 bg-[#f4cc6f]/6 blur-[130px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#10B981]/6 blur-[130px] rounded-full pointer-events-none" />
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={growthInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16">
@@ -505,7 +505,7 @@ export default function VictoriaMarketingClientPage() {
                     </div>
                     <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                       <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                      <p className="text-slate-600/55 text-sm sm:text-base leading-relaxed">{step.text}</p>
+                      <p className="text-[#3B4456]/55 text-sm sm:text-base leading-relaxed">{step.text}</p>
                     </div>
                   </div>
                 </div>
@@ -517,7 +517,7 @@ export default function VictoriaMarketingClientPage() {
         {/* Our Digital Marketing Services */}
         <section ref={servicesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#f4cc6f]/5 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#C9A227]/5 blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-[#8B5CF6]/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={servicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="text-center mb-10">
@@ -540,7 +540,7 @@ export default function VictoriaMarketingClientPage() {
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-2">{service.title}</h3>
                   </div>
-                  <p className="text-slate-600/65 text-sm sm:text-base leading-relaxed">{service.description}</p>
+                  <p className="text-[#3B4456]/65 text-sm sm:text-base leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -565,9 +565,9 @@ export default function VictoriaMarketingClientPage() {
                         <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
                           <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{item.title}</h3>
                       </div>
-                      <p className="text-slate-600/80 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
+                      <p className="text-[#3B4456]/80 text-sm sm:text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-300">{item.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -582,12 +582,12 @@ export default function VictoriaMarketingClientPage() {
         {/* Industries We Serve */}
         <section ref={industriesRef} className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[#F3F6FC]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#F3F6FC] via-[#EAF0FB] to-[#F3F6FC]" />
-          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#f4cc6f]/8 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A227]/8 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#8B5CF6]/8 blur-[100px] rounded-full pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={industriesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="mb-8">
               <h2 className={styles.sectionHeading}>Industries <span className={styles.gradientText}>We Serve</span></h2>
-              <p className="text-slate-600/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+              <p className="text-[#3B4456]/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                 We create customized marketing strategies for businesses across a variety of industries, including:
               </p>
             </motion.div>
@@ -598,15 +598,15 @@ export default function VictoriaMarketingClientPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={industriesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.05 * i }}
-                  className="flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#f4cc6f]/25 text-slate-600/85"
+                  className="flex items-center gap-2 text-sm sm:text-base px-4 py-2 rounded-full font-medium border border-[#C9A227]/25 text-[#3B4456]/85"
                   style={{ background: "rgba(244,204,111,0.06)" }}
                 >
-                  <Briefcase className="w-4 h-4 text-[#f4cc6f]" />
+                  <Briefcase className="w-4 h-4 text-[#C9A227]" />
                   {industry}
                 </motion.div>
               ))}
             </div>
-            <motion.p initial={{ opacity: 0 }} animate={industriesInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.4 }} className="text-slate-600/60 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+            <motion.p initial={{ opacity: 0 }} animate={industriesInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.4 }} className="text-[#3B4456]/60 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
               Every campaign is tailored to the unique challenges and opportunities within your industry.
             </motion.p>
           </div>
@@ -616,18 +616,18 @@ export default function VictoriaMarketingClientPage() {
         {/* Other Locations We Serve */}
         <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10 relative bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
               Serving Businesses Across Canada
             </h2>
-            <p className="text-slate-600/70 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#3B4456]/70 text-sm sm:text-base leading-relaxed">
               Beyond Victoria, we also operate as a{' '}
-              <Link href="/services/digital-marketing-company-in-Calgary" className="text-[#f4cc6f] hover:underline">Digital Marketing Company in Calgary</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-Calgary" className="text-[#C9A227] hover:underline">Digital Marketing Company in Calgary</Link>{' '}
               and support businesses in{' '}
-              <Link href="/services/digital-marketing-company-in-edmonton" className="text-[#f4cc6f] hover:underline">Edmonton</Link>.{' '}
+              <Link href="/services/digital-marketing-company-in-edmonton" className="text-[#C9A227] hover:underline">Edmonton</Link>.{' '}
               Our{' '}
-              <Link href="/services/digital-marketing-company-in-winnipeg" className="text-[#f4cc6f] hover:underline">Winnipeg team</Link>{' '}
+              <Link href="/services/digital-marketing-company-in-winnipeg" className="text-[#C9A227] hover:underline">Winnipeg team</Link>{' '}
               brings the same data-driven approach to{' '}
-              <Link href="/services/digital-marketing-company-in-toronto" className="text-[#f4cc6f] hover:underline">growing brands in Toronto</Link>.
+              <Link href="/services/digital-marketing-company-in-toronto" className="text-[#C9A227] hover:underline">growing brands in Toronto</Link>.
             </p>
           </div>
         </section>
@@ -644,12 +644,12 @@ export default function VictoriaMarketingClientPage() {
                   <button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:bg-black/[0.05] hover:border-black/20">
                     <div className="flex items-center justify-between gap-4">
                       <h3 className="text-base sm:text-lg font-bold text-slate-900">{faq.question}</h3>
-                      <svg className={`w-5 h-5 text-[#f4cc6f] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className={`w-5 h-5 text-[#C9A227] flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
                     <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 mt-3 opacity-100" : "max-h-0 opacity-0"}`}>
-                      <p className="faq-answer text-slate-600/70 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                      <p className="faq-answer text-[#3B4456]/70 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </button>
                 </motion.div>
@@ -664,7 +664,7 @@ export default function VictoriaMarketingClientPage() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6 }} className="relative rounded-3xl overflow-hidden p-8 sm:p-12 md:p-16 text-center">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-blue-900/80 to-purple-900/90" />
               <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#f4cc6f]/20 blur-[100px] rounded-full" />
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#C9A227]/20 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-[#EC4899]/15 blur-[80px] rounded-full" />
               </div>
               <div className="relative z-10">
@@ -682,7 +682,7 @@ export default function VictoriaMarketingClientPage() {
                   Let&apos;s transform your online presence into a powerful growth engine.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={finalCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.8 }}>
-                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] hover:from-[#e6b85c] hover:to-[#f4cc6f] text-[#010c22] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#f4cc6f]/25 hover:shadow-xl hover:shadow-[#f4cc6f]/40">
+                  <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#C9A227] to-[#B18B1E] hover:from-[#B18B1E] hover:to-[#C9A227] text-[#001A66] font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#C9A227]/25 hover:shadow-xl hover:shadow-[#C9A227]/40">
                     Get Your Free Strategy Session
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>

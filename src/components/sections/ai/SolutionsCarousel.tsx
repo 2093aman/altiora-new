@@ -85,7 +85,7 @@ export function SolutionsCarousel() {
   return (
     <section className="px-6 py-16 ">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-2xl sm:text-3xl font-bold tracking-tight text-white mb-8">
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-center text-white mb-8">
           Here&apos;s How Altiora&apos;s AI Solutions Help Businesses Like Yours
         </h2>
 
@@ -139,7 +139,7 @@ export function SolutionsCarousel() {
 
             {/* Content */}
             <div className="lg:col-span-7">
-              <h3 className="text-white font-semibold text-2xl" style={{ color: "#64B5F6" }}>
+              <h3 className="text-white font-bold text-2xl" style={{ color: "#64B5F6" }}>
                 {slide.title}
               </h3>
               <p className="mt-4 text-white/90 text-base sm:text-lg leading-relaxed text-justify">

@@ -83,7 +83,7 @@ export default function Hero() {
           altiora infotech
         </p>
 
-        <h1 className="mt-3 mx-auto font-semibold tracking-tight text-4xl sm:text-6xl leading-tight max-w-5xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mt-3 mx-auto tracking-tight leading-tight max-w-5xl">
           Growth Acceleration Through
           <br />
           Digital Marketing, Blockchain,<br/> AI & Software Engineering

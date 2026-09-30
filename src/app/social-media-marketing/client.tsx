@@ -128,9 +128,9 @@ const SocialPlatformCard = ({ platform, className }: { platform: any; className?
 
         {/* Platform Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${platform.iconBg} mb-6 relative z-10`}
+          className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded-xl ${platform.iconBg} mb-6 relative z-10 shadow-md`}
         >
-          <platform.icon className={`w-8 h-8 md:w-10 md:h-10 ${platform.iconColor}`} />
+          <platform.icon className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 ${platform.iconColor}`} />
         </motion.div>
 
         {/* Content */}
@@ -180,14 +180,14 @@ export default function SocialMediaMarketingClient() {
   const socialPlatforms = [
     {
       name: "Facebook Marketing",
-      highlightedName: "Facebook <span class='text-[#f4cc6f]'>Marketing</span>",
+      highlightedName: "Facebook <span class='text-[#C9A227]'>Marketing</span>",
       icon: FaFacebook,
       description: "Build communities and drive engagement with strategic Facebook marketing campaigns and content strategies.",
       engagement: "6.4%",
       reach: "2.3M",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
       textColor: "text-gray-700",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
@@ -195,14 +195,14 @@ export default function SocialMediaMarketingClient() {
     },
     {
       name: "Instagram Marketing",
-      highlightedName: "Instagram <span class='text-[#f4cc6f]'>Marketing</span>",
+      highlightedName: "Instagram <span class='text-[#C9A227]'>Marketing</span>",
       icon: FaInstagram,
       description: "Create visually stunning content and build brand awareness through strategic Instagram marketing campaigns.",
       engagement: "8.9%",
       reach: "1.8M",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
       textColor: "text-gray-700",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
@@ -210,14 +210,14 @@ export default function SocialMediaMarketingClient() {
     },
     {
       name: "LinkedIn Marketing",
-      highlightedName: "LinkedIn <span class='text-[#f4cc6f]'>Marketing</span>",
+      highlightedName: "LinkedIn <span class='text-[#C9A227]'>Marketing</span>",
       icon: FaLinkedin,
       description: "Build professional networks and generate B2B leads through strategic LinkedIn marketing and thought leadership.",
       engagement: "4.2%",
       reach: "890K",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
       textColor: "text-gray-700",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
@@ -225,14 +225,14 @@ export default function SocialMediaMarketingClient() {
     },
     {
       name: "YouTube Marketing",
-      highlightedName: "YouTube <span class='text-[#f4cc6f]'>Marketing</span>",
+      highlightedName: "YouTube <span class='text-[#C9A227]'>Marketing</span>",
       icon: FaYoutube,
       description: "Create engaging video content and build subscriber communities through strategic YouTube marketing campaigns.",
       engagement: "12.3%",
       reach: "3.2M",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
       textColor: "text-gray-700",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
@@ -366,10 +366,10 @@ export default function SocialMediaMarketingClient() {
                   <Share2 className="w-4 h-4" />
                   ALTIORA INFOTECH
                 </span>
-                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                   Social Media Management
                   <br />
-                  <span className="text-[#f4cc6f]">SMM Services</span>
+                  <span className="text-[#C9A227]">SMM Services</span>
                 </h1>
                 <p className="text-xl sm:text-2xl text-white/90">
                   Build brand awareness and engage your audience with strategic social media management.
@@ -435,7 +435,7 @@ export default function SocialMediaMarketingClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Social Platforms We <span className="text-[#f4cc6f]">Master</span>
+              Social Platforms We <span className="text-[#C9A227]">Master</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Build authentic communities and drive engagement across all major social media platforms.
@@ -456,7 +456,7 @@ export default function SocialMediaMarketingClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Real-Time SMM <span className="text-[#f4cc6f]">Performance</span>
+                Real-Time SMM <span className="text-[#C9A227]">Performance</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
                 Track your social media success with our comprehensive analytics dashboard. Monitor engagement, reach, and conversions across all platforms in real-time.
@@ -487,7 +487,7 @@ export default function SocialMediaMarketingClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
-              Our Social Media Management <span className="text-[#f4cc6f]">Services</span>
+              Our Social Media Management <span className="text-[#C9A227]">Services</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive SMM solutions designed to build communities and drive meaningful engagement.
@@ -531,7 +531,7 @@ export default function SocialMediaMarketingClient() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our <span className="text-[#f4cc6f]">SMM Services?</span>
+              Why Choose Our <span className="text-[#C9A227]">SMM Services?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               We combine creative storytelling with data-driven strategies to build authentic communities that drive business growth.
@@ -573,7 +573,7 @@ export default function SocialMediaMarketingClient() {
 
       {/* SMM Process Timeline */}
       <ProcessTimeline
-        title="Our Social Media Management <span class='text-[#f4cc6f]'>Process</span>"
+        title="Our Social Media Management <span class='text-[#C9A227]'>Process</span>"
         subtitle="A strategic approach that transforms your social presence into a powerful brand community and engagement engine."
         steps={[
           {
@@ -626,7 +626,7 @@ export default function SocialMediaMarketingClient() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-              Why Work With Altiora <span className="text-[#f4cc6f]">Infotech?</span>
+              Why Work With Altiora <span className="text-[#C9A227]">Infotech?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Partner with social media marketing experts who build authentic communities and drive meaningful engagement that converts.

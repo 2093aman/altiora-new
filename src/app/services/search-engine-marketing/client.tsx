@@ -83,7 +83,7 @@ const SEMDashboard = () => {
             <motion.div
               key={index}
               className={`p-4 rounded-2xl border transition-all duration-500 ${activeMetric === index
-                ? 'border-[#f4cc6f] bg-[#f4cc6f]/10'
+                ? 'border-[#C9A227] bg-[#C9A227]/10'
                 : 'border-black/10 bg-black/5'
                 }`}
               animate={activeMetric === index ? { scale: 1.05 } : { scale: 1 }}
@@ -91,7 +91,7 @@ const SEMDashboard = () => {
               <Icon className={`w-5 h-5 text-slate-500 mb-2`} />
               <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
               <div className="text-xs text-slate-500 mb-1">{metric.label}</div>
-              <div className={`text-xs font-semibold text-slate-700`}>{metric.change}</div>
+              <div className={`text-xs font-semibold text-[#3B4456]`}>{metric.change}</div>
             </motion.div>
           );
         })}
@@ -121,15 +121,15 @@ const SEMStrategyCard = ({ strategy, className }: { strategy: any; className?: s
 
         {/* Strategy Icon */}
         <motion.div
-          className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl ${strategy.iconBg} mb-6 relative z-10`}
+          className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded-xl ${strategy.iconBg} mb-6 relative z-10 shadow-md`}
         >
-          <strategy.icon className={`w-8 h-8 md:w-10 md:h-10 ${strategy.iconColor}`} />
+          <strategy.icon className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 ${strategy.iconColor}`} />
         </motion.div>
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3" dangerouslySetInnerHTML={{ __html: strategy.highlightedName }} />
-          <p className="text-slate-600 text-base md:text-lg mb-4 leading-relaxed flex-1">{strategy.description}</p>
+          <p className="text-[#3B4456] text-base md:text-lg mb-4 leading-relaxed flex-1">{strategy.description}</p>
 
           {/* Stats */}
           <div className="flex items-center justify-between mb-4">
@@ -148,7 +148,7 @@ const SEMStrategyCard = ({ strategy, className }: { strategy: any; className?: s
             {strategy.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-gray-500" />
-                <span className="text-sm text-slate-600">{feature}</span>
+                <span className="text-sm text-[#3B4456]">{feature}</span>
               </div>
             ))}
           </div>
@@ -173,61 +173,61 @@ export default function SearchEngineMarketingClient() {
   const semStrategies = [
     {
       name: "Organic Search (SEO)",
-      highlightedName: "Organic Search <span class='text-[#f4cc6f]'>(SEO)</span>",
+      highlightedName: "Organic Search <span class='text-[#C9A227]'>(SEO)</span>",
       icon: Search,
       description: "Comprehensive SEO strategies to improve organic rankings and drive sustainable long-term traffic growth.",
       impact: "+234%",
       timeframe: "3-6 months",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
-      textColor: "text-gray-700",
+      textColor: "text-[#3B4456]",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
       features: ["Keyword Optimization", "Technical SEO", "Content Strategy", "Link Building", "Schema Markup", "Core Web Vitals"]
     },
     {
       name: "Paid Search (PPC)",
-      highlightedName: "Paid Search <span class='text-[#f4cc6f]'>(PPC)</span>",
+      highlightedName: "Paid Search <span class='text-[#C9A227]'>(PPC)</span>",
       icon: DollarSign,
       description: "Strategic paid search campaigns for immediate visibility and targeted traffic with optimized ROI.",
       impact: "+189%",
       timeframe: "1-2 weeks",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
-      textColor: "text-gray-700",
+      textColor: "text-[#3B4456]",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
       features: ["Google Ads", "Bing Ads", "Shopping Campaigns", "Display Advertising", "Performance Max", "Local Campaigns"]
     },
     {
       name: "Local Search Marketing",
-      highlightedName: "Local Search <span class='text-[#f4cc6f]'>Marketing</span>",
+      highlightedName: "Local Search <span class='text-[#C9A227]'>Marketing</span>",
       icon: Globe,
       description: "Dominate local search results with optimized Google My Business and location-based strategies.",
       impact: "+156%",
       timeframe: "2-4 weeks",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
-      textColor: "text-gray-700",
+      textColor: "text-[#3B4456]",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
       features: ["Google My Business", "Local Citations", "Review Management", "Map Pack Optimization", "Local Schema", "NAP Consistency"]
     },
     {
       name: "Search Analytics & Optimization",
-      highlightedName: "Search Analytics & <span class='text-[#f4cc6f]'>Optimization</span>",
+      highlightedName: "Search Analytics & <span class='text-[#C9A227]'>Optimization</span>",
       icon: BarChart3,
       description: "Advanced analytics and continuous optimization for maximum search performance and ROI.",
       impact: "+278%",
       timeframe: "Ongoing",
       borderColor: "border-gray-500/30",
       bgGradient: "bg-gradient-to-br from-gray-50 to-white",
-      iconBg: "bg-gradient-to-br from-gray-600 to-gray-700",
+      iconBg: "bg-gradient-to-br from-[#C9A227] to-[#B18B1E]",
       iconColor: "text-white",
-      textColor: "text-gray-700",
+      textColor: "text-[#3B4456]",
       hoverGradient: "bg-gradient-to-br from-gray-600 to-gray-700",
       features: ["Performance Tracking", "Conversion Optimization", "A/B Testing", "ROI Analysis", "Competitor Analysis", "Attribution Modeling"]
     }
@@ -293,35 +293,35 @@ export default function SearchEngineMarketingClient() {
   const mobileServices = [
     {
       title: "SEO Services",
-      icon: <FaSearch className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <FaSearch className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "PPC Advertising",
-      icon: <FaAd className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <FaAd className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Keyword Research",
-      icon: <FaKeyboard className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <FaKeyboard className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Local Search",
-      icon: <Globe className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <Globe className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Search Analytics",
-      icon: <BarChart3 className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <BarChart3 className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Conversion Optimization",
-      icon: <Target className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <Target className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Technical SEO",
-      icon: <Settings className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <Settings className="w-8 h-8 text-[#C9A227]" />
     },
     {
       title: "Competitor Analysis",
-      icon: <Eye className="w-8 h-8 text-[#f4cc6f]" />
+      icon: <Eye className="w-8 h-8 text-[#C9A227]" />
     }
   ];
 
@@ -355,20 +355,20 @@ export default function SearchEngineMarketingClient() {
           <div className="w-full max-w-full">
             <div className="grid lg:grid-cols-12 gap-12 items-center w-full max-w-full">
               <div className="lg:col-span-12 space-y-6 w-full max-w-full">
-                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-slate-700 shadow-sm backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs tracking-wider text-[#3B4456] shadow-sm backdrop-blur-sm">
                   <Search className="w-4 h-4" />
                   ALTIORA INFOTECH
                 </span>
-                <h1 className="font-semibold tracking-tight text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
                   Search Engine Marketing
                   <br />
-                  <span className="text-[#f4cc6f]">SEM Services</span>
+                  <span className="text-[#C9A227]">SEM Services</span>
                 </h1>
                 <p className="text-xl sm:text-2xl text-white/90">
                   Dominate search results with integrated SEO and PPC strategies for maximum visibility.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
-                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105">
+                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105">
                     Get Started
                     <FaRocket className="ml-2 w-4 h-4" />
                   </Link>
@@ -393,11 +393,11 @@ export default function SearchEngineMarketingClient() {
           >
             {/* Top - Label with centered lines */}
             <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-l from-[#C9A227]/50 to-transparent" />
               <span className={styles.overviewTitle}>
                 Overview
               </span>
-              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#f4cc6f]/50 to-transparent" />
+              <div className="h-px w-full max-w-[80px] sm:max-w-[120px] bg-gradient-to-r from-[#C9A227]/50 to-transparent" />
             </div>
 
             {/* Main Content Centered */}
@@ -408,29 +408,29 @@ export default function SearchEngineMarketingClient() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="max-w-5xl mx-auto pt-[5px] px-8 pb-8 sm:px-12 sm:pb-12 md:px-14 md:pb-14 rounded-[40px] border border-black/5 bg-black/[0.02] backdrop-blur-xl shadow-[0_20px_50px_rgba(244,204,111,0.05)] relative overflow-hidden"
               >
-                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-slate-700`}>
+                <p className={`${styles.sectionDescription} !max-w-none relative z-10 !text-[#3B4456]`}>
                   Win customer attention at the exact moment they’re searching for solutions that match your business. Our Search Engine Marketing helps you appear instantly on top of search results and capture high-intent traffic ready to convert. At Altiora Infotech, we combine smart bidding, precise keyword targeting, and continuous optimization to maximize ROI. From lead generation to revenue growth, we build SEM campaigns designed for predictable, scalable performance.
                 </p>
 
                 {/* Subtle inner light effect */}
-                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#f4cc6f]/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#C9A227]/10 blur-[80px] rounded-full pointer-events-none" />
               </motion.div>
             </div>
           </motion.div>
         </div>
 
         {/* Background Accent Centered */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#f4cc6f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-[#C9A227]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       </section>
 
       {/* SEM Strategies Showcase */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Search Marketing Strategies That <span className="text-[#f4cc6f]">Dominate</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              Search Marketing Strategies That <span className="text-[#C9A227]">Dominate</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Comprehensive search engine marketing approaches for maximum visibility and conversions.
             </p>
           </div>
@@ -448,10 +448,10 @@ export default function SearchEngineMarketingClient() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-                Real-Time SEM <span className="text-[#f4cc6f]">Performance</span>
+              <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+                Real-Time SEM <span className="text-[#C9A227]">Performance</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-[#3B4456] mb-8 leading-relaxed">
                 Track your search marketing success with our comprehensive analytics dashboard. Monitor rankings, traffic, and conversions across all search channels.
               </p>
               <div className="space-y-4">
@@ -462,8 +462,8 @@ export default function SearchEngineMarketingClient() {
                   "Comprehensive competitor analysis and market share insights"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#f4cc6f]" />
-                    <span className="text-slate-700">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-[#C9A227]" />
+                    <span className="text-[#3B4456]">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -479,10 +479,10 @@ export default function SearchEngineMarketingClient() {
       <section className="py-20 px-6 bg-[#F3F6FC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 text-center">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900 text-center">
               Our Search Engine Marketing Services
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Comprehensive SEM solutions designed to dominate search results and maximize your online visibility.
             </p>
           </div>
@@ -523,10 +523,10 @@ export default function SearchEngineMarketingClient() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
-              Why Choose Our <span className="text-[#f4cc6f]">SEM Services?</span>
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold mb-6 text-slate-900">
+              Why Choose Our <span className="text-[#C9A227]">SEM Services?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               We combine SEO expertise with PPC mastery to deliver integrated search strategies that maximize visibility and ROI.
             </p>
           </div>
@@ -552,7 +552,7 @@ export default function SearchEngineMarketingClient() {
                         <Icon className="w-7 h-7 text-white" />
                       </div>
 
-                      <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed group-hover:text-slate-900 transition-colors duration-300 flex-1">
+                      <p className="text-base sm:text-lg md:text-xl text-[#3B4456] leading-relaxed group-hover:text-slate-900 transition-colors duration-300 flex-1">
                         {point}
                       </p>
                     </div>
@@ -618,10 +618,10 @@ export default function SearchEngineMarketingClient() {
       <section className="px-4 md:px-6 py-24 md:py-20">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-slate-900 mb-4">
               Why Work With Altiora Infotech?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-[#3B4456] max-w-3xl mx-auto leading-relaxed">
               Partner with search marketing experts who deliver integrated SEO and PPC strategies for maximum search visibility and ROI.
             </p>
           </div>
@@ -648,11 +648,11 @@ export default function SearchEngineMarketingClient() {
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#f4cc6f] transition-colors duration-300">{titles[index]}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-[#C9A227] transition-colors duration-300">{titles[index]}</h3>
                           <span className="text-sm text-slate-500">{subtitles[index]}</span>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl text-slate-600 group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-[#3B4456] group-hover:text-slate-900 transition-colors duration-300">{benefit.text}</p>
                       <div className="mt-3 md:mt-4 h-1 w-full bg-black/10 rounded-full overflow-hidden hidden md:block">
                         <div className={`h-full w-0 bg-gradient-to-r ${colors[index]} transition-all duration-700 group-hover:w-full rounded-full`} />
                       </div>
@@ -672,11 +672,11 @@ export default function SearchEngineMarketingClient() {
             <div className="absolute inset-0">
               <Image src="https://pub-00cafda969bc42d5aac5365b6609f526.r2.dev/web2/custom-web-application-development-cta.jpg" alt="Search Engine Marketing" fill className="object-cover rounded-3xl" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#010c22]/95 via-[#0a1038]/85 to-[#010c22]/95" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#001A66]/95 via-[#0a1038]/85 to-[#001A66]/95" />
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#f4cc6f]/20 to-[#e6b85c]/20 ring-2 ring-[#f4cc6f]/30 mb-8 mx-auto">
-                <Search className="w-10 h-10 text-[#f4cc6f]" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#C9A227]/20 to-[#B18B1E]/20 ring-2 ring-[#C9A227]/30 mb-8 mx-auto">
+                <Search className="w-10 h-10 text-[#C9A227]" />
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                 Ready to Dominate Search Results?
@@ -692,7 +692,7 @@ export default function SearchEngineMarketingClient() {
                   href="https://calendly.com/altiorainfotech/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#f4cc6f] to-[#e6b85c] text-[#010c22] hover:shadow-lg hover:shadow-[#f4cc6f]/25 focus:shadow-lg focus:shadow-[#f4cc6f]/25 focus:outline-none focus:ring-2 focus:ring-[#f4cc6f]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-gradient-to-r from-[#C9A227] to-[#B18B1E] text-[#001A66] hover:shadow-lg hover:shadow-[#C9A227]/25 focus:shadow-lg focus:shadow-[#C9A227]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/50 transition-all duration-300 transform hover:scale-105 focus:scale-105"
                 >
                   <FaRocket className="mr-2 w-5 h-5" />
                   Book SEM Consultation

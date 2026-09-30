@@ -32,7 +32,7 @@
 }
 
 .overviewTitle {
-  color: #f4cc6f;
+  color: #C9A227;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.4em;
@@ -41,7 +41,7 @@
 }
 
 .gradientText {
-  background: linear-gradient(135deg, #f4cc6f, #e6b85c, #f4cc6f);
+  background: linear-gradient(135deg, #C9A227, #B18B1E, #C9A227);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

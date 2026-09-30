@@ -106,8 +106,8 @@ export default function ToolsStack() {
   return (
     <section className="px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-2xl sm:text-3xl font-semibold">
-          Tools <span className="text-brand">&amp; Tech Stack</span>
+        <h2 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-bold text-center">
+          Tools <span className="text-[#C9A227]">&amp; Tech Stack</span>
         </h2>
 
         {/* Tabs with golden active underline */}
